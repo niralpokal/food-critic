@@ -35,7 +35,12 @@
   z-index: 10;
   display: inline-block;
 }
+
 #review-adder {
   position: relative;
-  top: -40px;
+  display: inline-block;
+  top: 30px;
+  padding-left: 20px;
+  z-index: 10;
+  
 }
