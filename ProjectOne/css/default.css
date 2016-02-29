@@ -20,7 +20,7 @@
   top: 25px;
   position: relative;
 }
-#search-image {
+#search-button {
   background-color: #ba0006;
   border-color: black;
   padding-top: 5px;
@@ -42,5 +42,8 @@
   top: 30px;
   padding-left: 20px;
   z-index: 10;
-  
+}
+
+#review-holder {
+  visibility: hidden;
 }
