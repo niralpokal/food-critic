@@ -3,54 +3,54 @@ var restuarant1 = {
   name: 'Taco Taco!',
   type: 'Mexican',
   numberOfReviews: 34,
-  stars: 4.5
+  stars: 4.5,
   //image:
-  //reviews:
+  reviews: reviewsOfRestuarant1
 };
 
 var restuarant2 = {
   name: 'Pizza Unlimited',
   type: 'Pizza',
   numberOfReviews: 14,
-  stars: 3
+  stars: 3,
   //image:
-//  reviews:
+  reviews: reviewsOfRestuarant2
 };
 
 var restuarant3 = {
   name: 'Urban Plates',
   type: 'American',
   numberOfReviews: 198,
-  stars: 4
+  stars: 4,
 //  image:
-  //reviews:
+  reviews: reviewsOfRestuarant3
 };
 
 var restuarant4 = {
   name: 'Burger!',
   type: 'American',
   numberOfReviews: 56,
-  stars: 3.5
+  stars: 3.5,
   //image:
-  //reviews:
+  reviews: reviewsOfRestuarant4
 };
 
 var restuarant5 = {
   name: 'Pizza Cafe',
   type: 'Pizza',
   numberOfReviews: 74,
-  stars: 4
+  stars: 4,
   //image:
-  //reviews:
+  reviews: reviewsOfRestuarant5
 };
 
 var restuarant6 = {
   name: 'Aioli',
   type: 'American',
   numberOfReviews: 201,
-  stars: 5
+  stars: 5,
   //image:
-  //reviews:
+  reviews: reviewsOfRestuarant6
 };
 
 var restuarant7 = {
@@ -59,13 +59,13 @@ var restuarant7 = {
   numberOfReviews: 93,
   stars: 4.5,
   //image:
-  //reviews:
+  reviews: reviewsOfRestuarant7
 };
 
 var reviewsOfRestuarant1 =[
   review1 = {
     name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    content: '1Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
   },
   review2 = {
     name: 'Tom',
@@ -78,7 +78,7 @@ var reviewsOfRestuarant1 =[
 ]
 
 var reviewsOfRestuarant2 =[
-  review1 = {
+  review1 ={
     name: 'Tom',
     content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
   },
@@ -95,20 +95,20 @@ var reviewsOfRestuarant2 =[
 var reviewsOfRestuarant3 =[
   review1 = {
     name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    content: '1Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
   },
   review2 = {
     name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    content: '2Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
   },
   review3 = {
     name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    content: '3Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
   }
 ]
 
 var reviewsOfRestuarant4 =[
-  review1 = {
+   review1 = {
     name: 'Tom',
     content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
   },
@@ -175,8 +175,15 @@ var restuarantArray = [ restuarant1, restuarant2, restuarant3, restuarant4, rest
 var search;
 var restuarants = document.getElementById('restuarants');
 var searchButton = document.getElementById('form1');
-
-
+var newH5 = document.createElement('h5');
+//var newP = document.createElement('p');
+restuarant1.reviews = reviewsOfRestuarant1.slice(0);
+restuarant2.reviews = reviewsOfRestuarant2.slice(0);
+restuarant3.reviews = reviewsOfRestuarant3.slice(0);
+restuarant4.reviews = reviewsOfRestuarant4.slice(0);
+restuarant5.reviews = reviewsOfRestuarant5.slice(0);
+restuarant6.reviews = reviewsOfRestuarant6.slice(0);
+restuarant7.reviews = reviewsOfRestuarant7.slice(0);
 
 
 function sortRestuarants(array,b) {
@@ -200,17 +207,35 @@ function stopRefresh(event) {
   sortRestuarants(restuarantArray, search.toLowerCase());
 };
 
+function addReviews(array){
+  var temp = array;
+  var reviewContent = document.createTextNode(temp.content);
+  var reviewName = document.createTextNode(temp.name);
+   newH5 = document.createElement('h5');
+  var newP = document.createElement('p');
+  newH5.appendChild(reviewName);
+  newP.appendChild(reviewContent);
+  newH5.appendChild(newP);
+  return newH5;
+};
+
 function addRestuarant(array){
   var name = array.name;
   var stars = array.stars;
+  var reviews = array.reviews;
+  for (var i = 0; i<reviews.length; i++){
+    addReviews(reviews[i]);
+  }
   var nameContent = document.createTextNode(name);
   var starContent = document.createTextNode(stars);
-  var restuarantName = document.createElement('h1');
-  var restuarantStars= document.createElement('p');
+  var restuarantName = document.createElement('h3');
+  var restuarantStars = document.createElement('p');
   restuarantName.appendChild(nameContent);
+  restuarantName.appendChild(newH5);
   restuarantStars.appendChild(starContent);
   restuarants.appendChild(restuarantName);
   restuarants.appendChild(restuarantStars);
 };
 
 searchButton.addEventListener("submit", stopRefresh);
+console.log(restuarant7.reviews[1].name);
