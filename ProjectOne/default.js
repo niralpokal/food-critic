@@ -51,37 +51,41 @@ var restuarant7 = {
 var searchFail = 'Sorry but your search brought zero results.';
 var restuarantArray = [ restuarant1, restuarant2, restuarant3, restuarant4, restuarant5, restuarant6, restuarant7 ];
 var search;
+var restuarants = document.getElementById('restuarants');
+var searchButton = document.getElementById('form1');
+
+
 
 function sortRestuarants(array,b) {
   for (var i = 0; i< array.length; i++){
     var a = array[i];
     if ((a.type.toLowerCase() === b)|| (a.name.toLowerCase() === b)){
-      addToDocument(array[i]);
+      addRestuarant(array[i]);
     }
   }
 };
 
 function stopRefresh(event) {
+  var element = restuarants;
+  while(element.firstChild){
+    element.removeChild(element.firstChild);
+  }
   event.preventDefault();
   search = document.getElementById('search-bar').value;
   sortRestuarants(restuarantArray, search.toLowerCase());
-}
+};
 
-function addToDocument(array){
+function addRestuarant(array){
   var name = array.name;
   var stars = array.stars;
-  var newH1 = document.createElement('h1');
-  var newP = document.createElement('p');
   var nameContent = document.createTextNode(name);
   var starContent = document.createTextNode(stars);
-  newH1.appendChild(nameContent);
-  newP.appendChild(starContent);
-  restuarants.appendChild(newH1);
-  restuarants.appendChild(newP);
-  array;
+  var restuarantName = document.createElement('h1');
+  var restuarantStars= document.createElement('p');
+  restuarantName.appendChild(nameContent);
+  restuarantStars.appendChild(starContent);
+  restuarants.appendChild(restuarantName);
+  restuarants.appendChild(restuarantStars);
+};
 
-}
-
-var restuarants = document.getElementById('restuarants');
-var searchButton = document.getElementById('form1');
 searchButton.addEventListener("submit", stopRefresh);
