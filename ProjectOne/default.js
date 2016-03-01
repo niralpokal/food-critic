@@ -1,8 +1,3 @@
-/*var reviews = {
-  name: ,
-  stars: ,
-  content:
-};*/
 
 var restuarant1 = {
   name: 'Taco Taco!',
@@ -52,26 +47,41 @@ var restuarant7 = {
   numberOfReviews: 93,
   stars: 4.5
 };
-var restuarantResults = [];
+
 var searchFail = 'Sorry but your search brought zero results.';
 var restuarantArray = [ restuarant1, restuarant2, restuarant3, restuarant4, restuarant5, restuarant6, restuarant7 ];
-
-/*function addReview() = {
-
-};*/
+var search;
 
 function sortRestuarants(array,b) {
   for (var i = 0; i< array.length; i++){
     var a = array[i];
-    switch (true){
-    case(a.type.toLowerCase() == b):
-    restuarantResults.push(array[i]);
-    break;
-  }
+    if ((a.type.toLowerCase() === b)|| (a.name.toLowerCase() === b)){
+      addToDocument(array[i]);
+    }
   }
 };
-var search = document.getElementById('searchbar').value;
-var lowersearch = search.toLowerCase();
-sortRestuarants(restuarantArray, 'american')
 
-console.log(restuarantResults);
+function stopRefresh(event) {
+  event.preventDefault();
+  search = document.getElementById('search-bar').value;
+  sortRestuarants(restuarantArray, search.toLowerCase());
+}
+
+function addToDocument(array){
+  var name = array.name;
+  var stars = array.stars;
+  var newH1 = document.createElement('h1');
+  var newP = document.createElement('p');
+  var nameContent = document.createTextNode(name);
+  var starContent = document.createTextNode(stars);
+  newH1.appendChild(nameContent);
+  newP.appendChild(starContent);
+  restuarants.appendChild(newH1);
+  restuarants.appendChild(newP);
+  array;
+
+}
+
+var restuarants = document.getElementById('restuarants');
+var searchButton = document.getElementById('form1');
+searchButton.addEventListener("submit", stopRefresh);
