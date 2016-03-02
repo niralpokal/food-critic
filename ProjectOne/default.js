@@ -175,8 +175,8 @@ var restuarantArray = [ restuarant1, restuarant2, restuarant3, restuarant4, rest
 var search;
 var restuarants = document.getElementById('restuarants');
 var searchButton = document.getElementById('form1');
+var newDiv = document.createElement('div');
 var newH5 = document.createElement('h5');
-//var newP = document.createElement('p');
 restuarant1.reviews = reviewsOfRestuarant1.slice(0);
 restuarant2.reviews = reviewsOfRestuarant2.slice(0);
 restuarant3.reviews = reviewsOfRestuarant3.slice(0);
@@ -211,30 +211,38 @@ function addReviews(array){
   var temp = array;
   var reviewContent = document.createTextNode(temp.content);
   var reviewName = document.createTextNode(temp.name);
-   newH5 = document.createElement('h5');
+  newH5 = document.createElement('h5');
   var newP = document.createElement('p');
-  newH5.appendChild(reviewName);
+  //newDiv = document.createElement('div');
   newP.appendChild(reviewContent);
+  newH5.appendChild(reviewName);
   newH5.appendChild(newP);
+  //newDiv.appendChild(newH5);
   return newH5;
 };
 
 function addRestuarant(array){
-  var name = array.name;
-  var stars = array.stars;
-  var reviews = array.reviews;
-  for (var i = 0; i<reviews.length; i++){
-    addReviews(reviews[i]);
-  }
-  var nameContent = document.createTextNode(name);
-  var starContent = document.createTextNode(stars);
-  var restuarantName = document.createElement('h3');
-  var restuarantStars = document.createElement('p');
-  restuarantName.appendChild(nameContent);
-  restuarantName.appendChild(newH5);
-  restuarantStars.appendChild(starContent);
-  restuarants.appendChild(restuarantName);
-  restuarants.appendChild(restuarantStars);
+  //for(var i =0; i<array.length;i++){
+    var name = array.name;
+    var stars = array.stars;
+    var reviews = array.reviews;
+    var i = 0;
+    newDiv = document.createElement('div');
+    while  (i<reviews.length){
+      addReviews(array.reviews[i]);
+      newDiv.appendChild(newH5);
+      i++;
+    }
+    var nameContent = document.createTextNode(name);
+    var starContent = document.createTextNode(stars);
+    var restuarantName = document.createElement('h3');
+    var restuarantStars = document.createElement('p');
+    restuarantName.appendChild(nameContent);
+    restuarantName.appendChild(newDiv);
+    restuarantStars.appendChild(starContent);
+    restuarants.appendChild(restuarantName);
+    restuarants.appendChild(restuarantStars);
+  //}
 };
 
 searchButton.addEventListener("submit", stopRefresh);
