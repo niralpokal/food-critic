@@ -191,7 +191,6 @@ restuarant5.reviews = reviewsOfRestuarant5.slice(0);
 restuarant6.reviews = reviewsOfRestuarant6.slice(0);
 restuarant7.reviews = reviewsOfRestuarant7.slice(0);
 
-
 function stopRefresh(event) {
   var element = restuarants;
   while(element.firstChild){
@@ -234,6 +233,7 @@ function addRestuarant(array){
     var restuarantName = document.createElement('h3');
     var restuarantStars = document.createElement('p');
     showButton.appendChild(buttonContent);
+    showButton.addEventListener('click',showReviews, false);
     restuarantName.appendChild(nameContent);
     restuarantStars.appendChild(starContent);
     newDivMediaLeftRestuarant.appendChild(restuarantName);
@@ -242,23 +242,15 @@ function addRestuarant(array){
     newDivContainerRestuarant.appendChild(newDivMediaLeftRestuarant);
     newDivContainerRestuarant.appendChild(newDivRestuarant);
     restuarants.appendChild(newDivContainerRestuarant);
-    searchedArray = array;
-    reviewsList(array);
-    reviewButtonPress();
-};
-
-function reviewButtonPress(array){
-  var array1 = array;
-  var classname = document.getElementsByClassName('show-reviews');
-  for (var i = 0; i < classname.length; i++) {
-    classname[i].addEventListener('click', showReviews);
-
-  }
+    searchedArray.push(array);
 };
 
 function showReviews(){
   restuarants.className = "hidden media";
   listOfReviews.className = "media";
+  //var btn = document.getElementsByClassName('show-reviews');
+  //for (var i = 0; i < btn.length, i++){
+  //}
 };
 
 function reviewsList(array){
@@ -300,8 +292,6 @@ function addReviews(array){
   newDivContainer.appendChild(newDiv);
   return newDivContainer;
 };
-
-
 
 searchButton.addEventListener("submit", stopRefresh);
 
