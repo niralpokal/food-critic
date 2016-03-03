@@ -22,7 +22,7 @@ var restuarant3 = {
   type: 'American',
   numberOfReviews: 198,
   stars: 4,
-//  image:
+  //image:
   reviews: reviewsOfRestuarant3
 };
 
@@ -173,6 +173,8 @@ var userReview = [];
 //failH1.appendChild(searchFail);
 var restuarantArray = [ restuarant1, restuarant2, restuarant3, restuarant4, restuarant5, restuarant6, restuarant7 ];
 var search;
+//var addReviewButtonDiv = document.getElementById('review-adder');
+var addReviewButton = document.getElementById('add-review');
 var restuarants = document.getElementById('restuarants');
 var listOfReviews = document.getElementById('review-list');
 var searchButton = document.getElementById('form1');
@@ -202,6 +204,7 @@ function stopRefresh(event) {
   }
   restuarants.className = "media";
   listOfReviews.className = "hidden media";
+  addReviewButton.className = "hidden btn btn-default";
   event.preventDefault();
   search = document.getElementById('search-bar').value;
   sortRestuarants(restuarantArray, search.toLowerCase());
@@ -219,36 +222,36 @@ function sortRestuarants(array,b) {
   };
 
 function addRestuarant(array){
-    var array = array;
-    var name = array.name;
-    var stars = array.stars;
-    var showButton = document.createElement('button');
-    showButton.setAttribute('type', 'button');
-    showButton.setAttribute('class', 'show-reviews');
-    var buttonContent = document.createTextNode('Show Reviews');
-    var newDivRestuarant = document.createElement('div');
-    newDiv.className = "media-body";
-    var newDivContainerRestuarant = document.createElement('div');
-    newDivContainerRestuarant.className = "media well";
-    var newDivMediaLeftRestuarant = document.createElement('div');
-    newDivMediaLeftRestuarant.className = "media-left";
-    var newAnchor = document.createElement('a');
-    var newImage = document.createElement('img');
-    var nameContent = document.createTextNode(name);
-    var starContent = document.createTextNode(stars);
-    var restuarantName = document.createElement('h3');
-    var restuarantStars = document.createElement('p');
-    showButton.appendChild(buttonContent);
-    showButton.addEventListener('click',showReviews, false);
-    restuarantName.appendChild(nameContent);
-    restuarantStars.appendChild(starContent);
-    newDivMediaLeftRestuarant.appendChild(restuarantName);
-    newDivMediaLeftRestuarant.appendChild(restuarantStars);
-    newDivMediaLeftRestuarant.appendChild(showButton);
-    newDivContainerRestuarant.appendChild(newDivMediaLeftRestuarant);
-    newDivContainerRestuarant.appendChild(newDivRestuarant);
-    restuarants.appendChild(newDivContainerRestuarant);
-    searchedArray.push(array);
+  var array = array;
+  var name = array.name;
+  var stars = array.stars;
+  var showButton = document.createElement('button');
+  showButton.setAttribute('type', 'button');
+  showButton.setAttribute('class', 'show-reviews');
+  var buttonContent = document.createTextNode('Show Reviews');
+  var newDivRestuarant = document.createElement('div');
+  newDiv.className = "media-body";
+  var newDivContainerRestuarant = document.createElement('div');
+  newDivContainerRestuarant.className = "media well";
+  var newDivMediaLeftRestuarant = document.createElement('div');
+  newDivMediaLeftRestuarant.className = "media-left";
+  var newAnchor = document.createElement('a');
+  var newImage = document.createElement('img');
+  var nameContent = document.createTextNode(name);
+  var starContent = document.createTextNode(stars);
+  var restuarantName = document.createElement('h3');
+  var restuarantStars = document.createElement('p');
+  showButton.appendChild(buttonContent);
+  showButton.addEventListener('click',showReviews, false);
+  restuarantName.appendChild(nameContent);
+  restuarantStars.appendChild(starContent);
+  newDivMediaLeftRestuarant.appendChild(restuarantName);
+  newDivMediaLeftRestuarant.appendChild(restuarantStars);
+  newDivMediaLeftRestuarant.appendChild(showButton);
+  newDivContainerRestuarant.appendChild(newDivMediaLeftRestuarant);
+  newDivContainerRestuarant.appendChild(newDivRestuarant);
+  restuarants.appendChild(newDivContainerRestuarant);
+  searchedArray.push(array);
 };
 
 function showReviews(event){
@@ -266,22 +269,23 @@ function showReviews(event){
 };
 
 function reviewsList(array){
-    var reviews = array;
-    var i = 0;
-    var newDiv1 = document.createElement('div');
-    newDiv.className = "media-body";
-    var newDivContainer1 = document.createElement('div');
-    newDivContainer1.className = "media well";
-    var newDivMediaLeft1 = document.createElement('div');
-    newDivMediaLeft1.className = "media-left";
-    while  (i<reviews.length){
-      addReviews(reviews[i]);
-      newDiv1.appendChild(newDivContainer);
-      i++;
-    }
-    newDivContainer1.appendChild(newDivMediaLeft1);
-    newDivContainer1.appendChild(newDiv1);
-    listOfReviews.appendChild(newDivContainer1);
+  var reviews = array;
+  var i = 0;
+  var newDiv1 = document.createElement('div');
+  newDiv.className = "media-body";
+  var newDivContainer1 = document.createElement('div');
+  newDivContainer1.className = "media well";
+  var newDivMediaLeft1 = document.createElement('div');
+  newDivMediaLeft1.className = "media-left";
+  while  (i<reviews.length){
+    addReviews(reviews[i]);
+    newDiv1.appendChild(newDivContainer);
+    i++;
+  }
+  newDivContainer1.appendChild(newDivMediaLeft1);
+  newDivContainer1.appendChild(newDiv1);
+  listOfReviews.appendChild(newDivContainer1);
+  addReviewButton.className = "btn btn-default";
 };
 
 function addReviews(array){

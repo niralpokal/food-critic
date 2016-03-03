@@ -1,4 +1,4 @@
-.page-header {
+/*.page-header {
   position: relative;
   background-color: #af0606;
   height: 150px;
@@ -42,8 +42,4 @@
   top: 30px;
   padding-left: 20px;
   z-index: 10;
-}
-
-#review-holder {
-  visibility: hidden;
-}
+}*/

@@ -3,33 +3,35 @@
   <head>
     <meta charset="utf-8">
     <title>Project One</title>
-    <link type="text/css" href="css/default.css" rel="stylesheet">
+    <!--<link type="text/css" href="css/default.css" rel="stylesheet">-->
     <link <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   </head>
   <body>
     <div class="container-fluid">
-      <div class="page-header">
+      <div class="row">
         <div class="header-overlay"></div>
-        <div id="header" class="row">
-          <img id="logo" src="images/header_logo.png" alt="Yelp Logo" />
-          <div class="search-function">
+        <div id="header" class="col-md-12 ">
+          <div class="col-md-offset-5 col-md-8">
+            <div class="search-function">
             <form id="form1" class="form-inline">
+              <img id="logo" src="images/header_logo.png" alt="Yelp Logo" />
               <label for="searchbar"></label>
               <input type="text" id="search-bar" class="form-control" form="form1" placeholder="Search" value="">
               <button type="submit"  id="search-button" form="form1" class="btn btn-default"><img src="images/search_icon.png" alt="Search" height = "20px" width = "20px"></button>
+              <!--<div id="review-adder" class="hidden button">-->
+              <button type="submit" id="add-review" class="hidden btn btn-default">Add Your Review Here!!</button>
+              <!--</div>-->
             </form>
-          </div>
-          <div id="review-adder">
-            <button type="submit" id="add-review" class="btn btn-default">Add Your Review Here!!</button>
+            </div>
           </div>
         </div>
       </div>
-      <div id="food-image-home" class="row-fluid">
+      <!--<div id="food-image-home" class="row-fluid">
         <img src="images/food1.jpg" class="img-responsive img-thumbnail" width="300"  height="300" alt="Food">
         <img src="images/food2.jpg" class="img-responsive img-thumbnail" height="300" width="300" alt="burger photo">
         <img src="images/food3.jpg" class="img-responsive img-thumbnail" height="300" width="300" alt="pizza photo">
         <img src="images/food4.jpg" class="img-responsive img-thumbnail" height="300" width="300" alt="taco photo">
-      </div>
+      </div>-->
       <div>
         <div id="restuarants"class="media">
         </div>
