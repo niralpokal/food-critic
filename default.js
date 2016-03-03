@@ -182,6 +182,7 @@ var foodHomePage = document.getElementById('food-image-home');
 var userReviewForm = document.getElementById('form2');
 var submitUserForm = document.getElementById('submit-user-review');
 var homeButton = document.getElementById('home');
+var logo = document.getElementById('logo');
 var newDiv = document.createElement('div');
 var newDivContainer = document.createElement('div');
 var newDivMediaLeft = document.createElement('div');
@@ -212,7 +213,6 @@ function stopRefresh(event) {
   foodHomePage.className ="hidden row-fluid";
   event.preventDefault();
   search = document.getElementById('search-bar').value;
-  //console.log(search);
   sortRestuarants(restuarantArray, search.toLowerCase());
 };
 
@@ -357,11 +357,25 @@ function resetReviews(){
   }
 }
 
-//function go
+function goHome(event){
+  event.preventDefault();
+  var element = listOfReviews;
+  var element2 = restuarants;
+  while(element.firstChild){
+    element.removeChild(element.firstChild);
+  }
+  while(element2.firstChild){
+    element2.removeChild(element2.firstChild);
+  }
+  addReviewButton.className = "hidden btn btn-default center-block";
+  foodHomePage.className ="row-fluid";
+  userReviewForm.className="hidden well";
+}
 
 searchButton.addEventListener("submit", stopRefresh);
 addReviewButton.addEventListener('click', reviewButton);
 submitUserForm.addEventListener('click', submitReview);
-//homeButton.addEventListener('click' goHome);
+homeButton.addEventListener('click', goHome);
+logo.addEventListener('click', goHome);
 
 //console.log(restuarant7.reviews[1].name);
