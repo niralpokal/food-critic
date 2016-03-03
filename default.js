@@ -193,9 +193,15 @@ restuarant7.reviews = reviewsOfRestuarant7.slice(0);
 
 function stopRefresh(event) {
   var element = restuarants;
+  var element2 = listOfReviews;
   while(element.firstChild){
     element.removeChild(element.firstChild);
   }
+  while(element2.firstChild){
+    element2.removeChild(element2.firstChild);
+  }
+  restuarants.className = "media";
+  listOfReviews.className = "hidden media";
   event.preventDefault();
   search = document.getElementById('search-bar').value;
   sortRestuarants(restuarantArray, search.toLowerCase());
@@ -245,16 +251,22 @@ function addRestuarant(array){
     searchedArray.push(array);
 };
 
-function showReviews(){
+function showReviews(event){
+  var target = event.target;
+  var parent = target.parentElement;
+  var theParent = parent.getElementsByTagName("h3")[0];
+  var name = theParent.textContent;
+  for (var i = 0; i < restuarantArray.length; i++) {
+    if (name === restuarantArray[i].name){
+      reviewsList(restuarantArray[i].reviews)
+    }
+  }
   restuarants.className = "hidden media";
   listOfReviews.className = "media";
-  //var btn = document.getElementsByClassName('show-reviews');
-  //for (var i = 0; i < btn.length, i++){
-  //}
 };
 
 function reviewsList(array){
-    var reviews = array.reviews;
+    var reviews = array;
     var i = 0;
     var newDiv1 = document.createElement('div');
     newDiv.className = "media-body";
@@ -263,7 +275,7 @@ function reviewsList(array){
     var newDivMediaLeft1 = document.createElement('div');
     newDivMediaLeft1.className = "media-left";
     while  (i<reviews.length){
-      addReviews(array.reviews[i]);
+      addReviews(reviews[i]);
       newDiv1.appendChild(newDivContainer);
       i++;
     }
