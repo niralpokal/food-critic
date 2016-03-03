@@ -18,26 +18,60 @@
               <label for="searchbar"></label>
               <input type="text" id="search-bar" class="form-control" form="form1" placeholder="Search" value="">
               <button type="submit"  id="search-button" form="form1" class="btn btn-default"><img src="images/search_icon.png" alt="Search" height = "20px" width = "20px"></button>
-              <!--<div id="review-adder" class="hidden button">-->
-              <button type="submit" id="add-review" class="hidden btn btn-default">Add Your Review Here!!</button>
-              <!--</div>-->
             </form>
             </div>
           </div>
+          <button type="submit" id="add-review" class="hidden btn btn-default center-block">Add Your Review Here!!</button>
+          //<button type="submit" id="home" class="btn btn-default center-block">Home</button>
         </div>
       </div>
-      <!--<div id="food-image-home" class="row-fluid">
-        <img src="images/food1.jpg" class="img-responsive img-thumbnail" width="300"  height="300" alt="Food">
+      <div id="food-image-home" class="row-fluid">
+        <img src="images/food1.jpg" class="img-responsive img-thumbnail" width="300" height="300" alt="Food">
         <img src="images/food2.jpg" class="img-responsive img-thumbnail" height="300" width="300" alt="burger photo">
         <img src="images/food3.jpg" class="img-responsive img-thumbnail" height="300" width="300" alt="pizza photo">
         <img src="images/food4.jpg" class="img-responsive img-thumbnail" height="300" width="300" alt="taco photo">
-      </div>-->
-      <div>
+      </div>
+      <div class="row">
         <div id="restuarants"class="media">
         </div>
         <div id="review-list" class="hidden media">
         </div>
       </div>
+      <div class="row-fluid">
+      <form id="form2" class="hidden well">
+        <div class="form-group">
+          <label for="name-input">Name</label>
+          <input type="text" class="form-control" id="name-input" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <b>How many Stars do you want to give the Restuarant?<b><br>
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadio" id="inlineRadio1" value="1"> 1
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadio" id="inlineRadio2" value="2"> 2
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadio" id="inlineRadio3" value="3"> 3
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadio" id="inlineRadio4" value="4"> 4
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="inlineRadio" id="inlineRadio5" value="5"> 5
+          </label>
+        </div>
+        <div class="form-group">
+          <label for="user-review-content">Enter Your Review Below</label>
+          <textarea id="user-review-content" class="form-control" rows="3" placeholder="Your review goes here...."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="picture-input">Picture Upload</label>
+          <input type="file" id="picture-input">
+          <p class="help-block">Upload an picture for your review!</p>
+        </div>
+        <button type="submit" id="submit-user-review" class="btn btn-default">Submit</button>
+      </form>
     </div>
     <script src="default.js"></script>
   </body>

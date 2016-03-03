@@ -1,11 +1,9 @@
-/*.page-header {
+.page-header {
   position: relative;
   background-color: #af0606;
   height: 150px;
   width: 100%;
-  top: -40px;
   z-index: 8;
-  text-align: center;
   margin-bottom: 0;
 }
 .header-overlay {
@@ -42,4 +40,4 @@
   top: 30px;
   padding-left: 20px;
   z-index: 10;
-}*/
+}

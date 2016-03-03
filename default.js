@@ -167,7 +167,7 @@ var reviewsOfRestuarant7 =[
   }
 ]
 
-var userReview = [];
+var userReview = {};
 //var searchFail = document.createTextNode('Sorry but your search brought zero results.');
 //var failH1 = document.createElement('h1');
 //failH1.appendChild(searchFail);
@@ -178,6 +178,10 @@ var addReviewButton = document.getElementById('add-review');
 var restuarants = document.getElementById('restuarants');
 var listOfReviews = document.getElementById('review-list');
 var searchButton = document.getElementById('form1');
+var foodHomePage = document.getElementById('food-image-home');
+var userReviewForm = document.getElementById('form2');
+var submitUserForm = document.getElementById('submit-user-review');
+var homeButton = document.getElementById('home');
 var newDiv = document.createElement('div');
 var newDivContainer = document.createElement('div');
 var newDivMediaLeft = document.createElement('div');
@@ -205,8 +209,10 @@ function stopRefresh(event) {
   restuarants.className = "media";
   listOfReviews.className = "hidden media";
   addReviewButton.className = "hidden btn btn-default";
+  foodHomePage.className ="hidden row-fluid";
   event.preventDefault();
   search = document.getElementById('search-bar').value;
+  //console.log(search);
   sortRestuarants(restuarantArray, search.toLowerCase());
 };
 
@@ -220,7 +226,7 @@ function sortRestuarants(array,b) {
       }
     }
   };
-
+var reviewsForSearchedRestuarant;
 function addRestuarant(array){
   var array = array;
   var name = array.name;
@@ -258,9 +264,9 @@ function showReviews(event){
   var target = event.target;
   var parent = target.parentElement;
   var theParent = parent.getElementsByTagName("h3")[0];
-  var name = theParent.textContent;
+  reviewsForSearchedRestuarant = theParent.textContent;
   for (var i = 0; i < restuarantArray.length; i++) {
-    if (name === restuarantArray[i].name){
+    if (reviewsForSearchedRestuarant === restuarantArray[i].name){
       reviewsList(restuarantArray[i].reviews)
     }
   }
@@ -285,7 +291,7 @@ function reviewsList(array){
   newDivContainer1.appendChild(newDivMediaLeft1);
   newDivContainer1.appendChild(newDiv1);
   listOfReviews.appendChild(newDivContainer1);
-  addReviewButton.className = "btn btn-default";
+  addReviewButton.className = "btn btn-default center-block";
 };
 
 function addReviews(array){
@@ -309,6 +315,53 @@ function addReviews(array){
   return newDivContainer;
 };
 
+function reviewButton(event){
+  event.preventDefault();
+  userReviewForm.className="well";
+};
+
+function submitReview(event){
+  event.preventDefault();
+  var userName = document.getElementById('name-input').value;
+  var starChoice = document.getElementsByName('inlineRadio');
+  var stars;
+  for (var i = 0; i< starChoice.length; i++ ){
+    if (starChoice[i].checked){
+      stars = starChoice[i].value;
+    }
+  }
+  var reviewContent = document.getElementById('user-review-content').value;
+  userReview = {
+    name: userName,
+    content: reviewContent
+  };
+  for (var i = 0; i < restuarantArray.length; i++) {
+    if (reviewsForSearchedRestuarant === restuarantArray[i].name){
+      restuarantArray[i].reviews.push(userReview);
+    }
+  }
+  document.forms['form2'].reset();
+  resetReviews();
+};
+
+function resetReviews(){
+  userReviewForm.className="hidden well";
+  var element = listOfReviews;
+  while(element.firstChild){
+    element.removeChild(element.firstChild);
+  }
+  for (var i = 0; i < restuarantArray.length; i++) {
+    if (reviewsForSearchedRestuarant === restuarantArray[i].name){
+      reviewsList(restuarantArray[i].reviews);
+    }
+  }
+}
+
+//function go
+
 searchButton.addEventListener("submit", stopRefresh);
+addReviewButton.addEventListener('click', reviewButton);
+submitUserForm.addEventListener('click', submitReview);
+//homeButton.addEventListener('click' goHome);
 
 //console.log(restuarant7.reviews[1].name);
