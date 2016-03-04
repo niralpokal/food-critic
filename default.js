@@ -314,6 +314,7 @@ var search;
 //var addReviewButtonDiv = document.getElementById('review-adder');
 var addReviewButton = document.getElementById('add-review');
 var restuarants = document.getElementById('restuarants');
+var selectedRestuarant = document.getElementById('selected-restuarant');
 var listOfReviews = document.getElementById('review-list');
 var searchButton = document.getElementById('form1');
 var goBackToResultsButton = document.getElementById('search-results')
@@ -342,11 +343,15 @@ restuarant9.reviews = reviewsOfRestuarant9.slice(0);
 function stopRefresh(event) {
   var element = restuarants;
   var element2 = listOfReviews;
+  var element3 = selectedRestuarant;
   while(element.firstChild){
     element.removeChild(element.firstChild);
   }
   while(element2.firstChild){
     element2.removeChild(element2.firstChild);
+  }
+  while(element3.firstChild){
+    element3.removeChild(element3.firstChild);
   }
   restuarants.className = "media";
   listOfReviews.className = "hidden media";
@@ -385,7 +390,7 @@ function addRestuarant(array){
   newDivContainerRestuarant.className = "media well";
   var newDivMediaLeftRestuarant = document.createElement('div');
   newDivMediaLeftRestuarant.className = "media-left";
-  var newAnchor = document.createElement('a');
+  //var newAnchor = document.createElement('a');
   var newImage = document.createElement('img');
   var newBreak = document.createElement('br');
   newImage.className="img-rounded";
@@ -416,6 +421,41 @@ function addRestuarant(array){
   searchedArray.push(array);
 };
 
+function slRes(array){
+    var name = array.name;
+    var stars = array.stars;
+    var image = array.image;
+    var info = array.info;
+    var newDivRestuarant = document.createElement('div');
+    newDivRestuarant.className = "media-body";
+    var newDivContainerRestuarant = document.createElement('div');
+    newDivContainerRestuarant.className = "media well";
+    var newDivMediaLeftRestuarant = document.createElement('div');
+    newDivMediaLeftRestuarant.className = "media-left";
+    var newImage = document.createElement('img');
+    newImage.className="img-rounded";
+    newImage.setAttribute('src', image);
+    newImage.setAttribute('alt', "");
+    newImage.setAttribute('width', "324");
+    newImage.setAttribute('height', "236");
+    var nameContent = document.createTextNode(name);
+    var starContent = document.createTextNode(stars);
+    var restuarantName = document.createElement('h3');
+    var restuarantStars = document.createElement('p');
+    var infoTextNode = document.createTextNode(info);
+    var restuarantInfo = document.createElement('p');
+    restuarantName.appendChild(nameContent);
+    restuarantInfo.appendChild(infoTextNode);
+    restuarantStars.appendChild(starContent);
+    newDivRestuarant.appendChild(restuarantName);
+    newDivRestuarant.appendChild(restuarantStars);
+    newDivRestuarant.appendChild(restuarantInfo);
+    newDivMediaLeftRestuarant.appendChild(newImage);
+    newDivContainerRestuarant.appendChild(newDivMediaLeftRestuarant);
+    newDivContainerRestuarant.appendChild(newDivRestuarant);
+    selectedRestuarant.appendChild(newDivContainerRestuarant);
+};
+
 function showReviews(event){
   var target = event.target;
   var parent = target.parentElement;
@@ -423,7 +463,9 @@ function showReviews(event){
   reviewsForSearchedRestuarant = theParent.textContent;
   for (var i = 0; i < restuarantArray.length; i++) {
     if (reviewsForSearchedRestuarant === restuarantArray[i].name){
-      reviewsList(restuarantArray[i].reviews)
+      slRes(restuarantArray[i]);
+      reviewsList(restuarantArray[i].reviews);
+
     }
   }
   restuarants.className = "hidden media";
@@ -533,8 +575,12 @@ function resetReviews(){
 function goBackToResults(event){
   event.preventDefault();
   var element = listOfReviews;
+  var element2 = selectedRestuarant;
   while(element.firstChild){
     element.removeChild(element.firstChild);
+  }
+  while(element2.firstChild){
+    element2.removeChild(element2.firstChild);
   }
   restuarants.className = "media";
   goBackToResultsButton.className = "hidden btn btn-default center-block";
@@ -544,11 +590,15 @@ function goHome(event){
   event.preventDefault();
   var element = listOfReviews;
   var element2 = restuarants;
+  var element3 = selectedRestuarant;
   while(element.firstChild){
     element.removeChild(element.firstChild);
   }
   while(element2.firstChild){
     element2.removeChild(element2.firstChild);
+  }
+  while(element3.firstChild){
+    element3.removeChild(element3.firstChild);
   }
   addReviewButton.className = "hidden btn btn-default center-block";
   goBackToResultsButton.className = "hidden btn btn-default center-block";
