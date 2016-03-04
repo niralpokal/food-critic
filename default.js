@@ -4,7 +4,8 @@ var restuarant1 = {
   type: 'Mexican',
   numberOfReviews: 34,
   stars: 4.5,
-  //image:
+  image: "images/mexican1.jpg",
+  info: "Find us to try our savory tacos, our enormous burritos, and delightful antojitos. Don't forget to grab your freshly made agua fresca and to grab salsas from our 20+ salsa bar.",
   reviews: reviewsOfRestuarant1
 };
 
@@ -23,7 +24,8 @@ var restuarant3 = {
   type: 'American',
   numberOfReviews: 198,
   stars: 4,
-  //image:
+  image: 'images/american1.jpg',
+  info: "We're farm to plate and won't break the bank! It's true. Farm means freshly delivered from local farms and producers. Plate means chef-crafted dishes piled high with one-of-a-kind flavors. Won't break the bank means you could pay twice as much for food this good.",
   reviews: reviewsOfRestuarant3
 };
 
@@ -31,8 +33,9 @@ var restuarant4 = {
   name: 'Burger!',
   type: 'American',
   numberOfReviews: 56,
-  stars: 3.5,
-  //image:
+  stars: 4.5,
+  image: 'images/american2.jpg',
+  info: "Intricately Simple - We are quite Intricate in our preparation, techniques, and craft. Yet, our menu is Simple, just good ol' fashioned grub.",
   reviews: reviewsOfRestuarant4
 };
 
@@ -50,8 +53,9 @@ var restuarant6 = {
   name: 'Aioli',
   type: 'American',
   numberOfReviews: 201,
-  stars: 5,
-  //image:
+  stars: 4,
+  image: 'images/american3.jpg',
+  info: 'Our restaurant serves great burgers, fresh salads, healthy meals and Chicago specialties.  Our catering service specializes in corporate catering, drop off catering, lunch catering, wedding and party catering. Let Aioli create an unforgettable experience for your next event.',
   reviews: reviewsOfRestuarant6
 };
 
@@ -65,122 +69,247 @@ var restuarant7 = {
   reviews: reviewsOfRestuarant7
 };
 
+var restuarant8 = {
+  name: 'La Sirena Grill',
+  type: 'Mexican',
+  numberOfReviews: 34,
+  stars: 4,
+  image: "images/mexican2.jpg",
+  info: 'Contemporary Mexican Grill with an edge. Everything from our spicy fire-roasted salsas, blackened seasonings, hand-made tortillas & agua frescas.',
+  reviews: reviewsOfRestuarant8
+};
+
+var restuarant9 = {
+  name: 'Super Mex',
+  type: 'Mexican',
+  numberOfReviews: 34,
+  stars: 3,
+  image: "images/mexican3.jpg",
+  info: 'Super Mex offers great-tasting, traditional Mexican food that is prepared to taste homemade. Our signature "Super Mex Burrito" is the perfect example of classic Mexican comfort food prepared with a distinct homemade authenticity. Our extra-grande tortilla chips, legendary salsa, and tender pork carnitas are among the staples here at Super Mex.',
+  reviews: reviewsOfRestuarant9
+};
+
 var reviewsOfRestuarant1 =[
   review1 = {
-    name: 'Tom',
-    content: '1Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Shawna C.',
+    stars: 4,
+    image: "images/mexicanreview1.jpg",
+    tag: '',
+    content: "'Holy moly! Is this place GOOD! Don't let the look of the truck deceive you. At least for me, I had seen this truck numerous times at the food truck event that we frequent, but nothing really jumped out to me from the outside. The truck is a pretty plain black with simple gold small writing of Classic Tacos. Plus, you can find tacos at a lot of places. One day we finally decided to give it a shot and I really regret not trying these guys out sooner!!'"
   },
   review2 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Brian R.',
+    stars: 5,
+    image: "images/mexicanreview2.jpg",
+    tag: '',
+    content: 'Man I read some of these reviews and damn some people really take their yelping very seriously. Straight and to the point. Food was great. Food was fast. The biggest challenge is my 3.5 year old daughter who is absurdly picky and she ate most of my burrito. Would eat again'
   },
   review3 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Angie M.',
+    stars: 5,
+    image: "images/mexicanreview3.jpg",
+    tag: '',
+    content: 'I have to start by saying... I am often disappointed by food trucks.  Most of the time, I feel a little ripped off, and I dont feel like the food was worth it. That is NOT the case with the Classic Tacos Truck.  I LOVED IT!'
   }
 ]
 
 var reviewsOfRestuarant2 =[
   review1 ={
-    name: 'Tom',
-    stars: 4,
+    name: 'Beast A.',
+    stars: 2,
     image: "images/pizzareview1.jpg",
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    tag: '',
+    content: "Ownership is rude. Staff is nice and on a weeknight the place seems like a good option but in reality it takes a long time to wait for food (20 minutes tonight) and there are better options really close by. I went to NY pizza cuz I'd been there in the past and didn't want to risk the new Square One or the CPK across Jeffrey since both are new and I wasn't sure how long the wait would be. But I certainly will be giving those a try next time! Can't be difficult to beat $26 medium pepperoni pizza with breadsticks and super easy to do better than the impolite owner with tons of attitude. Im all for buying local but why patronize a small business if they are going to be rude?"
   },
   review2 = {
-    name: 'Tom',
-    stars: 5,
+    name: 'Dana K.',
+    stars: 4,
     image: "images/pizzareview2.jpg",
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    tag: '',
+    content: 'I love pizza by the slice since I can get a variety. My default is the white pizza with mozzarella and ricotta and sprinkles of pepper flakes. Their garlic knots are super garlicy and bready which I absolutely love. They use good sausage (nice and peppery) on their pepperoni and sausage pizza.'
   },
   review3 = {
-    name: 'Tom',
-    stars: 4,
+    name: 'Aaron E.',
+    stars: 3,
     image: "images/pizzareview3.jpg",
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    tag:  '',
+    content: 'The pie itself is undoubtedly greasy, as the cheese top showcased pools of yellow oily liquid and the paper plate it arrived on had some areas saturated with grease as well. The marinara was quite good however, with a nice kick of basil in each bite and the perfect consistency of tomato paste. The Crust was also noteworthy, doughy on the inside, crusty on the outside and the crust to toppings ratio was spot on.'
   }
 ]
 
 var reviewsOfRestuarant3 =[
   review1 = {
-    name: 'Tom',
-    content: '1Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Julie H.',
+    stars: 4,
+    image: "images/americanreview1.jpg",
+    tag: '',
+    content: 'My first impression of Urban Plates was that it was like a Lemonade done better. When I first walked in I immediately liked the variety in the seating arrangement. It includes a long narrow table on which people propped up their laptops and were working while others were able to eat and chat with the person across from them. They also offered 2 and 4 person tables around this longer table and plenty of outdoor seating on their covered patio.'
   },
   review2 = {
-    name: 'Tom',
-    content: '2Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Anh B.',
+    stars: 2,
+    image: "images/americanreview2.jpg",
+    tag: '',
+    content: "The dinner team tonight executed service really well!! Not sure if it's like this every weekend nights as we've only been here a handful of time. But well done!! The food backed up the line a little and some were sent back (our neighboring table :p but they were not the only ones) because they were undercooked but the team handled it very well!!"
   },
   review3 = {
-    name: 'Tom',
-    content: '3Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Joanna H.',
+    stars: 4,
+    image: "images/americanreview3.jpg",
+    tag: '',
+    content: "Recently, I've been trying to calm down my beer belly by eating healthier. I haven't consumed less beer... but I have been eating healthier! While figuring out a quick dinner with a few girlfriends, Urban Plates seemed like the perfect candidate for a healthy, faux-home-cooked meal with the fresh ingredients I was looking for. "
   }
 ]
 
 var reviewsOfRestuarant4 =[
    review1 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Truong T.',
+    stars: 5,
+    image: "images/americanreview4.jpg",
+    tag: '',
+    content: 'Overall this was a wonderful food truck.  I had a great lunch experience here though it can be a bit pricey.  The total was about 40 bucks which is a bit insane for lunch but sometimes you gotta pay the cost to be a boss.'
   },
   review2 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Stacy S.',
+    stars: 5,
+    image: "images/americanreview5.jpg",
+    tag: '',
+    content: 'Super awesome burger food truck!!  I learned of this place because it was stationed right outside of a brewery (Bottle Logic) that we were going to check out. I got their Savory Burger and it was perfection in every bite!  It has bacon relish, Swiss cheese, aioli and 3,000 sauce.'
   },
   review3 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Rob D.',
+    stars: 4,
+    image: "images/americanreview6.jpg",
+    tag: '',
+    content: 'I ordered the Savory Cut burger that came with bacon relish, swiss cheese, aioli splash (their name for sauce) and the 3000 splash priced at $11.  The burger patty had a nice beefy, charred flavor and was pretty rich and moist.  They put this bacon relish on that has bacon pieces, capers and what looked like little smashed grapes.  It was really good and complimented the burger patty very well with the richness of the bacon and the sweet, tangy and slight pepper flavor of the capers and little smashed grapes.  The bun was very good being moist, buttery and bready holding up well to the burger patty and other ingredients.  Also, the swiss was a good choice for this rendition of a burger.'
   }
 ]
 
 var reviewsOfRestuarant5 =[
   review1 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Puja L.',
+    stars: 4,
+    image: "images/pizzareview4.jpg",
+    tag: '',
+    content: "Mix and match everything!  It's like a dream come true for a person who loves to sample things.  I'm a big fan of variety...and I got it at Pizza Cafe. You can do up to 4 different pizzas on your pie, and order a beer flight of any 4 of the beers they have on tap ($9). I will say that I didn't love their crust, but I was still a pretty happy customer. "
   },
   review2 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Shelly C.',
+    stars: 4,
+    image: "images/pizzareview5.jpg",
+    tag: '',
+    content: "At first, we order first class pizza because it's so close to our house- 2 minute of drive, how convenient! AND after we tasted the pizza, we were impressive how good the pizza was! Their crust is the chewy, thicker type, which I love. However, there's also an ultra thin crust option on the menu. Kids like the Sweet Pig (Hawaiian) and plain cheese, my husband and I like the Zesty Italian and Popeye's Favorite. They were generous on toppings, not stingy at all! Our go-to pizza place when I don't feel like cooking!"
   },
   review3 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Denise K.',
+    stars: 5,
+    image: "images/pizzareview6.jpg",
+    tag: '',
+    content: 'My favorite kind of pizza has crust that is crispy on the outside and chewy on the inside. Pizza Cafe serves up first class pizza dough - exactly how I like it! Not only do they have great flavors, but they are generous with the toppings too. We ordered an XL combo and it was enough for 4 average appetites. My family has a big appetite so we ordered another XL - pizza of the month: feta, garlic, spinach and roma tomatoes. The pizza of the month was my favorite of the two.'
   }
 ]
 
 var reviewsOfRestuarant6 =[
   review1 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Romuel Dave C.',
+    stars: 3,
+    image: "images/americanreview7.jpg",
+    tag: '',
+    content: 'I had really high hopes for this spot.  It is located inside the Main Place food court off Jamboree and Main.  This place has the makings of the perfect burger, but it sort of fell short of great in my book.  Perhaps its my choice on the menu that I made a mistake on... so I wont be too harsh.'
   },
   review2 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Truong T.',
+    stars: 4,
+    image: "images/americanreview8.jpg",
+    tag: '',
+    content: "I've been eyeing Aioli for a while now but nobody wanted to go with me for lunch at work to it since my street cred has taken quite a hit from prior bad experiences (curses).  Finally I got somebody to trust me (sucker).  I came through with my coworker to a food court located on Main St.  The place was pretty runned down.  It lacked outer appeal but the interior was actually quite decent."
   },
   review3 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Aaron E.',
+    stars: 2,
+    image: "images/americanreview9.jpg",
+    tag: '',
+    content: 'I can only give Aioli 2 stars and it is probably all of my own fault. No fewer than 10 people I follow on Yelp and a few co-workers have raved about the food at Aioli by mouth or in reviews so I have had this one bookmarked for quite a while now. The opportunity to stop for lunch finally arose and I think I totally blew it while ordering. '
   }
 ]
 
 var reviewsOfRestuarant7 =[
   review1 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Janet R.',
+    stars: 5,
+    image: "images/pizzareview7.jpg",
+    tag: '',
+    content: 'This is probably my favorite make your own pizza place. They have a variety of toppings to choose from. I usually like to pack my pizza with a lot of veggies and places like Blaze and Pieology get the crust soggy, but here the crust stays nice and crisp!'
   },
   review2 = {
-    name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
+    name: 'Nijole T.',
+    stars: 5,
+    image: "images/pizzareview8.jpg",
+    tag: '',
+    content: 'Really falling in love with MOD! More options than any other places where you can create your own pizza, different size pizzas and salads, several tasty and fresh juices instead of soda, desserts and more toppings than any other place offers! Prices and quality are great, this is the perfect place to take kids and picky eaters, you can be healthy or not, everything is fresh and made in house, even the salad dressings which I also love. Service wass very nice, they are a bit slower and your food takes longer than other chains, but the wait is well worth it. Cool and clean location, plenty of seating, worth checking out!'
+  },
+  review3 = {
+    name: 'Fernando C.',
+    stars: 4,
+    image: "images/pizzareview9.jpg",
+    tag: '',
+    content: 'I am a converted MOD believer.  I have come back 6 or 7 times now and it seems they got rid of the rude girl that made my first visit so unpleasant.  I like the topping options here compared to similar spots.  Surprisingly their drinks are scrumptious although more size options would be nice.'
+  }
+]
+
+var reviewsOfRestuarant8 =[
+  review1 = {
+    name: 'Matt K.',
+    stars: 4,
+    image: "images/mexicanreview4.jpg",
+    tag: '',
+    content: "'Excellent Mexican food in the Orchard Hills Plaza.  It's a quick order type of place like a Rubio's.  I think the food tastes fresh and clean.  My carnitas burrito was not heavy at all.  It also came with guacamole on the side which was good and tortilla chips which were also good.  I don't like the salsas at their salsa bar, but the pico de gallo is good.'"
+  },
+  review2 = {
+    name: 'Aileen K.',
+    stars: 3,
+    image: "images/mexicanreview5.jpg",
+    tag: '',
+    content: "'My friend and I shared the chicken nachos and the chicken burrito. Both came with nice portions of delicious guacamole, which was amazing and fresh. However, the burrito was quite plain and small. Nachos are, well, nachos (delicious and filling but gluttonous). Additionally, the salsas were mediocre.'"
   },
   review3 = {
     name: 'Tom',
-    content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.788776'
+    stars: 4,
+    image: "images/mexicanreview6.jpg",
+    tag: '',
+    content: "'Since I don't like too authentic mexican food that can get pretty spicy, too saucy, and stinky from over seasoning meat, I think this place is just right for my tastebuds. Clean, simple and and not crazy with mysterious green, red, black or white sauces! I always get chicken nachos and salmon burrito here. '"
   }
 ]
+
+var reviewsOfRestuarant9 =[
+    review1 = {
+      name: 'A. P.',
+      stars: 2,
+      image: "images/mexicanreview7.jpg",
+      tag: '',
+      content: "'Good food and good service.  There were 5 of us seated at a table with a bench on one side and two chairs in the other.  No one can sit at the end of the table so three of us sat on one side while two sat on the other.  Very uncomfortable when one is left-handed and has all but 1 foot of space to work with.  I honestly don't know what they were thinking by seating 5 adults at a table designed for 4.  It was a busy Saturday night but no excuse for that.  I didn't want to upset the grandparents who were already comfortably seated so we sat through dinner without complaint. '"
+    },
+    review2 = {
+      name: 'Jessica E.',
+      stars: 3,
+      image: "images/mexicanreview8.jpg",
+      tag: '',
+      content: "'Tonight I ordered 2 meals to go, it was $25 plus tip. My order was 2 cheese enchiladas  crispy asada taco and beans. Well I got about 2 tablespoons of beans if that... the food was cold, I got a soft taco not a Crispy taco. By the time my husband go home it was all cold. we live 5 min away. He even tipped them and when he got home we realized all of this was wrong. I'm super disappointed. I can't believe a place of service would actually serve food this way.  The only reason I gave 2 stars is because the food tasted decent once I reheated it.'"
+    },
+    review3 = {
+      name: 'Victoria S.',
+      stars: 4,
+      image: "images/mexicanreview9.jpg",
+      tag: '',
+      content: "'4 stars for finding a good Mexican food restaurant in Irvine. This definitely is not the best Mexican food I've ever had... But trying to find authentic Mexican in irvine is probably impossible. I'm all about authentic Mexican food, like not-so-pretty restaurants made with love from my Tia (I'm not Latina, but I'm from an area with a large percentage so I love good stuff!) '"
+    }
+  ]
 
 var userReview = {};
 //var searchFail = document.createTextNode('Sorry but your search brought zero results.');
 //var failH1 = document.createElement('h1');
 //failH1.appendChild(searchFail);
-var restuarantArray = [ restuarant1, restuarant2, restuarant3, restuarant4, restuarant5, restuarant6, restuarant7 ];
+var restuarantArray = [ restuarant1, restuarant2, restuarant3, restuarant4, restuarant5, restuarant6, restuarant7, restuarant8, restuarant9 ];
 var search;
 //var addReviewButtonDiv = document.getElementById('review-adder');
 var addReviewButton = document.getElementById('add-review');
@@ -206,6 +335,8 @@ restuarant4.reviews = reviewsOfRestuarant4.slice(0);
 restuarant5.reviews = reviewsOfRestuarant5.slice(0);
 restuarant6.reviews = reviewsOfRestuarant6.slice(0);
 restuarant7.reviews = reviewsOfRestuarant7.slice(0);
+restuarant8.reviews = reviewsOfRestuarant8.slice(0);
+restuarant9.reviews = reviewsOfRestuarant9.slice(0);
 
 function stopRefresh(event) {
   var element = restuarants;
