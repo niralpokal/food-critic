@@ -13,7 +13,8 @@ var restuarant2 = {
   type: 'Pizza',
   numberOfReviews: 14,
   stars: 3,
-  //image:
+  image: "images/pizza1.jpg",
+  info: 'We offer a flexible approach to dining, combining a fast paced, informal atmosphere in the daytime and casual sit down dinner service in the evening. Our thin, crisp pizzas combine a delicate balance of fresh, unique flavors paired with our carefully cured and handcrafted dough.',
   reviews: reviewsOfRestuarant2
 };
 
@@ -40,7 +41,8 @@ var restuarant5 = {
   type: 'Pizza',
   numberOfReviews: 74,
   stars: 4,
-  //image:
+  image: "images/pizza2.jpg",
+  info: 'Authentic Neapolitan Style Pizza made in a 900 degree wood fired oven. Closest to real Italian pizza outside of Naples, Italy.',
   reviews: reviewsOfRestuarant5
 };
 
@@ -58,7 +60,8 @@ var restuarant7 = {
   type: 'Pizza',
   numberOfReviews: 93,
   stars: 4.5,
-  //image:
+  image: "images/pizza3.jpg",
+  info: 'MOD Pizza specializes in individual artisan-style pizzas Made On Demand (MOD) in a fast, friendly and stylish environment. All pizzas are cooked by hand in an 800 degree display oven and ready in under 5 minutes with as many toppings as you like for one low price. You can also create your own salads. Northwest beers on tap, wine, sodas and milkshakes. Takeout, awesome music and patio dining.',
   reviews: reviewsOfRestuarant7
 };
 
@@ -80,14 +83,20 @@ var reviewsOfRestuarant1 =[
 var reviewsOfRestuarant2 =[
   review1 ={
     name: 'Tom',
+    stars: 4,
+    image: "images/pizzareview1.jpg",
     content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
   },
   review2 = {
     name: 'Tom',
+    stars: 5,
+    image: "images/pizzareview2.jpg",
     content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
   },
   review3 = {
     name: 'Tom',
+    stars: 4,
+    image: "images/pizzareview3.jpg",
     content: 'Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.Uneasy barton seeing remark happen his has. Am possible offering at contempt mr distance stronger an. Attachment excellence announcing or reasonable am on if indulgence. Exeter talked in agreed spirit no he unable do. Betrayed shutters in vicinity it unpacked in. In so impossible appearance considered mr. Mrs him left find are good.'
   }
 ]
@@ -231,28 +240,43 @@ function addRestuarant(array){
   var array = array;
   var name = array.name;
   var stars = array.stars;
+  var image = array.image;
+  var info = array.info;
   var showButton = document.createElement('button');
   showButton.setAttribute('type', 'button');
   showButton.setAttribute('class', 'show-reviews');
+  showButton.className="center-block";
   var buttonContent = document.createTextNode('Show Reviews');
   var newDivRestuarant = document.createElement('div');
-  newDiv.className = "media-body";
+  newDivRestuarant.className = "media-body";
   var newDivContainerRestuarant = document.createElement('div');
   newDivContainerRestuarant.className = "media well";
   var newDivMediaLeftRestuarant = document.createElement('div');
   newDivMediaLeftRestuarant.className = "media-left";
   var newAnchor = document.createElement('a');
   var newImage = document.createElement('img');
+  var newBreak = document.createElement('br');
+  newImage.className="img-rounded";
+  newImage.setAttribute('src', image);
+  newImage.setAttribute('alt', "");
+  newImage.setAttribute('width', "324");
+  newImage.setAttribute('height', "236");
   var nameContent = document.createTextNode(name);
   var starContent = document.createTextNode(stars);
   var restuarantName = document.createElement('h3');
   var restuarantStars = document.createElement('p');
+  var infoTextNode = document.createTextNode(info);
+  var restuarantInfo = document.createElement('p');
   showButton.appendChild(buttonContent);
   showButton.addEventListener('click',showReviews, false);
   restuarantName.appendChild(nameContent);
+  restuarantInfo.appendChild(infoTextNode);
   restuarantStars.appendChild(starContent);
-  newDivMediaLeftRestuarant.appendChild(restuarantName);
-  newDivMediaLeftRestuarant.appendChild(restuarantStars);
+  newDivRestuarant.appendChild(restuarantName);
+  newDivRestuarant.appendChild(restuarantStars);
+  newDivRestuarant.appendChild(restuarantInfo);
+  newDivMediaLeftRestuarant.appendChild(newImage);
+  newDivMediaLeftRestuarant.appendChild(newBreak);
   newDivMediaLeftRestuarant.appendChild(showButton);
   newDivContainerRestuarant.appendChild(newDivMediaLeftRestuarant);
   newDivContainerRestuarant.appendChild(newDivRestuarant);
@@ -263,7 +287,7 @@ function addRestuarant(array){
 function showReviews(event){
   var target = event.target;
   var parent = target.parentElement;
-  var theParent = parent.getElementsByTagName("h3")[0];
+  var theParent = parent.nextSibling.getElementsByTagName("h3")[0];
   reviewsForSearchedRestuarant = theParent.textContent;
   for (var i = 0; i < restuarantArray.length; i++) {
     if (reviewsForSearchedRestuarant === restuarantArray[i].name){
@@ -285,33 +309,47 @@ function reviewsList(array){
   newDivMediaLeft1.className = "media-left";
   while  (i<reviews.length){
     addReviews(reviews[i]);
-    newDiv1.appendChild(newDivContainer);
+    //newDiv1.appendChild(newDivContainer);
     i++;
   }
-  newDivContainer1.appendChild(newDivMediaLeft1);
-  newDivContainer1.appendChild(newDiv1);
-  listOfReviews.appendChild(newDivContainer1);
+//  newDivContainer1.appendChild(newDivMediaLeft1);
+  //newDivContainer1.appendChild(newDiv1);
+  //listOfReviews.appendChild(newDivContainer1);
   addReviewButton.className = "btn btn-default center-block";
 };
 
 function addReviews(array){
   var temp = array;
+  var image = temp.image;
+  var stars = temp.stars;
   var reviewContent = document.createTextNode(temp.content);
   var reviewName = document.createTextNode(temp.name);
+  var starNumber = document.createTextNode(stars);
+  var newImage = document.createElement('img');
+  newImage.className="img-rounded";
+  newImage.setAttribute('src', image);
+  newImage.setAttribute('alt', "");
+  newImage.setAttribute('width', "256");
+  newImage.setAttribute('height', "236");
   newDiv = document.createElement('div');
   newDiv.className = "media-body";
   newDivContainer = document.createElement('div');
-  newDivContainer.className = "media";
+  newDivContainer.className = "media well";
   newDivMediaLeft = document.createElement('div');
   newDivMediaLeft.className = "media-left";
   newH3 = document.createElement('h3');
   newP = document.createElement('p');
+  newP2 = document.createElement('p');
   newP.appendChild(reviewContent);
+  newP2.appendChild(starNumber);
   newH3.appendChild(reviewName);
-  newDivMediaLeft.appendChild(newH3);
+  newH3.appendChild(newP2);
+  newDiv.appendChild(newH3);
   newDiv.appendChild(newP);
+  newDivMediaLeft.appendChild(newImage);
   newDivContainer.appendChild(newDivMediaLeft);
   newDivContainer.appendChild(newDiv);
+  listOfReviews.appendChild(newDivContainer);
   return newDivContainer;
 };
 
@@ -324,15 +362,23 @@ function submitReview(event){
   event.preventDefault();
   var userName = document.getElementById('name-input').value;
   var starChoice = document.getElementsByName('inlineRadio');
-  var stars;
+  var stars1;
   for (var i = 0; i< starChoice.length; i++ ){
     if (starChoice[i].checked){
-      stars = starChoice[i].value;
+      stars1 = starChoice[i].value;
     }
   }
+  var images;
   var reviewContent = document.getElementById('user-review-content').value;
+for (var i = 0; i < restuarantArray.length; i++) {
+  if (reviewsForSearchedRestuarant === restuarantArray[i].name){
+    images = restuarantArray[i].image;
+  }
+}
   userReview = {
     name: userName,
+    stars: stars1,
+    image: images,
     content: reviewContent
   };
   for (var i = 0; i < restuarantArray.length; i++) {
