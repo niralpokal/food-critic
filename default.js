@@ -316,6 +316,7 @@ var addReviewButton = document.getElementById('add-review');
 var restuarants = document.getElementById('restuarants');
 var listOfReviews = document.getElementById('review-list');
 var searchButton = document.getElementById('form1');
+var goBackToResultsButton = document.getElementById('search-results')
 var foodHomePage = document.getElementById('food-image-home');
 var userReviewForm = document.getElementById('form2');
 var submitUserForm = document.getElementById('submit-user-review');
@@ -432,20 +433,14 @@ function showReviews(event){
 function reviewsList(array){
   var reviews = array;
   var i = 0;
-  var newDiv1 = document.createElement('div');
-  newDiv.className = "media-body";
-  var newDivContainer1 = document.createElement('div');
-  newDivContainer1.className = "media well";
-  var newDivMediaLeft1 = document.createElement('div');
-  newDivMediaLeft1.className = "media-left";
+  var newDiv1;
+  var newDivContainer1;
+  var newDivMediaLeft1;
   while  (i<reviews.length){
     addReviews(reviews[i]);
-    //newDiv1.appendChild(newDivContainer);
     i++;
   }
-//  newDivContainer1.appendChild(newDivMediaLeft1);
-  //newDivContainer1.appendChild(newDiv1);
-  //listOfReviews.appendChild(newDivContainer1);
+  goBackToResultsButton.className = "btn btn-default center-block";
   addReviewButton.className = "btn btn-default center-block";
 };
 
@@ -532,6 +527,17 @@ function resetReviews(){
       reviewsList(restuarantArray[i].reviews);
     }
   }
+  goBackToResultsButton.className = "btn btn-default center-block";
+}
+
+function goBackToResults(event){
+  event.preventDefault();
+  var element = listOfReviews;
+  while(element.firstChild){
+    element.removeChild(element.firstChild);
+  }
+  restuarants.className = "media";
+  goBackToResultsButton.className = "hidden btn btn-default center-block";
 }
 
 function goHome(event){
@@ -545,6 +551,7 @@ function goHome(event){
     element2.removeChild(element2.firstChild);
   }
   addReviewButton.className = "hidden btn btn-default center-block";
+  goBackToResultsButton.className = "hidden btn btn-default center-block";
   foodHomePage.className ="row-fluid";
   userReviewForm.className="hidden well";
 }
@@ -552,6 +559,7 @@ function goHome(event){
 searchButton.addEventListener("submit", stopRefresh);
 addReviewButton.addEventListener('click', reviewButton);
 submitUserForm.addEventListener('click', submitReview);
+goBackToResultsButton.addEventListener('click', goBackToResults);
 homeButton.addEventListener('click', goHome);
 logo.addEventListener('click', goHome);
 
