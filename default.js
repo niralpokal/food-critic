@@ -1,95 +1,95 @@
 
-var restuarant1 = {
+var restaurant1 = {
   name: 'Taco Taco!',
   type: 'Mexican',
   numberOfReviews: 34,
   stars: 4.5,
   image: "images/mexican1.jpg",
   info: "Find us to try our savory tacos, our enormous burritos, and delightful antojitos. Don't forget to grab your freshly made agua fresca and to grab salsas from our 20+ salsa bar.",
-  reviews: reviewsOfRestuarant1
+  reviews: reviewsOfRestaurant1
 };
 
-var restuarant2 = {
+var restaurant2 = {
   name: 'Pizza Unlimited',
   type: 'Pizza',
   numberOfReviews: 14,
   stars: 3,
   image: "images/pizza1.jpg",
   info: 'We offer a flexible approach to dining, combining a fast paced, informal atmosphere in the daytime and casual sit down dinner service in the evening. Our thin, crisp pizzas combine a delicate balance of fresh, unique flavors paired with our carefully cured and handcrafted dough.',
-  reviews: reviewsOfRestuarant2
+  reviews: reviewsOfRestaurant2
 };
 
-var restuarant3 = {
+var restaurant3 = {
   name: 'Urban Plates',
   type: 'American',
   numberOfReviews: 198,
   stars: 4,
   image: 'images/american1.jpg',
   info: "We're farm to plate and won't break the bank! It's true. Farm means freshly delivered from local farms and producers. Plate means chef-crafted dishes piled high with one-of-a-kind flavors. Won't break the bank means you could pay twice as much for food this good.",
-  reviews: reviewsOfRestuarant3
+  reviews: reviewsOfRestaurant3
 };
 
-var restuarant4 = {
+var restaurant4 = {
   name: 'Burger!',
   type: 'American',
   numberOfReviews: 56,
   stars: 4.5,
   image: 'images/american2.jpg',
   info: "Intricately Simple - We are quite Intricate in our preparation, techniques, and craft. Yet, our menu is Simple, just good ol' fashioned grub.",
-  reviews: reviewsOfRestuarant4
+  reviews: reviewsOfRestaurant4
 };
 
-var restuarant5 = {
+var restaurant5 = {
   name: 'Pizza Cafe',
   type: 'Pizza',
   numberOfReviews: 74,
   stars: 4,
   image: "images/pizza2.jpg",
   info: 'Authentic Neapolitan Style Pizza made in a 900 degree wood fired oven. Closest to real Italian pizza outside of Naples, Italy.',
-  reviews: reviewsOfRestuarant5
+  reviews: reviewsOfRestaurant5
 };
 
-var restuarant6 = {
+var restaurant6 = {
   name: 'Aioli',
   type: 'American',
   numberOfReviews: 201,
   stars: 4,
   image: 'images/american3.jpg',
   info: 'Our restaurant serves great burgers, fresh salads, healthy meals and Chicago specialties.  Our catering service specializes in corporate catering, drop off catering, lunch catering, wedding and party catering. Let Aioli create an unforgettable experience for your next event.',
-  reviews: reviewsOfRestuarant6
+  reviews: reviewsOfRestaurant6
 };
 
-var restuarant7 = {
+var restaurant7 = {
   name: 'Mod Pizza',
   type: 'Pizza',
   numberOfReviews: 93,
   stars: 4.5,
   image: "images/pizza3.jpg",
   info: 'MOD Pizza specializes in individual artisan-style pizzas Made On Demand (MOD) in a fast, friendly and stylish environment. All pizzas are cooked by hand in an 800 degree display oven and ready in under 5 minutes with as many toppings as you like for one low price. You can also create your own salads. Northwest beers on tap, wine, sodas and milkshakes. Takeout, awesome music and patio dining.',
-  reviews: reviewsOfRestuarant7
+  reviews: reviewsOfRestaurant7
 };
 
-var restuarant8 = {
+var restaurant8 = {
   name: 'La Sirena Grill',
   type: 'Mexican',
   numberOfReviews: 34,
   stars: 4,
   image: "images/mexican2.jpg",
   info: 'Contemporary Mexican Grill with an edge. Everything from our spicy fire-roasted salsas, blackened seasonings, hand-made tortillas & agua frescas.',
-  reviews: reviewsOfRestuarant8
+  reviews: reviewsOfRestaurant8
 };
 
-var restuarant9 = {
+var restaurant9 = {
   name: 'Super Mex',
   type: 'Mexican',
   numberOfReviews: 34,
   stars: 3,
   image: "images/mexican3.jpg",
   info: 'Super Mex offers great-tasting, traditional Mexican food that is prepared to taste homemade. Our signature "Super Mex Burrito" is the perfect example of classic Mexican comfort food prepared with a distinct homemade authenticity. Our extra-grande tortilla chips, legendary salsa, and tender pork carnitas are among the staples here at Super Mex.',
-  reviews: reviewsOfRestuarant9
+  reviews: reviewsOfRestaurant9
 };
 
-var reviewsOfRestuarant1 =[
+var reviewsOfRestaurant1 =[
   review1 = {
     name: 'Shawna C.',
     stars: 4,
@@ -113,7 +113,7 @@ var reviewsOfRestuarant1 =[
   }
 ]
 
-var reviewsOfRestuarant2 =[
+var reviewsOfRestaurant2 =[
   review1 ={
     name: 'Beast A.',
     stars: 2,
@@ -137,7 +137,7 @@ var reviewsOfRestuarant2 =[
   }
 ]
 
-var reviewsOfRestuarant3 =[
+var reviewsOfRestaurant3 =[
   review1 = {
     name: 'Julie H.',
     stars: 4,
@@ -161,7 +161,7 @@ var reviewsOfRestuarant3 =[
   }
 ]
 
-var reviewsOfRestuarant4 =[
+var reviewsOfRestaurant4 =[
    review1 = {
     name: 'Truong T.',
     stars: 5,
@@ -185,7 +185,7 @@ var reviewsOfRestuarant4 =[
   }
 ]
 
-var reviewsOfRestuarant5 =[
+var reviewsOfRestaurant5 =[
   review1 = {
     name: 'Puja L.',
     stars: 4,
@@ -209,7 +209,7 @@ var reviewsOfRestuarant5 =[
   }
 ]
 
-var reviewsOfRestuarant6 =[
+var reviewsOfRestaurant6 =[
   review1 = {
     name: 'Romuel Dave C.',
     stars: 3,
@@ -233,7 +233,7 @@ var reviewsOfRestuarant6 =[
   }
 ]
 
-var reviewsOfRestuarant7 =[
+var reviewsOfRestaurant7 =[
   review1 = {
     name: 'Janet R.',
     stars: 5,
@@ -257,7 +257,7 @@ var reviewsOfRestuarant7 =[
   }
 ]
 
-var reviewsOfRestuarant8 =[
+var reviewsOfRestaurant8 =[
   review1 = {
     name: 'Matt K.',
     stars: 4,
@@ -281,7 +281,7 @@ var reviewsOfRestuarant8 =[
   }
 ]
 
-var reviewsOfRestuarant9 =[
+var reviewsOfRestaurant9 =[
     review1 = {
       name: 'A. P.',
       stars: 2,
@@ -306,21 +306,25 @@ var reviewsOfRestuarant9 =[
   ]
 
 var userReview = {};
+var userRestuarant = {};
 //var searchFail = document.createTextNode('Sorry but your search brought zero results.');
 //var failH1 = document.createElement('h1');
 //failH1.appendChild(searchFail);
-var restuarantArray = [ restuarant1, restuarant2, restuarant3, restuarant4, restuarant5, restuarant6, restuarant7, restuarant8, restuarant9 ];
+var restaurantArray = [ restaurant1, restaurant2, restaurant3, restaurant4, restaurant5, restaurant6, restaurant7, restaurant8, restaurant9 ];
 var search;
 //var addReviewButtonDiv = document.getElementById('review-adder');
 var addReviewButton = document.getElementById('add-review');
-var restuarants = document.getElementById('restuarants');
-var selectedRestuarant = document.getElementById('selected-restuarant');
+var addRestaurantButton = document.getElementById('add-restaurant');
+var restaurants = document.getElementById('restaurants');
+var selectedRestaurant = document.getElementById('selected-restaurant');
 var listOfReviews = document.getElementById('review-list');
 var searchButton = document.getElementById('form1');
 var goBackToResultsButton = document.getElementById('search-results')
 var foodHomePage = document.getElementById('food-image-home');
 var userReviewForm = document.getElementById('form2');
+var userRestaurantForm = document.getElementById('form3');
 var submitUserForm = document.getElementById('submit-user-review');
+var submitRestaurantForm = document.getElementById('submit-user-restaurant')
 var homeButton = document.getElementById('home');
 var logo = document.getElementById('logo');
 var newDiv = document.createElement('div');
@@ -331,20 +335,20 @@ var newP = document.createElement('p');
 var newDivContainer = document.createElement('div');
 var starValue;
 var searchedArray = [];
-restuarant1.reviews = reviewsOfRestuarant1.slice(0);
-restuarant2.reviews = reviewsOfRestuarant2.slice(0);
-restuarant3.reviews = reviewsOfRestuarant3.slice(0);
-restuarant4.reviews = reviewsOfRestuarant4.slice(0);
-restuarant5.reviews = reviewsOfRestuarant5.slice(0);
-restuarant6.reviews = reviewsOfRestuarant6.slice(0);
-restuarant7.reviews = reviewsOfRestuarant7.slice(0);
-restuarant8.reviews = reviewsOfRestuarant8.slice(0);
-restuarant9.reviews = reviewsOfRestuarant9.slice(0);
+restaurant1.reviews = reviewsOfRestaurant1.slice(0);
+restaurant2.reviews = reviewsOfRestaurant2.slice(0);
+restaurant3.reviews = reviewsOfRestaurant3.slice(0);
+restaurant4.reviews = reviewsOfRestaurant4.slice(0);
+restaurant5.reviews = reviewsOfRestaurant5.slice(0);
+restaurant6.reviews = reviewsOfRestaurant6.slice(0);
+restaurant7.reviews = reviewsOfRestaurant7.slice(0);
+restaurant8.reviews = reviewsOfRestaurant8.slice(0);
+restaurant9.reviews = reviewsOfRestaurant9.slice(0);
 
 function stopRefresh(event) {
-  var element = restuarants;
+  var element = restaurants;
   var element2 = listOfReviews;
-  var element3 = selectedRestuarant;
+  var element3 = selectedRestaurant;
   while(element.firstChild){
     element.removeChild(element.firstChild);
   }
@@ -354,27 +358,27 @@ function stopRefresh(event) {
   while(element3.firstChild){
     element3.removeChild(element3.firstChild);
   }
-  restuarants.className = "media";
+  restaurants.className = "media";
   listOfReviews.className = "hidden media";
   addReviewButton.className = "hidden btn btn-default";
   foodHomePage.className ="hidden row-fluid";
   event.preventDefault();
   search = document.getElementById('search-bar').value;
-  sortRestuarants(restuarantArray, search.toLowerCase());
+  sortRestaurants(restaurantArray, search.toLowerCase());
 };
 
-function sortRestuarants(array,b) {
+function sortRestaurants(array,b) {
   for (var i = 0; i< array.length; i++){
     var a = array[i];
     if ((a.type.toLowerCase() == b) || (a.name.toLowerCase() == b)){
-      addRestuarant(array[i]);
+      searchedRestaurants(array[i]);
     } else /*if (!(a.type.toLowerCase() == b) && !(a.name.toLowerCase() == b))*/{
-      //restuarants.appendChild(failH1);
+      //restaurants.appendChild(failH1);
       }
     }
   };
-var reviewsForSearchedRestuarant;
-function addRestuarant(array){
+var reviewsForSearchedRestaurant;
+function searchedRestaurants(array){
   var array = array;
   var name = array.name;
   var stars = array.stars;
@@ -387,12 +391,12 @@ function addRestuarant(array){
   showButton.setAttribute('class', 'show-reviews');
   showButton.className="center-block";
   var buttonContent = document.createTextNode('Show Reviews');
-  var newDivRestuarant = document.createElement('div');
-  newDivRestuarant.className = "media-body";
-  var newDivContainerRestuarant = document.createElement('div');
-  newDivContainerRestuarant.className = "media well";
-  var newDivMediaLeftRestuarant = document.createElement('div');
-  newDivMediaLeftRestuarant.className = "media-left";
+  var newDivRestaurant = document.createElement('div');
+  newDivRestaurant.className = "media-body";
+  var newDivContainerRestaurant = document.createElement('div');
+  newDivContainerRestaurant.className = "media well";
+  var newDivMediaLeftRestaurant = document.createElement('div');
+  newDivMediaLeftRestaurant.className = "media-left";
   var newImage = document.createElement('img');
   var starImage = document.createElement('img');
   var newBreak = document.createElement('br');
@@ -407,21 +411,21 @@ function addRestuarant(array){
   starImage.setAttribute('width', "150");
   starImage.setAttribute('height', "150");
   var nameContent = document.createTextNode(name);
-  var restuarantName = document.createElement('h3');
+  var restaurantName = document.createElement('h3');
   var infoTextNode = document.createTextNode(info);
-  var restuarantInfo = document.createElement('p');
+  var restaurantInfo = document.createElement('p');
   showButton.appendChild(buttonContent);
   showButton.addEventListener('click',showReviews, false);
-  restuarantName.appendChild(nameContent);
-  restuarantInfo.appendChild(infoTextNode);
-  restuarantName.appendChild(starImage);
-  newDivRestuarant.appendChild(restuarantName);
-  newDivRestuarant.appendChild(restuarantInfo);
-  newDivMediaLeftRestuarant.appendChild(newImage);
-  newDivMediaLeftRestuarant.appendChild(showButton);
-  newDivContainerRestuarant.appendChild(newDivMediaLeftRestuarant);
-  newDivContainerRestuarant.appendChild(newDivRestuarant);
-  restuarants.appendChild(newDivContainerRestuarant);
+  restaurantName.appendChild(nameContent);
+  restaurantInfo.appendChild(infoTextNode);
+  restaurantName.appendChild(starImage);
+  newDivRestaurant.appendChild(restaurantName);
+  newDivRestaurant.appendChild(restaurantInfo);
+  newDivMediaLeftRestaurant.appendChild(newImage);
+  newDivMediaLeftRestaurant.appendChild(showButton);
+  newDivContainerRestaurant.appendChild(newDivMediaLeftRestaurant);
+  newDivContainerRestaurant.appendChild(newDivRestaurant);
+  restaurants.appendChild(newDivContainerRestaurant);
   searchedArray.push(array);
 };
 
@@ -432,12 +436,12 @@ function slRes(array){
   var info = array.info;
   starIcon(stars);
   stars = starValue;
-  var newDivRestuarant = document.createElement('div');
-  newDivRestuarant.className = "media-body";
-  var newDivContainerRestuarant = document.createElement('div');
-  newDivContainerRestuarant.className = "media well";
-  var newDivMediaLeftRestuarant = document.createElement('div');
-  newDivMediaLeftRestuarant.className = "media-left";
+  var newDivRestaurant = document.createElement('div');
+  newDivRestaurant.className = "media-body";
+  var newDivContainerRestaurant = document.createElement('div');
+  newDivContainerRestaurant.className = "media well";
+  var newDivMediaLeftRestaurant = document.createElement('div');
+  newDivMediaLeftRestaurant.className = "media-left";
   var newImage = document.createElement('img');
   var starImage = document.createElement('img');
   newImage.className="img-rounded";
@@ -451,33 +455,33 @@ function slRes(array){
   starImage.setAttribute('width', "150");
   starImage.setAttribute('height', "150");
   var nameContent = document.createTextNode(name);
-  var restuarantName = document.createElement('h3');
+  var restaurantName = document.createElement('h3');
   var infoTextNode = document.createTextNode(info);
-  var restuarantInfo = document.createElement('p');
-  restuarantName.appendChild(nameContent);
-  restuarantInfo.appendChild(infoTextNode);
-  restuarantName.appendChild(starImage);
-  newDivRestuarant.appendChild(restuarantName);
-  newDivRestuarant.appendChild(restuarantInfo);
-  newDivMediaLeftRestuarant.appendChild(newImage);
-  newDivContainerRestuarant.appendChild(newDivMediaLeftRestuarant);
-  newDivContainerRestuarant.appendChild(newDivRestuarant);
-  selectedRestuarant.appendChild(newDivContainerRestuarant);
+  var restaurantInfo = document.createElement('p');
+  restaurantName.appendChild(nameContent);
+  restaurantInfo.appendChild(infoTextNode);
+  restaurantName.appendChild(starImage);
+  newDivRestaurant.appendChild(restaurantName);
+  newDivRestaurant.appendChild(restaurantInfo);
+  newDivMediaLeftRestaurant.appendChild(newImage);
+  newDivContainerRestaurant.appendChild(newDivMediaLeftRestaurant);
+  newDivContainerRestaurant.appendChild(newDivRestaurant);
+  selectedRestaurant.appendChild(newDivContainerRestaurant);
 };
 
 function showReviews(event){
   var target = event.target;
   var parent = target.parentElement;
   var theParent = parent.nextSibling.getElementsByTagName("h3")[0];
-  reviewsForSearchedRestuarant = theParent.textContent;
-  for (var i = 0; i < restuarantArray.length; i++) {
-    if (reviewsForSearchedRestuarant === restuarantArray[i].name){
-      slRes(restuarantArray[i]);
-      reviewsList(restuarantArray[i].reviews);
+  reviewsForSearchedRestaurant = theParent.textContent;
+  for (var i = 0; i < restaurantArray.length; i++) {
+    if (reviewsForSearchedRestaurant === restaurantArray[i].name){
+      slRes(restaurantArray[i]);
+      reviewsList(restaurantArray[i].reviews);
 
     }
   }
-  restuarants.className = "hidden media";
+  restaurants.className = "hidden media";
   listOfReviews.className = "media";
 };
 
@@ -524,7 +528,6 @@ function addReviews(array){
   newDivMediaLeft.className = "media-left";
   newH3 = document.createElement('h3');
   newP = document.createElement('p');
-
   newP.appendChild(reviewContent);
   newH3.appendChild(reviewName);
   newH3.appendChild(starImage);
@@ -554,9 +557,9 @@ function submitReview(event){
   }
   var images;
   var reviewContent = document.getElementById('user-review-content').value;
-  for (var i = 0; i < restuarantArray.length; i++) {
-    if (reviewsForSearchedRestuarant === restuarantArray[i].name){
-      images = restuarantArray[i].image;
+  for (var i = 0; i < restaurantArray.length; i++) {
+    if (reviewsForSearchedRestaurant === restaurantArray[i].name){
+      images = restaurantArray[i].image;
     }
   }
   userReview = {
@@ -565,9 +568,9 @@ function submitReview(event){
     image: images,
     content: reviewContent
   };
-  for (var i = 0; i < restuarantArray.length; i++) {
-    if (reviewsForSearchedRestuarant === restuarantArray[i].name){
-      restuarantArray[i].reviews.push(userReview);
+  for (var i = 0; i < restaurantArray.length; i++) {
+    if (reviewsForSearchedRestaurant === restaurantArray[i].name){
+      restaurantArray[i].reviews.push(userReview);
     }
   }
   document.forms['form2'].reset();
@@ -580,9 +583,9 @@ function resetReviews(){
   while(element.firstChild){
     element.removeChild(element.firstChild);
   }
-  for (var i = 0; i < restuarantArray.length; i++) {
-    if (reviewsForSearchedRestuarant === restuarantArray[i].name){
-      reviewsList(restuarantArray[i].reviews);
+  for (var i = 0; i < restaurantArray.length; i++) {
+    if (reviewsForSearchedRestaurant === restaurantArray[i].name){
+      reviewsList(restaurantArray[i].reviews);
     }
   }
   goBackToResultsButton.className = "btn btn-default center-block";
@@ -591,22 +594,22 @@ function resetReviews(){
 function goBackToResults(event){
   event.preventDefault();
   var element = listOfReviews;
-  var element2 = selectedRestuarant;
+  var element2 = selectedRestaurant;
   while(element.firstChild){
     element.removeChild(element.firstChild);
   }
   while(element2.firstChild){
     element2.removeChild(element2.firstChild);
   }
-  restuarants.className = "media";
+  restaurants.className = "media";
   goBackToResultsButton.className = "hidden btn btn-default center-block";
 }
 
 function goHome(event){
   event.preventDefault();
   var element = listOfReviews;
-  var element2 = restuarants;
-  var element3 = selectedRestuarant;
+  var element2 = restaurants;
+  var element3 = selectedRestaurant;
   while(element.firstChild){
     element.removeChild(element.firstChild);
   }
@@ -620,6 +623,7 @@ function goHome(event){
   goBackToResultsButton.className = "hidden btn btn-default center-block";
   foodHomePage.className ="row-fluid";
   userReviewForm.className="hidden well";
+  userRestaurantForm.className="hidden well";
 }
 
 function starIcon(array){
@@ -646,11 +650,50 @@ function starIcon(array){
   }
 }
 
+function addRestaurantClick(event){
+  event.preventDefault();
+  var element = restaurants;
+  var element2 = listOfReviews;
+  var element3 = selectedRestaurant;
+  while(element.firstChild){
+    element.removeChild(element.firstChild);
+  }
+  while(element2.firstChild){
+    element2.removeChild(element2.firstChild);
+  }
+  while(element3.firstChild){
+    element3.removeChild(element3.firstChild);
+  }
+  foodHomePage.className ="hidden row-fluid";
+  userRestaurantForm.className = "well"
+}
+
+function addRestaurant(event){
+  event.preventDefault();
+  var name = document.getElementById('restaurant-name').value;
+  var type = document.getElementById('restaurant-type').value;
+  var info = document.getElementById('restaurant-info').value;
+  userRestuarant = {
+    name: name,
+    type: type,
+    numberOfReviews: '',
+    stars: '',
+    image: 'images/defaultimage.jpg',
+    info: info,
+    reviews: []
+  };
+    restaurantArray.push(userRestuarant);
+    document.forms['form3'].reset();
+    userRestaurantForm.className="hidden well";
+    //goHome(event);
+}
+
 searchButton.addEventListener("submit", stopRefresh);
 addReviewButton.addEventListener('click', reviewButton);
 submitUserForm.addEventListener('click', submitReview);
 goBackToResultsButton.addEventListener('click', goBackToResults);
 homeButton.addEventListener('click', goHome);
 logo.addEventListener('click', goHome);
-
-//console.log(restuarant7.reviews[1].name);
+addRestaurantButton.addEventListener('click', addRestaurantClick);
+submitRestaurantForm.addEventListener('click', addRestaurant);
+//console.log(restaurant7.reviews[1].name);
