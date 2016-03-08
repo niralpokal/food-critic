@@ -593,7 +593,7 @@ function addReviews(array){
   newDivContainer.appendChild(newDivMediaLeft);
   newDivContainer.appendChild(newDiv);
   listOfReviews.appendChild(newDivContainer);
-  return newDivContainer;
+  //return newDivContainer;
 };
 
 function reviewButton(event){
@@ -765,19 +765,21 @@ function usefulClick(event){
       var array = restaurantArray[i].reviews;
       for (var z = 0; z < array.length; z++){
         if (reviewName === array[z].name){
-          useful(array[z]);
+          useful(array[z], target);
         }
       }
     }
   }
 };
 
-function useful(array){
+function useful(array, target){
   var array = array;
+  var target = target;
   var count = array.useful;
   var sum1 = (count + 1);
   array.useful = sum1;
-  resetReviews();
+  target.textContent = ('Useful: ' + array.useful);
+  return target;
 };
 
 function funnyClick(event){
@@ -791,19 +793,21 @@ function funnyClick(event){
       var array = restaurantArray[i].reviews;
       for (var z = 0; z < array.length; z++){
         if (reviewName === array[z].name){
-          funny(array[z]);
+          funny(array[z], target);
         }
       }
     }
   }
 };
 
-function funny(array){
+function funny(array, target){
   var array = array;
+  var target = target;
   var count = array.funny;
   var sum1 = (count + 1);
   array.funny = sum1;
-  resetReviews();
+  target.textContent =('Funny: ' + array.funny);
+  return target;
 };
 
 function coolClick(event){
@@ -812,26 +816,25 @@ function coolClick(event){
   var parent = target.parentElement;
   var theParent = parent.nextSibling;
   reviewName = theParent.textContent;
-  console.log(reviewName);
   for (var i = 0; i < restaurantArray.length; i++) {
     if (reviewsForSearchedRestaurant === restaurantArray[i].name){
       var array = restaurantArray[i].reviews;
       for (var z = 0; z < array.length; z++){
         if (reviewName === array[z].name){
-          cool(array[z]);
+          cool(array[z], target);
         }
       }
     }
   };
 };
 
-function cool(array){
+function cool(array, target){
   var array = array;
-  console.log(array)
+  var target = target;
   var count = array.cool;
   var sum1 = (count + 1);
   array.cool = sum1;
-  resetReviews();
+  target.textContent =('Cool: ' + array.cool);
 };
 
 searchButton.addEventListener("submit", stopRefresh);
@@ -842,4 +845,3 @@ homeButton.addEventListener('click', goHome);
 logo.addEventListener('click', goHome);
 addRestaurantButton.addEventListener('click', addRestaurantClick);
 submitRestaurantForm.addEventListener('click', addRestaurant);
-//console.log(restaurant7.reviews[1].name);
