@@ -12,17 +12,17 @@ var restaurantArray = [
         name: 'Shawna C.',
         stars: 4,
         image: "images/mexicanreview1.jpg",
-        useful: 0,
+        useful: 4,
         funny: 0,
-        cool: 0,
+        cool: 2,
         content: "'Holy moly! Is this place GOOD! Don't let the look of the truck deceive you. At least for me, I had seen this truck numerous times at the food truck event that we frequent, but nothing really jumped out to me from the outside. The truck is a pretty plain black with simple gold small writing of Classic Tacos. Plus, you can find tacos at a lot of places. One day we finally decided to give it a shot and I really regret not trying these guys out sooner!!'"
       },
       {
         name: 'Brian R.',
         stars: 5,
         image: "images/mexicanreview2.jpg",
-        useful: 0,
-        funny: 0,
+        useful: 1,
+        funny: 4,
         cool: 0,
         content: 'Man I read some of these reviews and damn some people really take their yelping very seriously. Straight and to the point. Food was great. Food was fast. The biggest challenge is my 3.5 year old daughter who is absurdly picky and she ate most of my burrito. Would eat again'
       },
@@ -30,9 +30,9 @@ var restaurantArray = [
         name: 'Angie M.',
         stars: 5,
         image: "images/mexicanreview3.jpg",
-        useful: 0,
+        useful: 3,
         funny: 0,
-        cool: 0,
+        cool: 1,
         content: 'I have to start by saying... I am often disappointed by food trucks.  Most of the time, I feel a little ripped off, and I dont feel like the food was worth it. That is NOT the case with the Classic Tacos Truck.  I LOVED IT!'
       }
     ]
@@ -50,7 +50,7 @@ var restaurantArray = [
         name: 'Beast A.',
         stars: 2,
         image: "images/pizzareview1.jpg",
-        useful: 0,
+        useful: 6,
         funny: 0,
         cool: 0,
         content: "Ownership is rude. Staff is nice and on a weeknight the place seems like a good option but in reality it takes a long time to wait for food (20 minutes tonight) and there are better options really close by. I went to NY pizza cuz I'd been there in the past and didn't want to risk the new Square One or the CPK across Jeffrey since both are new and I wasn't sure how long the wait would be. But I certainly will be giving those a try next time! Can't be difficult to beat $26 medium pepperoni pizza with breadsticks and super easy to do better than the impolite owner with tons of attitude. Im all for buying local but why patronize a small business if they are going to be rude?"
@@ -59,16 +59,16 @@ var restaurantArray = [
         name: 'Dana K.',
         stars: 4,
         image: "images/pizzareview2.jpg",
-        useful: 0,
+        useful: 3,
         funny: 0,
-        cool: 0,
+        cool: 1,
         content: 'I love pizza by the slice since I can get a variety. My default is the white pizza with mozzarella and ricotta and sprinkles of pepper flakes. Their garlic knots are super garlicy and bready which I absolutely love. They use good sausage (nice and peppery) on their pepperoni and sausage pizza.'
       },
       {
         name: 'Aaron E.',
         stars: 3,
         image: "images/pizzareview3.jpg",
-        useful: 0,
+        useful: 3,
         funny: 0,
         cool: 0,
         content: 'The pie itself is undoubtedly greasy, as the cheese top showcased pools of yellow oily liquid and the paper plate it arrived on had some areas saturated with grease as well. The marinara was quite good however, with a nice kick of basil in each bite and the perfect consistency of tomato paste. The Crust was also noteworthy, doughy on the inside, crusty on the outside and the crust to toppings ratio was spot on.'
@@ -88,7 +88,7 @@ var restaurantArray = [
         name: 'Julie H.',
         stars: 4,
         image: "images/americanreview1.jpg",
-        useful: 0,
+        useful: 4,
         funny: 0,
         cool: 0,
         content: 'My first impression of Urban Plates was that it was like a Lemonade done better. When I first walked in I immediately liked the variety in the seating arrangement. It includes a long narrow table on which people propped up their laptops and were working while others were able to eat and chat with the person across from them. They also offered 2 and 4 person tables around this longer table and plenty of outdoor seating on their covered patio.'
@@ -97,7 +97,7 @@ var restaurantArray = [
         name: 'Anh B.',
         stars: 2,
         image: "images/americanreview2.jpg",
-        useful: 0,
+        useful: 2,
         funny: 0,
         cool: 0,
         content: "The dinner team tonight executed service really well!! Not sure if it's like this every weekend nights as we've only been here a handful of time. But well done!! The food backed up the line a little and some were sent back (our neighboring table :p but they were not the only ones) because they were undercooked but the team handled it very well!!"
@@ -106,9 +106,9 @@ var restaurantArray = [
         name: 'Joanna H.',
         stars: 4,
         image: "images/americanreview3.jpg",
-        useful: 0,
+        useful: 1,
         funny: 0,
-        cool: 0,
+        cool: 2,
         content: "Recently, I've been trying to calm down my beer belly by eating healthier. I haven't consumed less beer... but I have been eating healthier! While figuring out a quick dinner with a few girlfriends, Urban Plates seemed like the perfect candidate for a healthy, faux-home-cooked meal with the fresh ingredients I was looking for. "
       }
     ]
@@ -126,7 +126,7 @@ var restaurantArray = [
         name: 'Truong T.',
         stars: 5,
         image: "images/americanreview4.jpg",
-        useful: 0,
+        useful: 3,
         funny: 0,
         cool: 0,
         content: 'Overall this was a wonderful food truck.  I had a great lunch experience here though it can be a bit pricey.  The total was about 40 bucks which is a bit insane for lunch but sometimes you gotta pay the cost to be a boss.'
@@ -135,7 +135,7 @@ var restaurantArray = [
         name: 'Stacy S.',
         stars: 5,
         image: "images/americanreview5.jpg",
-        useful: 0,
+        useful: 2,
         funny: 0,
         cool: 0,
         content: 'Super awesome burger food truck!!  I learned of this place because it was stationed right outside of a brewery (Bottle Logic) that we were going to check out. I got their Savory Burger and it was perfection in every bite!  It has bacon relish, Swiss cheese, aioli and 3,000 sauce.'
@@ -144,9 +144,9 @@ var restaurantArray = [
         name: 'Rob D.',
         stars: 4,
         image: "images/americanreview6.jpg",
-        useful: 0,
+        useful: 2,
         funny: 0,
-        cool: 0,
+        cool: 1,
         content: 'I ordered the Savory Cut burger that came with bacon relish, swiss cheese, aioli splash (their name for sauce) and the 3000 splash priced at $11.  The burger patty had a nice beefy, charred flavor and was pretty rich and moist.  They put this bacon relish on that has bacon pieces, capers and what looked like little smashed grapes.  It was really good and complimented the burger patty very well with the richness of the bacon and the sweet, tangy and slight pepper flavor of the capers and little smashed grapes.  The bun was very good being moist, buttery and bready holding up well to the burger patty and other ingredients.  Also, the swiss was a good choice for this rendition of a burger.'
       }
     ]
@@ -164,7 +164,7 @@ var restaurantArray = [
         name: 'Puja L.',
         stars: 4,
         image: "images/pizzareview4.jpg",
-        useful: 0,
+        useful: 3,
         funny: 0,
         cool: 0,
         content: "Mix and match everything!  It's like a dream come true for a person who loves to sample things.  I'm a big fan of variety...and I got it at Pizza Cafe. You can do up to 4 different pizzas on your pie, and order a beer flight of any 4 of the beers they have on tap ($9). I will say that I didn't love their crust, but I was still a pretty happy customer. "
@@ -173,16 +173,16 @@ var restaurantArray = [
         name: 'Shelly C.',
         stars: 4,
         image: "images/pizzareview5.jpg",
-        useful: 0,
+        useful: 2,
         funny: 0,
-        cool: 0,
+        cool: 1,
         content: "At first, we order first class pizza because it's so close to our house- 2 minute of drive, how convenient! AND after we tasted the pizza, we were impressive how good the pizza was! Their crust is the chewy, thicker type, which I love. However, there's also an ultra thin crust option on the menu. Kids like the Sweet Pig (Hawaiian) and plain cheese, my husband and I like the Zesty Italian and Popeye's Favorite. They were generous on toppings, not stingy at all! Our go-to pizza place when I don't feel like cooking!"
       },
       {
         name: 'Denise K.',
         stars: 5,
         image: "images/pizzareview6.jpg",
-        useful: 0,
+        useful: 1,
         funny: 0,
         cool: 0,
         content: 'My favorite kind of pizza has crust that is crispy on the outside and chewy on the inside. Pizza Cafe serves up first class pizza dough - exactly how I like it! Not only do they have great flavors, but they are generous with the toppings too. We ordered an XL combo and it was enough for 4 average appetites. My family has a big appetite so we ordered another XL - pizza of the month: feta, garlic, spinach and roma tomatoes. The pizza of the month was my favorite of the two.'
@@ -202,7 +202,7 @@ var restaurantArray = [
         name: 'Romuel Dave C.',
         stars: 3,
         image: "images/americanreview7.jpg",
-        useful: 0,
+        useful: 3,
         funny: 0,
         cool: 0,
         content: 'I had really high hopes for this spot.  It is located inside the Main Place food court off Jamboree and Main.  This place has the makings of the perfect burger, but it sort of fell short of great in my book.  Perhaps its my choice on the menu that I made a mistake on... so I wont be too harsh.'
@@ -211,7 +211,7 @@ var restaurantArray = [
         name: 'Truong T.',
         stars: 4,
         image: "images/americanreview8.jpg",
-        useful: 0,
+        useful: 4,
         funny: 0,
         cool: 0,
         content: "I've been eyeing Aioli for a while now but nobody wanted to go with me for lunch at work to it since my street cred has taken quite a hit from prior bad experiences (curses).  Finally I got somebody to trust me (sucker).  I came through with my coworker to a food court located on Main St.  The place was pretty runned down.  It lacked outer appeal but the interior was actually quite decent."
@@ -220,8 +220,8 @@ var restaurantArray = [
         name: 'Aaron E.',
         stars: 2,
         image: "images/americanreview9.jpg",
-        useful: 0,
-        funny: 0,
+        useful: 1,
+        funny: 3,
         cool: 0,
         content: 'I can only give Aioli 2 stars and it is probably all of my own fault. No fewer than 10 people I follow on Yelp and a few co-workers have raved about the food at Aioli by mouth or in reviews so I have had this one bookmarked for quite a while now. The opportunity to stop for lunch finally arose and I think I totally blew it while ordering. '
       }
@@ -240,7 +240,7 @@ var restaurantArray = [
         name: 'Janet R.',
         stars: 5,
         image: "images/pizzareview7.jpg",
-        useful: 0,
+        useful: 6,
         funny: 0,
         cool: 0,
         content: 'This is probably my favorite make your own pizza place. They have a variety of toppings to choose from. I usually like to pack my pizza with a lot of veggies and places like Blaze and Pieology get the crust soggy, but here the crust stays nice and crisp!'
@@ -249,16 +249,16 @@ var restaurantArray = [
         name: 'Nijole T.',
         stars: 5,
         image: "images/pizzareview8.jpg",
-        useful: 0,
+        useful: 8,
         funny: 0,
-        cool: 0,
+        cool: 3,
         content: 'Really falling in love with MOD! More options than any other places where you can create your own pizza, different size pizzas and salads, several tasty and fresh juices instead of soda, desserts and more toppings than any other place offers! Prices and quality are great, this is the perfect place to take kids and picky eaters, you can be healthy or not, everything is fresh and made in house, even the salad dressings which I also love. Service wass very nice, they are a bit slower and your food takes longer than other chains, but the wait is well worth it. Cool and clean location, plenty of seating, worth checking out!'
       },
       {
         name: 'Fernando C.',
         stars: 4,
         image: "images/pizzareview9.jpg",
-        useful: 0,
+        useful: 3,
         funny: 0,
         cool: 0,
         content: 'I am a converted MOD believer.  I have come back 6 or 7 times now and it seems they got rid of the rude girl that made my first visit so unpleasant.  I like the topping options here compared to similar spots.  Surprisingly their drinks are scrumptious although more size options would be nice.'
@@ -278,7 +278,7 @@ var restaurantArray = [
         name: 'Matt K.',
         stars: 4,
         image: "images/mexicanreview4.jpg",
-        useful: 0,
+        useful: 4,
         funny: 0,
         cool: 0,
         content: "'Excellent Mexican food in the Orchard Hills Plaza.  It's a quick order type of place like a Rubio's.  I think the food tastes fresh and clean.  My carnitas burrito was not heavy at all.  It also came with guacamole on the side which was good and tortilla chips which were also good.  I don't like the salsas at their salsa bar, but the pico de gallo is good.'"
@@ -287,18 +287,18 @@ var restaurantArray = [
         name: 'Aileen K.',
         stars: 3,
         image: "images/mexicanreview5.jpg",
-        useful: 0,
+        useful: 2,
         funny: 0,
-        cool: 0,
+        cool: 1,
         content: "'My friend and I shared the chicken nachos and the chicken burrito. Both came with nice portions of delicious guacamole, which was amazing and fresh. However, the burrito was quite plain and small. Nachos are, well, nachos (delicious and filling but gluttonous). Additionally, the salsas were mediocre.'"
       },
       {
         name: 'Tom',
         stars: 4,
         image: "images/mexicanreview6.jpg",
-        useful: 0,
+        useful: 3,
         funny: 0,
-        cool: 0,
+        cool: 4,
         content: "'Since I don't like too authentic mexican food that can get pretty spicy, too saucy, and stinky from over seasoning meat, I think this place is just right for my tastebuds. Clean, simple and and not crazy with mysterious green, red, black or white sauces! I always get chicken nachos and salmon burrito here. '"
       }
     ]
@@ -316,7 +316,7 @@ var restaurantArray = [
         name: 'A. P.',
         stars: 2,
         image: "images/mexicanreview7.jpg",
-        useful: 0,
+        useful: 3,
         funny: 0,
         cool: 0,
         content: "'Good food and good service.  There were 5 of us seated at a table with a bench on one side and two chairs in the other.  No one can sit at the end of the table so three of us sat on one side while two sat on the other.  Very uncomfortable when one is left-handed and has all but 1 foot of space to work with.  I honestly don't know what they were thinking by seating 5 adults at a table designed for 4.  It was a busy Saturday night but no excuse for that.  I didn't want to upset the grandparents who were already comfortably seated so we sat through dinner without complaint. '"
@@ -325,16 +325,16 @@ var restaurantArray = [
         name: 'Jessica E.',
         stars: 3,
         image: "images/mexicanreview8.jpg",
-        useful: 0,
+        useful: 3,
         funny: 0,
-        cool: 0,
+        cool: 1,
         content: "'Tonight I ordered 2 meals to go, it was $25 plus tip. My order was 2 cheese enchiladas  crispy asada taco and beans. Well I got about 2 tablespoons of beans if that... the food was cold, I got a soft taco not a Crispy taco. By the time my husband go home it was all cold. we live 5 min away. He even tipped them and when he got home we realized all of this was wrong. I'm super disappointed. I can't believe a place of service would actually serve food this way.  The only reason I gave 2 stars is because the food tasted decent once I reheated it.'"
       },
       {
         name: 'Victoria S.',
         stars: 4,
         image: "images/mexicanreview9.jpg",
-        useful: 0,
+        useful: 2,
         funny: 0,
         cool: 0,
         content: "'4 stars for finding a good Mexican food restaurant in Irvine. This definitely is not the best Mexican food I've ever had... But trying to find authentic Mexican in irvine is probably impossible. I'm all about authentic Mexican food, like not-so-pretty restaurants made with love from my Tia (I'm not Latina, but I'm from an area with a large percentage so I love good stuff!) '"
