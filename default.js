@@ -370,6 +370,7 @@ var newP = document.createElement('p');
 var newDivContainer = document.createElement('div');
 var starValue;
 var searchedArray = [];
+var reviewList = [];
 
 function removeDom(){
   var element = restaurants;
@@ -417,6 +418,16 @@ function showRes(){ restaurants.className = "media" };
 function hideRes(){ restaurants.className = "hidden media" }
 function showRev(){ listOfReviews.className = "media" };
 function hideRev(){ listOfReviews.className = "hidden media" };
+function showSort(){
+  var parent = sortReviewToggle.parentElement;
+  var theParent = parent.parentElement;
+  theParent.className = "form-group pull-right"
+}
+function hideSort(){
+  var parent = sortReviewToggle.parentElement;
+  var theParent = parent.parentElement;
+  theParent.className = "hidden form-group pull-right"
+}
 
 function stopRefresh(event) {
   removeDom();
@@ -550,14 +561,17 @@ function showReviews(event){
 
 function reviewsList(array){
   var reviews = array;
+  reviewList =[];
   var i = 0;
   var newDiv1;
   var newDivContainer1;
   var newDivMediaLeft1;
   while  (i<reviews.length){
     addReviews(reviews[i]);
+    reviewList.push(reviews[i]);
     i++;
   };
+  //console.log(_.sortBy(reviewList, 'name'));
   hideResForm();
   showGoBack();
   showRevButton();
@@ -704,6 +718,7 @@ function goHome(event){
   hideResForm();
   hideRevForm();
   document.forms['form1'].reset();
+  hideSort();
 };
 
 function starIcon(array){
@@ -845,10 +860,26 @@ function cool(array, target){
   array.cool = sum1;
   target.textContent =('Cool: ' + array.cool);
 };
+
 function sorter(event){
   event.preventDefault();
-  console.log(sortReviewToggle.value);
+  var value = sortReviewToggle.value;
+  console.log(value);
+  removeRevDom();
+  if (value === 'Name'){
+    var list =  _.sortBy(reviewList, 'name');
+    for (var i = 0; i<list.length; i++){
+      addReviews(list[i]);
+    }
+  } else if (value ==='Stars'){
+    var list = _.sortBy(reviewList, 'stars');
+    for (var i =0; i<list.length; i++){
+      addReviews(list[i]);
+    }
+  }
 }
+
+
 //console.log(sortReviewToggle.value);
 sortReviewToggle.addEventListener('change', sorter);
 searchButton.addEventListener("submit", stopRefresh);
