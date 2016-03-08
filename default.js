@@ -436,6 +436,7 @@ function stopRefresh(event) {
   hideImages();
   showRes();
   hideRev();
+  hideSort();
   event.preventDefault();
   search = document.getElementById('search-bar').value;
   sortRestaurants(restaurantArray, search.toLowerCase());
@@ -575,6 +576,7 @@ function reviewsList(array){
   hideResForm();
   showGoBack();
   showRevButton();
+  showSort();
 };
 
 function addReviews(array){
@@ -707,6 +709,7 @@ function goBackToResults(event){
   hideRevButton();
   showRes();
   hideRevForm();
+  hideSort();
 };
 
 function goHome(event){
@@ -753,6 +756,7 @@ function addRestaurantClick(event){
   hideRevButton();
   hideGoBack();
   hideRevForm();
+  hideSort();
   showResForm();
 };
 
