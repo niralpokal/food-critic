@@ -359,6 +359,7 @@ var userReviewForm = document.getElementById('form2');
 var userRestaurantForm = document.getElementById('form3');
 var submitUserForm = document.getElementById('submit-user-review');
 var submitRestaurantForm = document.getElementById('submit-user-restaurant')
+var sortReviewToggle = document.getElementById('sort-reviews');
 var homeButton = document.getElementById('home');
 var logo = document.getElementById('logo');
 var newDiv = document.createElement('div');
@@ -844,7 +845,12 @@ function cool(array, target){
   array.cool = sum1;
   target.textContent =('Cool: ' + array.cool);
 };
-
+function sorter(event){
+  event.preventDefault();
+  console.log(sortReviewToggle.value);
+}
+//console.log(sortReviewToggle.value);
+sortReviewToggle.addEventListener('change', sorter);
 searchButton.addEventListener("submit", stopRefresh);
 addReviewButton.addEventListener('click', reviewButton);
 submitUserForm.addEventListener('click', submitReview);
