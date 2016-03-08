@@ -432,7 +432,9 @@ function stopRefresh(event) {
 function sortRestaurants(array,b) {
   for (var i = 0; i< array.length; i++){
     var a = array[i];
-    if ((a.type.toLowerCase() == b) || (a.name.toLowerCase() == b)){
+    if (b == 'food'){
+      searchedRestaurants(array[i]);
+    } else if ((a.type.toLowerCase() == b) || (a.name.toLowerCase() == b)){
       searchedRestaurants(array[i]);
     } else /*if (!(a.type.toLowerCase() == b) && !(a.name.toLowerCase() == b))*/{
       //restaurants.appendChild(failH1);
@@ -700,6 +702,7 @@ function goHome(event){
   showImages();
   hideResForm();
   hideRevForm();
+  document.forms['form1'].reset();
 };
 
 function starIcon(array){
