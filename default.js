@@ -439,7 +439,9 @@ function stopRefresh(event) {
   hideSort();
   event.preventDefault();
   search = document.getElementById('search-bar').value;
+  searchedArray = [];
   sortRestaurants(restaurantArray, search.toLowerCase());
+
 };
 
 function sortRestaurants(array,b) {
@@ -447,14 +449,17 @@ function sortRestaurants(array,b) {
     var a = array[i];
     if (b == 'food'){
       searchedRestaurants(array[i]);
+      searchedArray.push(array[i]);
     } else if ((a.type.toLowerCase() == b) || (a.name.toLowerCase() == b)){
       searchedRestaurants(array[i]);
+      searchedArray.push(array[i]);
     } else /*if (!(a.type.toLowerCase() == b) && !(a.name.toLowerCase() == b))*/{
       //restaurants.appendChild(failH1);
       }
     }
+    console.log(searchedArray);
   };
-
+//console.log(searchedArray);
 function searchedRestaurants(array){
   var array = array;
   var name = array.name;
@@ -502,7 +507,7 @@ function searchedRestaurants(array){
   newDivContainerRestaurant.appendChild(newDivMediaLeftRestaurant);
   newDivContainerRestaurant.appendChild(newDivRestaurant);
   restaurants.appendChild(newDivContainerRestaurant);
-  searchedArray.push(array);
+  showSort();
 };
 
 function slRes(array){
@@ -868,17 +873,40 @@ function cool(array, target){
 function sorter(event){
   event.preventDefault();
   var value = sortReviewToggle.value;
-  console.log(value);
+  //console.log(value);
   removeRevDom();
-  if (value === 'Name'){
-    var list =  _.sortBy(reviewList, 'name');
-    for (var i = 0; i<list.length; i++){
-      addReviews(list[i]);
-    }
-  } else if (value ==='Stars'){
-    var list = _.sortBy(reviewList, 'stars');
-    for (var i =0; i<list.length; i++){
-      addReviews(list[i]);
+  removeRes();
+  //console.log(restaurants.className);
+  while(restaurants.className == "media"){
+   if (value === 'Name'){
+     var list =  _.sortBy(searchedArray, 'name');
+     for (var i = 0; i<searchedArray.length; i++){
+       searchedRestaurants(list[i]);
+   }
+   //console.log(searchedArray);
+   break;
+   } else if (value === 'Stars'){
+     var list =  _.sortBy(searchedArray, 'stars');
+     for (var i = 0; i<searchedArray.length; i++){
+       searchedRestaurants(list[i]);
+       }
+     //console.log(searchedArray);
+     break;
+     }
+   }
+   while (restaurants.className == "hidden media"){
+    if (value === 'Name'){
+      var list =  _.sortBy(reviewList, 'name');
+      for (var i = 0; i<list.length; i++){
+        addReviews(list[i]);
+      }
+    break;
+    } else if (value ==='Stars'){
+      var list = _.sortBy(reviewList, 'stars');
+      for (var i =0; i<list.length; i++){
+        addReviews(list[i]);
+      }
+      break;
     }
   }
 }
