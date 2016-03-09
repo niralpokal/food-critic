@@ -457,9 +457,10 @@ function sortRestaurants(array,b) {
       //restaurants.appendChild(failH1);
       }
     }
-    //console.log(searchedArray);
-  };
-//console.log(searchedArray);
+    sortOptions();
+    addType();
+};
+
 function searchedRestaurants(array){
   var array = array;
   var name = array.name;
@@ -581,6 +582,7 @@ function reviewsList(array){
   hideResForm();
   showGoBack();
   showRevButton();
+  sortOptions();
   showSort();
 };
 
@@ -712,11 +714,12 @@ function goBackToResults(event){
   hideGoBack();
   hideRevButton();
   hideRevForm();
-  //hideSort();
   for (var i  = 0; i < searchedArray.length; i++){
     searchedRestaurants(searchedArray[i]);
     console.log(searchedArray[i]);
   }
+  sortOptions();
+  addType();
   showRes();
 };
 
@@ -886,17 +889,23 @@ function sorter(event){
      for (var i = 0; i<searchedArray.length; i++){
        searchedRestaurants(list[i]);
        //console.log(list);
-   }
+     }
    //console.log(searchedArray);
    break;
    } else if (value === 'Stars'){
-     var list =  _.sortBy(searchedArray, 'stars');
-     for (var i = 0; i<searchedArray.length; i++){
+      var list =  _.sortBy(searchedArray, 'stars');
+      for (var i = 0; i<searchedArray.length; i++){
        searchedRestaurants(list[i]);
-       }
+      }
      //console.log(searchedArray);
      break;
-     }
+   } else if (value === 'Type'){
+        var list =  _.sortBy(searchedArray, function(i) {return i.type.toLowerCase();});
+        for (var i = 0; i<searchedArray.length; i++){
+          searchedRestaurants(list[i]);
+        }
+        break;
+      }
    }
    while (restaurants.className == "hidden media"){
     if (value === 'Name'){
@@ -906,17 +915,39 @@ function sorter(event){
       }
     break;
     } else if (value ==='Stars'){
-      var list = _.sortBy(reviewList, 'stars');
-      for (var i =0; i<list.length; i++){
+        var list = _.sortBy(reviewList, 'stars');
+        for (var i =0; i<list.length; i++){
         addReviews(list[i]);
-      }
+        }
       break;
-    }
+      }
+   }
+}
+
+function sortOptions (){
+  var element = sortReviewToggle;
+  while(element.firstChild){
+    element.removeChild(element.firstChild);
+  }
+  var option = document.createElement('option');
+  var option2 = document.createElement('option');
+  var name = document.createTextNode('Name');
+  var stars = document.createTextNode('Stars');
+  option.appendChild(name);
+  option2.appendChild(stars);
+  sortReviewToggle.appendChild(option);
+  sortReviewToggle.appendChild(option2);
+}
+
+function addType(){
+  while (sortReviewToggle.lastChild.textContent ==='Stars'){
+    var option = document.createElement('option');
+    var type = document.createTextNode('Type');
+    option.appendChild(type);
+    sortReviewToggle.appendChild(option);
   }
 }
 
-
-//console.log(sortReviewToggle.value);
 sortReviewToggle.addEventListener('change', sorter);
 searchButton.addEventListener("submit", stopRefresh);
 addReviewButton.addEventListener('click', reviewButton);
