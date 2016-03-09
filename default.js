@@ -422,7 +422,10 @@ function showRevButton(){ addReviewButton.className = "btn btn-default" };
 function hideRevButton(){ addReviewButton.className = "hidden btn btn-default" };
 function showResForm(){ userRestaurantForm.className = "well" };
 function hideResForm(){ userRestaurantForm.className = "hidden well" };
-function showRevForm(){ userReviewForm.className="well" };
+function showRevForm(event){
+  event.preventDefault();
+  userReviewForm.className="well"
+};
 function hideRevForm(){ userReviewForm.className="hidden well" };
 function showRes(){ restaurants.className = "media" };
 function hideRes(){ restaurants.className = "hidden media" }
@@ -490,6 +493,7 @@ function searchedRestaurants(array){
   var showButton = document.createElement('button');
   showButton.setAttribute('type', 'button');
   showButton.setAttribute('class', 'btn btn-default center-block');
+  showButton.setAttribute('data-id','show');
   var buttonContent = document.createTextNode('Show Reviews');
   var newDivRestaurant = document.createElement('div');
   newDivRestaurant.className = "media-body";
@@ -516,7 +520,6 @@ function searchedRestaurants(array){
   var restaurantInfo = document.createElement('p');
   restaurantName.setAttribute('id', id);
   showButton.appendChild(buttonContent);
-  showButton.addEventListener('click',showReviews, false);
   restaurantName.appendChild(nameContent);
   restaurantInfo.appendChild(infoTextNode);
   restaurantName.appendChild(starImage);
@@ -570,8 +573,7 @@ function slRes(array){
   selectedRestaurant.appendChild(newDivContainerRestaurant);
 };
 
-function showReviews(event){
-  var target = event.target;
+function showReviews(target){
   var parent = target.parentElement;
   var theParent = parent.nextSibling.getElementsByTagName("h3")[0];
   restaurantId = theParent.id;
@@ -626,9 +628,9 @@ function addReviews(array){
   funnyButton.setAttribute('class', 'btn btn-default btn-sm');
   coolButton.setAttribute('type', 'button');
   coolButton.setAttribute('class', 'btn btn-default btn-sm');
-  usefulButton.addEventListener('click', usefulClick);
-  funnyButton.addEventListener('click', funnyClick);
-  coolButton.addEventListener('click', coolClick);
+  usefulButton.setAttribute('data-id', 'useful' );
+  funnyButton.setAttribute('data-id', 'funny');
+  coolButton.setAttribute('data-id', 'cool');
   var buttonDiv = document.createElement('div');
   buttonDiv.className="form-group pull-right";
   var buttonForm = document.createElement('form');
@@ -673,11 +675,6 @@ function addReviews(array){
   newDivContainer.appendChild(newDivMediaLeft);
   newDivContainer.appendChild(newDiv);
   listOfReviews.appendChild(newDivContainer);
-};
-
-function reviewButton(event){
-  event.preventDefault();
-  showRevForm();
 };
 
 function submitReview(event){
@@ -741,7 +738,7 @@ function goBackToResults(event){
   showRes();
 };
 
-function goHome(event){
+function goHome(){
   event.preventDefault();
   removeDom();
   hideRevButton();
@@ -814,16 +811,16 @@ function addRestaurant(event){
   hideSort();
 };
 
-function findTarget(ev){
-  target = ev.target;
+function findTarget(target){
   var parent = target.parentElement;
   var theParent = parent.nextSibling;
   reviewName = theParent.textContent;
 };
 
-function usefulClick(event){
+function usefulClick(target){
+  var target = target;
   event.preventDefault();
-  findTarget(event);
+  findTarget(target);
   for (var i = 0; i < restaurantArray.length; i++) {
     if (restaurantId == restaurantArray[i].id){
       var array = restaurantArray[i].reviews;
@@ -846,9 +843,10 @@ function useful(array, target){
   return target;
 };
 
-function funnyClick(event){
+function funnyClick(target){
+  var target = target;
   event.preventDefault();
-  findTarget(event);
+  findTarget(target);
   for (var i = 0; i < restaurantArray.length; i++) {
     if (restaurantId == restaurantArray[i].id){
       var array = restaurantArray[i].reviews;
@@ -871,9 +869,10 @@ function funny(array, target){
   return target;
 };
 
-function coolClick(event){
+function coolClick(target){
+  var target = target;
   event.preventDefault();
-  findTarget(event);
+  findTarget(target);
   for (var i = 0; i < restaurantArray.length; i++) {
     if (restaurantId == restaurantArray[i].id){
       var array = restaurantArray[i].reviews;
@@ -962,12 +961,36 @@ function addType(){
   }
 }
 
+function myTarget(event){
+  var ev = event;
+  var target = ev.target;
+  console.log(target);
+  var theTarget = target.dataset.id;
+  console.log(theTarget);
+  if (theTarget === 'useful'){
+    usefulClick(target);
+  } else if(theTarget === 'funny'){
+    funnyClick(target);
+  } else if(theTarget === 'cool'){
+    coolClick(target);
+  } else if(theTarget === 'show'){
+    showReviews(target);
+  } else if(theTarget === 'logo'){
+    goHome(ev);
+  } else if(theTarget === 'home'){
+    goHome(ev);
+  }else if(theTarget === 'back'){
+    goBackToResults(ev);
+  }else if(theTarget === 'reviews'){
+    showRevForm(ev);
+  }else if(theTarget === 'restaurant'){
+    addRestaurantClick(ev);
+  }else if(theTarget === 'submit-review'){
+    submitReview(ev);
+  }else if(theTarget === 'submit-restaurant'){
+    addRestaurant(ev);
+  }
+}
+document.body.addEventListener('click', myTarget)
 sortReviewToggle.addEventListener('change', sorter);
 searchButton.addEventListener("submit", stopRefresh);
-addReviewButton.addEventListener('click', reviewButton);
-submitUserForm.addEventListener('click', submitReview);
-goBackToResultsButton.addEventListener('click', goBackToResults);
-homeButton.addEventListener('click', goHome);
-logo.addEventListener('click', goHome);
-addRestaurantButton.addEventListener('click', addRestaurantClick);
-submitRestaurantForm.addEventListener('click', addRestaurant);
