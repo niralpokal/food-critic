@@ -457,7 +457,7 @@ function sortRestaurants(array,b) {
       //restaurants.appendChild(failH1);
       }
     }
-    console.log(searchedArray);
+    //console.log(searchedArray);
   };
 //console.log(searchedArray);
 function searchedRestaurants(array){
@@ -708,13 +708,16 @@ function resetReviews(){
 
 function goBackToResults(event){
   event.preventDefault();
-  removeSel();
-  removeRevDom();
+  removeDom();
   hideGoBack();
   hideRevButton();
-  showRes();
   hideRevForm();
-  hideSort();
+  //hideSort();
+  for (var i  = 0; i < searchedArray.length; i++){
+    searchedRestaurants(searchedArray[i]);
+    console.log(searchedArray[i]);
+  }
+  showRes();
 };
 
 function goHome(event){
@@ -786,7 +789,7 @@ function addRestaurant(event){
     removeRes();
     //sortRestaurants(restaurantArray, userRestuarant.type);
     searchedRestaurants(userRestuarant);
-    //showRevButton();
+    hideSort();
 };
 
 function findTarget(ev){
@@ -882,6 +885,7 @@ function sorter(event){
      var list =  _.sortBy(searchedArray, 'name');
      for (var i = 0; i<searchedArray.length; i++){
        searchedRestaurants(list[i]);
+       console.log(list);
    }
    //console.log(searchedArray);
    break;
