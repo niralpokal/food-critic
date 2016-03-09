@@ -882,10 +882,10 @@ function sorter(event){
   //console.log(restaurants.className);
   while(restaurants.className == "media"){
    if (value === 'Name'){
-     var list =  _.sortBy(searchedArray, 'name');
+     var list =  _.sortBy(searchedArray, function(i) {return i.name.toLowerCase();});
      for (var i = 0; i<searchedArray.length; i++){
        searchedRestaurants(list[i]);
-       console.log(list);
+       //console.log(list);
    }
    //console.log(searchedArray);
    break;
@@ -900,7 +900,7 @@ function sorter(event){
    }
    while (restaurants.className == "hidden media"){
     if (value === 'Name'){
-      var list =  _.sortBy(reviewList, 'name');
+      var list =  _.sortBy(reviewList, function(i) {return i.name.toLowerCase();});
       for (var i = 0; i<list.length; i++){
         addReviews(list[i]);
       }
