@@ -372,12 +372,8 @@ var submitRestaurantForm = document.getElementById('submit-user-restaurant')
 var sortReviewToggle = document.getElementById('sort-reviews');
 var homeButton = document.getElementById('home');
 var logo = document.getElementById('logo');
-var newDiv = document.createElement('div');
-var newDivContainer = document.createElement('div');
-var newDivMediaLeft = document.createElement('div');
-var newH3 = document.createElement('h3');
-var newP = document.createElement('p');
-var newDivContainer = document.createElement('div');
+var mediaBody;
+var mediaLeft;
 var starValue;
 var searchedArray = [];
 var reviewList = [];
@@ -468,11 +464,11 @@ function sortRestaurants(array,b) {
   for (var i = 0; i< array.length; i++){
     var a = array[i];
     if (b == 'food'){
-      searchedRestaurants(array[i]);
-      searchedArray.push(array[i]);
+      searchedRestaurants(a);
+      searchedArray.push(a);
     } else if ((a.type.toLowerCase() == b) || (a.name.toLowerCase() == b)){
-      searchedRestaurants(array[i]);
-      searchedArray.push(array[i]);
+      searchedRestaurants(a);
+      searchedArray.push(a);
     } else /*if (!(a.type.toLowerCase() == b) && !(a.name.toLowerCase() == b))*/{
       //restaurants.appendChild(failH1);
       }
@@ -482,7 +478,25 @@ function sortRestaurants(array,b) {
 };
 
 function searchedRestaurants(array){
-  var array = array;
+  var res = array;
+  appendRes(res);
+  var button = document.createElement('button');
+  button.setAttribute('type', 'button');
+  button.setAttribute('class', 'btn btn-default center-block');
+  button.setAttribute('data-id','show');
+  var buttonContent = document.createTextNode('Show Reviews');
+  button.appendChild(buttonContent);
+  var divRestaurant = document.createElement('div');
+  divRestaurant.className = "media well";
+  mediaLeft.appendChild(button);
+  divRestaurant.appendChild(mediaLeft);
+  divRestaurant.appendChild(mediaBody);
+  restaurants.appendChild(divRestaurant);
+  showSort();
+  showRes();
+};
+
+function appendRes(array){
   var name = array.name;
   var stars = array.stars;
   var image = array.image;
@@ -490,87 +504,45 @@ function searchedRestaurants(array){
   var id = array.id;
   starIcon(stars);
   stars = starValue;
-  var showButton = document.createElement('button');
-  showButton.setAttribute('type', 'button');
-  showButton.setAttribute('class', 'btn btn-default center-block');
-  showButton.setAttribute('data-id','show');
-  var buttonContent = document.createTextNode('Show Reviews');
-  var newDivRestaurant = document.createElement('div');
-  newDivRestaurant.className = "media-body";
-  var newDivContainerRestaurant = document.createElement('div');
-  newDivContainerRestaurant.className = "media well";
-  var newDivMediaLeftRestaurant = document.createElement('div');
-  newDivMediaLeftRestaurant.className = "media-left";
-  var newImage = document.createElement('img');
+  mediaBody = document.createElement('div');
+  mediaBody.className = "media-body";
+  mediaLeft = document.createElement('div');
+  mediaLeft.className = "media-left";
+  var resImage = document.createElement('img');
   var starImage = document.createElement('img');
   var newBreak = document.createElement('br');
-  newImage.className="img-rounded";
-  newImage.setAttribute('src', image);
-  newImage.setAttribute('alt', "");
-  newImage.setAttribute('width', "324");
-  newImage.setAttribute('height', "236");
+  resImage.className="img-rounded";
+  resImage.setAttribute('src', image);
+  resImage.setAttribute('alt', "");
+  resImage.setAttribute('width', "324");
+  resImage.setAttribute('height', "236");
   starImage.className="img-responsive";
   starImage.setAttribute('src', stars);
   starImage.setAttribute('alt', "");
   starImage.setAttribute('width', "150");
   starImage.setAttribute('height', "150");
   var nameContent = document.createTextNode(name);
-  var restaurantName = document.createElement('h3');
+  var resName = document.createElement('h3');
   var infoTextNode = document.createTextNode(info);
-  var restaurantInfo = document.createElement('p');
-  restaurantName.setAttribute('id', id);
-  showButton.appendChild(buttonContent);
-  restaurantName.appendChild(nameContent);
-  restaurantInfo.appendChild(infoTextNode);
-  restaurantName.appendChild(starImage);
-  newDivRestaurant.appendChild(restaurantName);
-  newDivRestaurant.appendChild(restaurantInfo);
-  newDivMediaLeftRestaurant.appendChild(newImage);
-  newDivMediaLeftRestaurant.appendChild(showButton);
-  newDivContainerRestaurant.appendChild(newDivMediaLeftRestaurant);
-  newDivContainerRestaurant.appendChild(newDivRestaurant);
-  restaurants.appendChild(newDivContainerRestaurant);
-  showSort();
+  var resInfo = document.createElement('p');
+  resName.setAttribute('id', id);
+  resName.appendChild(nameContent);
+  resInfo.appendChild(infoTextNode);
+  resName.appendChild(starImage);
+  mediaBody.appendChild(resName);
+  mediaBody.appendChild(resInfo);
+  mediaLeft.appendChild(resImage);
 };
 
 function slRes(array){
-  var name = array.name;
-  var stars = array.stars;
-  var image = array.image;
-  var info = array.info;
-  starIcon(stars);
-  stars = starValue;
-  var newDivRestaurant = document.createElement('div');
-  newDivRestaurant.className = "media-body";
-  var newDivContainerRestaurant = document.createElement('div');
-  newDivContainerRestaurant.className = "media well";
-  var newDivMediaLeftRestaurant = document.createElement('div');
-  newDivMediaLeftRestaurant.className = "media-left";
-  var newImage = document.createElement('img');
-  var starImage = document.createElement('img');
-  newImage.className="img-rounded";
-  newImage.setAttribute('src', image);
-  newImage.setAttribute('alt', "");
-  newImage.setAttribute('width', "324");
-  newImage.setAttribute('height', "236");
-  starImage.className="img-responsive";
-  starImage.setAttribute('src', stars);
-  starImage.setAttribute('alt', "");
-  starImage.setAttribute('width', "150");
-  starImage.setAttribute('height', "150");
-  var nameContent = document.createTextNode(name);
-  var restaurantName = document.createElement('h3');
-  var infoTextNode = document.createTextNode(info);
-  var restaurantInfo = document.createElement('p');
-  restaurantName.appendChild(nameContent);
-  restaurantInfo.appendChild(infoTextNode);
-  restaurantName.appendChild(starImage);
-  newDivRestaurant.appendChild(restaurantName);
-  newDivRestaurant.appendChild(restaurantInfo);
-  newDivMediaLeftRestaurant.appendChild(newImage);
-  newDivContainerRestaurant.appendChild(newDivMediaLeftRestaurant);
-  newDivContainerRestaurant.appendChild(newDivRestaurant);
-  selectedRestaurant.appendChild(newDivContainerRestaurant);
+  var array = array;
+  appendRes(array);
+  var divRestaurant = document.createElement('div');
+  divRestaurant.className = "media well";
+  divRestaurant.appendChild(mediaLeft);
+  divRestaurant.appendChild(mediaBody);
+  selectedRestaurant.appendChild(divRestaurant);
+  hideSort();
 };
 
 function showReviews(target){
@@ -638,13 +610,13 @@ function addReviews(array){
   var reviewContent = document.createTextNode(temp.content);
   var reviewName = document.createTextNode(temp.name);
   var starNumber = document.createTextNode(stars);
-  var resImage = document.createElement('img');
+  var revImage = document.createElement('img');
   var starImage = document.createElement('img');
-  resImage.className="img-rounded";
-  resImage.setAttribute('src', image);
-  resImage.setAttribute('alt', "");
-  resImage.setAttribute('width', "185");
-  resImage.setAttribute('height', "150");
+  revImage.className="img-rounded";
+  revImage.setAttribute('src', image);
+  revImage.setAttribute('alt', "");
+  revImage.setAttribute('width', "185");
+  revImage.setAttribute('height', "150");
   starImage.className="img-responsive";
   starImage.setAttribute('src', stars);
   starImage.setAttribute('alt', "");
@@ -657,24 +629,24 @@ function addReviews(array){
   buttonDiv.appendChild(funnyButton);
   buttonDiv.appendChild(coolButton);
   buttonForm.appendChild(buttonDiv);
-  newDiv = document.createElement('div');
-  newDiv.className = "media-body";
-  newDivContainer = document.createElement('div');
-  newDivContainer.className = "media well";
-  newDivMediaLeft = document.createElement('div');
-  newDivMediaLeft.className = "media-left";
-  newH3 = document.createElement('h3');
-  newP = document.createElement('p');
-  newP.appendChild(reviewContent);
-  newH3.appendChild(reviewName);
-  buttonForm.appendChild(newH3);
-  newH3.appendChild(starImage);
-  newDiv.appendChild(buttonForm);
-  newDiv.appendChild(newP);
-  newDivMediaLeft.appendChild(resImage);
-  newDivContainer.appendChild(newDivMediaLeft);
-  newDivContainer.appendChild(newDiv);
-  listOfReviews.appendChild(newDivContainer);
+  var mediaBody = document.createElement('div');
+  mediaBody.className = "media-body";
+  var div = document.createElement('div');
+  div.className = "media well";
+  var mediaLeft = document.createElement('div');
+  mediaLeft.className = "media-left";
+  var h3 = document.createElement('h3');
+  var p = document.createElement('p');
+  p.appendChild(reviewContent);
+  h3.appendChild(reviewName);
+  buttonForm.appendChild(h3);
+  h3.appendChild(starImage);
+  mediaBody.appendChild(buttonForm);
+  mediaBody.appendChild(p);
+  mediaLeft.appendChild(revImage);
+  div.appendChild(mediaLeft);
+  div.appendChild(mediaBody);
+  listOfReviews.appendChild(div);
 };
 
 function submitReview(event){
@@ -964,9 +936,7 @@ function addType(){
 function myTarget(event){
   var ev = event;
   var target = ev.target;
-  console.log(target);
   var theTarget = target.dataset.id;
-  console.log(theTarget);
   if (theTarget === 'useful'){
     usefulClick(target);
   } else if(theTarget === 'funny'){
@@ -991,6 +961,7 @@ function myTarget(event){
     addRestaurant(ev);
   }
 }
+
 document.body.addEventListener('click', myTarget)
 sortReviewToggle.addEventListener('change', sorter);
 searchButton.addEventListener("submit", stopRefresh);
