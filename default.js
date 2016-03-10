@@ -11,6 +11,7 @@ var restaurantArray = [
     reviews: [
       {
         name: 'Shawna C.',
+        id: 1,
         stars: 4,
         image: "images/mexicanreview1.jpg",
         useful: 4,
@@ -20,6 +21,7 @@ var restaurantArray = [
       },
       {
         name: 'Brian R.',
+        id: 2,
         stars: 5,
         image: "images/mexicanreview2.jpg",
         useful: 1,
@@ -29,6 +31,7 @@ var restaurantArray = [
       },
       {
         name: 'Angie M.',
+        id: 3,
         stars: 5,
         image: "images/mexicanreview3.jpg",
         useful: 3,
@@ -50,6 +53,7 @@ var restaurantArray = [
     reviews: [
       {
         name: 'Beast A.',
+        id: 4,
         stars: 2,
         image: "images/pizzareview1.jpg",
         useful: 6,
@@ -59,6 +63,7 @@ var restaurantArray = [
       },
       {
         name: 'Dana K.',
+        id: 5,
         stars: 4,
         image: "images/pizzareview2.jpg",
         useful: 3,
@@ -68,6 +73,7 @@ var restaurantArray = [
       },
       {
         name: 'Aaron E.',
+        id: 6,
         stars: 3,
         image: "images/pizzareview3.jpg",
         useful: 3,
@@ -89,6 +95,7 @@ var restaurantArray = [
     reviews: [
       {
         name: 'Julie H.',
+        id: 7,
         stars: 4,
         image: "images/americanreview1.jpg",
         useful: 4,
@@ -98,6 +105,7 @@ var restaurantArray = [
       },
       {
         name: 'Anh B.',
+        id: 8,
         stars: 2,
         image: "images/americanreview2.jpg",
         useful: 2,
@@ -107,6 +115,7 @@ var restaurantArray = [
       },
       {
         name: 'Joanna H.',
+        id: 9,
         stars: 4,
         image: "images/americanreview3.jpg",
         useful: 1,
@@ -128,6 +137,7 @@ var restaurantArray = [
     reviews: [
       {
         name: 'Truong T.',
+        id: 10,
         stars: 5,
         image: "images/americanreview4.jpg",
         useful: 3,
@@ -137,6 +147,7 @@ var restaurantArray = [
       },
       {
         name: 'Stacy S.',
+        id: 11,
         stars: 5,
         image: "images/americanreview5.jpg",
         useful: 2,
@@ -146,6 +157,7 @@ var restaurantArray = [
       },
       {
         name: 'Rob D.',
+        id: 12,
         stars: 4,
         image: "images/americanreview6.jpg",
         useful: 2,
@@ -167,6 +179,7 @@ var restaurantArray = [
     reviews: [
       {
         name: 'Puja L.',
+        id: 13,
         stars: 4,
         image: "images/pizzareview4.jpg",
         useful: 3,
@@ -176,6 +189,7 @@ var restaurantArray = [
       },
       {
         name: 'Shelly C.',
+        id: 14,
         stars: 4,
         image: "images/pizzareview5.jpg",
         useful: 2,
@@ -185,6 +199,7 @@ var restaurantArray = [
       },
       {
         name: 'Denise K.',
+        id: 15,
         stars: 5,
         image: "images/pizzareview6.jpg",
         useful: 1,
@@ -206,6 +221,7 @@ var restaurantArray = [
     reviews: [
       {
         name: 'Romuel Dave C.',
+        id: 16,
         stars: 3,
         image: "images/americanreview7.jpg",
         useful: 3,
@@ -215,6 +231,7 @@ var restaurantArray = [
       },
       {
         name: 'Truong T.',
+        id: 17,
         stars: 4,
         image: "images/americanreview8.jpg",
         useful: 4,
@@ -224,6 +241,7 @@ var restaurantArray = [
       },
       {
         name: 'Aaron E.',
+        id: 18,
         stars: 2,
         image: "images/americanreview9.jpg",
         useful: 1,
@@ -245,6 +263,7 @@ var restaurantArray = [
     reviews: [
       {
         name: 'Janet R.',
+        id: 19,
         stars: 5,
         image: "images/pizzareview7.jpg",
         useful: 6,
@@ -254,6 +273,7 @@ var restaurantArray = [
       },
       {
         name: 'Nijole T.',
+        id: 20,
         stars: 5,
         image: "images/pizzareview8.jpg",
         useful: 8,
@@ -263,6 +283,7 @@ var restaurantArray = [
       },
       {
         name: 'Fernando C.',
+        id: 21,
         stars: 4,
         image: "images/pizzareview9.jpg",
         useful: 3,
@@ -284,6 +305,7 @@ var restaurantArray = [
     reviews: [
       {
         name: 'Matt K.',
+        id: 22,
         stars: 4,
         image: "images/mexicanreview4.jpg",
         useful: 4,
@@ -293,6 +315,7 @@ var restaurantArray = [
       },
       {
         name: 'Aileen K.',
+        id: 23,
         stars: 3,
         image: "images/mexicanreview5.jpg",
         useful: 2,
@@ -302,6 +325,7 @@ var restaurantArray = [
       },
       {
         name: 'Tom',
+        id: 24,
         stars: 4,
         image: "images/mexicanreview6.jpg",
         useful: 3,
@@ -323,6 +347,7 @@ var restaurantArray = [
     reviews: [
       {
         name: 'A. P.',
+        id: 25,
         stars: 2,
         image: "images/mexicanreview7.jpg",
         useful: 3,
@@ -332,6 +357,7 @@ var restaurantArray = [
       },
       {
         name: 'Jessica E.',
+        id: 26,
         stars: 3,
         image: "images/mexicanreview8.jpg",
         useful: 3,
@@ -341,6 +367,7 @@ var restaurantArray = [
       },
       {
         name: 'Victoria S.',
+        id: 27,
         stars: 4,
         image: "images/mexicanreview9.jpg",
         useful: 2,
@@ -356,7 +383,8 @@ var userRestuarant = {};
 var search;
 var restaurantId;
 var target;
-var newId;
+var resId;
+var revId
 var addReviewButton = document.getElementById('add-review');
 var addRestaurantButton = document.getElementById('add-restaurant');
 var restaurants = document.getElementById('restaurants');
@@ -438,12 +466,19 @@ function hideSort(){
   theParent.className = "hidden form-group pull-right"
 }
 function generateId(){
-  var idList = [];
-  for(var i =0; i< restaurantArray.length; i++){
-    idList.push(restaurantArray[i].id);
+  var resList = [];
+  var revList = [];
+  for(var i = 0; i< restaurantArray.length; i++){
+    resList.push(restaurantArray[i].id);
+    var rev = restaurantArray[i].reviews;
+    for (var z = 0; z < rev.length; z++){
+      revList.push(rev[z].id);
+    }
   }
-  var last = _.last(idList);
-  newId = (last +1);
+  var resLast = Math.max.apply(null, resList);
+  var revLast = Math.max.apply(null, revList);
+  resId = (resLast +1);
+  revId = (revLast +1);
 }
 
 function stopRefresh(event) {
@@ -586,6 +621,7 @@ function addReviews(array){
   var useful = temp.useful;
   var funny = temp.funny;
   var cool = temp.cool;
+  var id = temp.id;
   starIcon(stars);
   stars = starValue;
   var usefulButton = document.createElement('button');
@@ -607,8 +643,8 @@ function addReviews(array){
   buttonDiv.className="form-group pull-right";
   var buttonForm = document.createElement('form');
   buttonForm.className = "form-inline";
-  var reviewContent = document.createTextNode(temp.content);
-  var reviewName = document.createTextNode(temp.name);
+  var revContent = document.createTextNode(temp.content);
+  var revName = document.createTextNode(temp.name);
   var starNumber = document.createTextNode(stars);
   var revImage = document.createElement('img');
   var starImage = document.createElement('img');
@@ -637,8 +673,9 @@ function addReviews(array){
   mediaLeft.className = "media-left";
   var h3 = document.createElement('h3');
   var p = document.createElement('p');
-  p.appendChild(reviewContent);
-  h3.appendChild(reviewName);
+  h3.setAttribute('id', id);
+  p.appendChild(revContent);
+  h3.appendChild(revName);
   buttonForm.appendChild(h3);
   h3.appendChild(starImage);
   mediaBody.appendChild(buttonForm);
@@ -651,6 +688,7 @@ function addReviews(array){
 
 function submitReview(event){
   event.preventDefault();
+  generateId();
   var userName = document.getElementById('name-input').value;
   var starChoice = document.getElementsByName('inlineRadio');
   var stars1;
@@ -668,6 +706,7 @@ function submitReview(event){
   };
   userReview = {
     name: userName,
+    id: revId,
     stars: stars1,
     image: images,
     useful: 0,
@@ -767,14 +806,14 @@ function addRestaurant(event){
   userRestuarant = {
     name: name,
     type: type,
-    id: newId,
+    id: resId,
     numberOfReviews: '',
     stars: 0,
     image: 'images/defaultimage.jpg',
     info: info,
     reviews: []
   };
-  restaurantId = newId;
+  restaurantId = resId;
   restaurantArray.push(userRestuarant);
   document.forms['form3'].reset();
   hideResForm();
@@ -786,7 +825,7 @@ function addRestaurant(event){
 function findTarget(target){
   var parent = target.parentElement;
   var theParent = parent.nextSibling;
-  reviewName = theParent.textContent;
+  reviewId = theParent.id;
 };
 
 function usefulClick(target){
@@ -797,7 +836,7 @@ function usefulClick(target){
     if (restaurantId == restaurantArray[i].id){
       var array = restaurantArray[i].reviews;
       for (var z = 0; z < array.length; z++){
-        if (reviewName === array[z].name){
+        if (reviewId == array[z].id){
           useful(array[z], target);
         }
       }
@@ -823,7 +862,7 @@ function funnyClick(target){
     if (restaurantId == restaurantArray[i].id){
       var array = restaurantArray[i].reviews;
       for (var z = 0; z < array.length; z++){
-        if (reviewName === array[z].name){
+        if (reviewId == array[z].id){
           funny(array[z], target);
         }
       }
@@ -849,7 +888,7 @@ function coolClick(target){
     if (restaurantId == restaurantArray[i].id){
       var array = restaurantArray[i].reviews;
       for (var z = 0; z < array.length; z++){
-        if (reviewName === array[z].name){
+        if (reviewId == array[z].id){
           cool(array[z], target);
         }
       }
