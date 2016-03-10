@@ -515,10 +515,10 @@ function sortRestaurants(array,b) {
       searchedArray.push(a);
     } else /*if (!(a.type.toLowerCase() == b) && !(a.name.toLowerCase() == b))*/{
       //restaurants.appendChild(failH1);
-      }
     }
-    sortOptions();
-    addType();
+  }
+  sortOptions();
+  addType();
 };
 
 function searchedRestaurants(array){
@@ -626,7 +626,6 @@ function reviewsList(array){
     reviewList.push(reviews[i]);
     i++;
   };
-  //console.log(_.sortBy(reviewList, 'name'));
   hideResForm();
   showGoBack();
   showRevButton();
@@ -806,7 +805,6 @@ function goHome(){
 
 function starIcon(array){
   var array = parseFloat(array);
-  console.log(array);
   if (array == 0){
     starValue = "images/stars0.png";
   }else if (0 <= array && array< 1){
@@ -980,52 +978,52 @@ function sorter(event){
   removeRevDom();
   removeRes();
   while(restaurants.className == "media"){
-   if (value === 'Name (A-Z)'){
-     var list =  _.sortBy(searchedArray, function(i) {return i.name.toLowerCase();});
-     for (var i = 0; i<searchedArray.length; i++){
-       searchedRestaurants(list[i]);
-     }
-   break;
-  } else if (value === 'Name (Z-A)'){
-     var list =  _.sortBy(searchedArray, function(i) {return i.name.toLowerCase();});
-     var rlist = list.reverse();
-     for (var i = 0; i<searchedArray.length; i++){
-       searchedRestaurants(rlist[i]);
+    if (value === 'Name (A-Z)'){
+      var list =  _.sortBy(searchedArray, function(i) {return i.name.toLowerCase();});
+      for (var i = 0; i<searchedArray.length; i++){
+        searchedRestaurants(list[i]);
       }
       break;
-  } else if (value === 'Highest Rated'){
+    } else if (value === 'Name (Z-A)'){
+      var list =  _.sortBy(searchedArray, function(i) {return i.name.toLowerCase();});
+      var rlist = list.reverse();
+      for (var i = 0; i<searchedArray.length; i++){
+        searchedRestaurants(rlist[i]);
+      }
+      break;
+    } else if (value === 'Highest Rated'){
       var list =  _.sortBy(searchedArray, 'stars');
       var rlist = list.reverse();
       for (var i = 0; i<searchedArray.length; i++){
         searchedRestaurants(rlist[i]);
       }
       break;
-   } else if (value === 'Lowest Rated'){
+    } else if (value === 'Lowest Rated'){
       var list =  _.sortBy(searchedArray, 'stars');
       for (var i = 0; i<searchedArray.length; i++){
-      searchedRestaurants(list[i]);
-     }
-    break;
-   } else if (value === 'Price (Low-High)'){
+        searchedRestaurants(list[i]);
+      }
+      break;
+    } else if (value === 'Price (Low-High)'){
       var list =  _.sortBy(searchedArray, 'cost');
       for (var i = 0; i<searchedArray.length; i++){
         searchedRestaurants(list[i]);
       }
       break;
-   } else if (value === 'Price (High-Low)'){
+    } else if (value === 'Price (High-Low)'){
       var list =  _.sortBy(searchedArray, 'cost');
       var rlist= list.reverse();
       for (var i = 0; i<searchedArray.length; i++){
         searchedRestaurants(rlist[i]);
       }
       break;
-   } else if (value === 'Type'){
+    } else if (value === 'Type'){
       var list =  _.sortBy(searchedArray, function(i) {return i.type.toLowerCase();});
       for (var i = 0; i<searchedArray.length; i++){
         searchedRestaurants(list[i]);
       }
       break;
-   }
+    }
   }
   while (restaurants.className == "hidden media"){
     if (value === 'Name (A-Z)'){
@@ -1033,26 +1031,26 @@ function sorter(event){
       for (var i = 0; i<list.length; i++){
         addReviews(list[i]);
       }
-    break;
-  } else if (value === 'Name (Z-A)'){
+      break;
+    } else if (value === 'Name (Z-A)'){
       var list =  _.sortBy(reviewList, function(i) {return i.name.toLowerCase();});
       var rlist = list.reverse();
       for (var i = 0; i<list.length; i++){
         addReviews(rlist[i]);
       }
-    break;
+      break;
     } else if (value ==='Highest Rated'){
-        var list = _.sortBy(reviewList, 'stars');
-        var rlist = list.reverse();
-        for (var i =0; i<list.length; i++){
+      var list = _.sortBy(reviewList, 'stars');
+      var rlist = list.reverse();
+      for (var i =0; i<list.length; i++){
         addReviews(rlist[i]);
-        }
+      }
       break;
     }else if (value ==='Lowest Rated'){
-        var list = _.sortBy(reviewList, 'stars');
-        for (var i =0; i<list.length; i++){
+      var list = _.sortBy(reviewList, 'stars');
+      for (var i =0; i<list.length; i++){
         addReviews(list[i]);
-        }
+      }
       break;
     }
   }
