@@ -848,10 +848,17 @@ function useful(array, target){
   var array = array;
   var target = target;
   var count = array.useful;
-  var sum1 = (count + 1);
-  array.useful = sum1;
-  target.textContent = ('Useful: ' + array.useful);
-  return target;
+  if (target.className === "btn btn-default btn-sm"){
+    var sum1 = (count + 1);
+    array.useful = sum1;
+    target.textContent =('Useful: ' + array.useful);
+    target.className = "btn btn-default btn-sm active"
+  } else if (target.className === "btn btn-default btn-sm active"){
+    var subtract1 = (count - 1);
+    array.useful = subtract1;
+    target.textContent =('Useful: ' + array.useful);
+    target.className = "btn btn-default btn-sm"
+  }
 };
 
 function funnyClick(target){
@@ -874,10 +881,17 @@ function funny(array, target){
   var array = array;
   var target = target;
   var count = array.funny;
-  var sum1 = (count + 1);
-  array.funny = sum1;
-  target.textContent =('Funny: ' + array.funny);
-  return target;
+  if (target.className === "btn btn-default btn-sm"){
+    var sum1 = (count + 1);
+    array.funny = sum1;
+    target.textContent =('Funny: ' + array.funny);
+    target.className = "btn btn-default btn-sm active"
+  } else if (target.className === "btn btn-default btn-sm active"){
+    var subtract1 = (count - 1);
+    array.funny = subtract1;
+    target.textContent =('Funny: ' + array.funny);
+    target.className = "btn btn-default btn-sm"
+  }
 };
 
 function coolClick(target){
@@ -900,9 +914,17 @@ function cool(array, target){
   var array = array;
   var target = target;
   var count = array.cool;
-  var sum1 = (count + 1);
-  array.cool = sum1;
-  target.textContent =('Cool: ' + array.cool);
+  if (target.className === "btn btn-default btn-sm"){
+    var sum1 = (count + 1);
+    array.cool = sum1;
+    target.textContent =('Cool: ' + array.cool);
+    target.className = "btn btn-default btn-sm active"
+  } else if (target.className === "btn btn-default btn-sm active"){
+    var subtract1 = (count - 1);
+    array.cool = subtract1;
+    target.textContent =('Cool: ' + array.cool);
+    target.className = "btn btn-default btn-sm"
+  }
 };
 
 function sorter(event){
