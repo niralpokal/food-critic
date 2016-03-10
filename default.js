@@ -47,7 +47,7 @@ var restaurantArray = [
     id: 2,
     type: 'Pizza',
     numberOfReviews: 14,
-    stars: 3,
+    stars: 3.1,
     image: "images/pizza1.jpg",
     info: 'We offer a flexible approach to dining, combining a fast paced, informal atmosphere in the daytime and casual sit down dinner service in the evening. Our thin, crisp pizzas combine a delicate balance of fresh, unique flavors paired with our carefully cured and handcrafted dough.',
     reviews: [
@@ -537,6 +537,7 @@ function appendRes(array){
   var image = array.image;
   var info = array.info;
   var id = array.id;
+  var rev = array.numberOfReviews;
   starIcon(stars);
   stars = starValue;
   mediaBody = document.createElement('div');
@@ -545,26 +546,30 @@ function appendRes(array){
   mediaLeft.className = "media-left";
   var resImage = document.createElement('img');
   var starImage = document.createElement('img');
-  var newBreak = document.createElement('br');
+  var totalRev = document.createTextNode(" " + rev + " reviews");
   resImage.className="img-rounded";
   resImage.setAttribute('src', image);
   resImage.setAttribute('alt', "");
   resImage.setAttribute('width', "324");
   resImage.setAttribute('height', "236");
-  starImage.className="img-responsive";
+  starImage.className="img";
   starImage.setAttribute('src', stars);
   starImage.setAttribute('alt', "");
   starImage.setAttribute('width', "150");
-  starImage.setAttribute('height', "150");
+  starImage.setAttribute('height', "");
   var nameContent = document.createTextNode(name);
   var resName = document.createElement('h3');
+  var resTotal = document.createElement('p');
   var infoTextNode = document.createTextNode(info);
   var resInfo = document.createElement('p');
+  starImage.appendChild(totalRev);
   resName.setAttribute('id', id);
   resName.appendChild(nameContent);
   resInfo.appendChild(infoTextNode);
-  resName.appendChild(starImage);
+  resTotal.appendChild(starImage);
+  resTotal.appendChild(totalRev)
   mediaBody.appendChild(resName);
+  mediaBody.appendChild(resTotal);
   mediaBody.appendChild(resInfo);
   mediaLeft.appendChild(resImage);
 };
@@ -716,11 +721,34 @@ function submitReview(event){
   };
   for (var i = 0; i < restaurantArray.length; i++) {
     if (restaurantId == restaurantArray[i].id){
+      var sum = (restaurantArray[i].numberOfReviews +1)
+      restaurantArray[i].numberOfReviews = sum;
       restaurantArray[i].reviews.push(userReview);
+      updateStars(restaurantArray[i], userReview.stars);
+      removeSel();
+      slRes(restaurantArray[i]);
     }
   }
+
   document.forms['form2'].reset();
   resetReviews();
+};
+
+function updateStars(array, a){
+  var array = array;
+  var user =  parseFloat(a);
+  var id = array.id;
+  var stars = array.stars;
+  var rev = (array.numberOfReviews -1)
+  var mult = (rev * stars);
+  var num = (mult + user);
+  var dem = (rev +1)
+  var total = (num / dem);
+  for (var i = 0; i < restaurantArray.length; i++) {
+    if (id == restaurantArray[i].id){
+      restaurantArray[i].stars = total;
+    }
+  }
 };
 
 function resetReviews(){
@@ -762,25 +790,29 @@ function goHome(){
 };
 
 function starIcon(array){
+  var array = parseFloat(array);
+  console.log(array);
   if (array == 0){
     starValue = "images/stars0.png";
-  }else if (array == 1){
+  }else if (0 <= array && array< 1){
     starValue = "images/stars1.png";
-  }else if (array == 1.5){
+  }else if (1 <= array && array < 1.5){
+    starValue = "images/stars1.png";
+  }else if (1.5 <= array && array < 2){
     starValue = "images/stars1.5.png";
-  }else if (array == 2){
+  }else if (2 <= array && array < 2.5){
     starValue = "images/stars2.png";
-  }else if (array == 2.5){
+  }else if (2.5 <= array && array < 3){
     starValue = "images/stars2.5.png";
-  }else if (array == 3){
+  }else if (3 <= array && array < 3.5){
     starValue = "images/stars3.png";
-  }else if (array == 3.5){
+  }else if (3.5 <= array && array < 4){
     starValue = "images/stars3.5.png";
-  }else if (array == 4){
+  }else if (4 <= array && array < 4.5){
     starValue = "images/stars4.png";
-  }else if (array == 4.5){
+  }else if (4.5 <= array && array < 5){
     starValue = "images/stars4.5.png";
-  }else if (array == 5){
+  }else if (array ==5){
     starValue = "images/stars5.png";
   }
 };
@@ -807,7 +839,7 @@ function addRestaurant(event){
     name: name,
     type: type,
     id: resId,
-    numberOfReviews: '',
+    numberOfReviews: 0,
     stars: 0,
     image: 'images/defaultimage.jpg',
     info: info,
