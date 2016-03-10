@@ -3,6 +3,7 @@ var restaurantArray = [
   restaurant1 = {
     name: 'Taco Taco!',
     id: 1,
+    cost: '$',
     type: 'Mexican',
     numberOfReviews: 34,
     stars: 4.5,
@@ -45,6 +46,7 @@ var restaurantArray = [
   restaurant2 = {
     name: 'Pizza Unlimited',
     id: 2,
+    cost: '$$',
     type: 'Pizza',
     numberOfReviews: 14,
     stars: 3.1,
@@ -87,6 +89,7 @@ var restaurantArray = [
   restaurant3 = {
     name: 'Urban Plates',
     id: 3,
+    cost: '$$$',
     type: 'American',
     numberOfReviews: 198,
     stars: 4,
@@ -129,6 +132,7 @@ var restaurantArray = [
   restaurant4 = {
     name: 'Burger!',
     id: 4,
+    cost: '$',
     type: 'American',
     numberOfReviews: 56,
     stars: 4.5,
@@ -171,6 +175,7 @@ var restaurantArray = [
   restaurant5 = {
     name: 'Pizza Cafe',
     id: 5,
+    cost: '$$',
     type: 'Pizza',
     numberOfReviews: 74,
     stars: 4,
@@ -213,6 +218,7 @@ var restaurantArray = [
   restaurant6 = {
     name: 'Aioli',
     id: 6,
+    cost: '$$$$',
     type: 'American',
     numberOfReviews: 201,
     stars: 4,
@@ -255,6 +261,7 @@ var restaurantArray = [
   restaurant7 = {
     name: 'Mod Pizza',
     id: 7,
+    cost: '$$',
     type: 'Pizza',
     numberOfReviews: 93,
     stars: 4.5,
@@ -297,6 +304,7 @@ var restaurantArray = [
   restaurant8 = {
     name: 'La Sirena Grill',
     id: 8,
+    cost: '$$',
     type: 'Mexican',
     numberOfReviews: 34,
     stars: 4,
@@ -339,6 +347,7 @@ var restaurantArray = [
   restaurant9 = {
     name: 'Super Mex',
     id: 9,
+    cost: '$$',
     type: 'Mexican',
     numberOfReviews: 34,
     stars: 3,
@@ -538,6 +547,8 @@ function appendRes(array){
   var info = array.info;
   var id = array.id;
   var rev = array.numberOfReviews;
+  var type = array.type;
+  var cost = array.cost;
   starIcon(stars);
   stars = starValue;
   mediaBody = document.createElement('div');
@@ -562,6 +573,9 @@ function appendRes(array){
   var resTotal = document.createElement('p');
   var infoTextNode = document.createTextNode(info);
   var resInfo = document.createElement('p');
+  var quickInfo = document.createElement('p');
+  var quickNode = document.createTextNode(cost + " " + type);
+  quickInfo.appendChild(quickNode);
   starImage.appendChild(totalRev);
   resName.setAttribute('id', id);
   resName.appendChild(nameContent);
@@ -570,6 +584,7 @@ function appendRes(array){
   resTotal.appendChild(totalRev)
   mediaBody.appendChild(resName);
   mediaBody.appendChild(resTotal);
+  mediaBody.appendChild(quickInfo);
   mediaBody.appendChild(resInfo);
   mediaLeft.appendChild(resImage);
 };
@@ -965,18 +980,45 @@ function sorter(event){
   removeRevDom();
   removeRes();
   while(restaurants.className == "media"){
-   if (value === 'Name'){
+   if (value === 'Name (A-Z)'){
      var list =  _.sortBy(searchedArray, function(i) {return i.name.toLowerCase();});
      for (var i = 0; i<searchedArray.length; i++){
        searchedRestaurants(list[i]);
      }
    break;
-   } else if (value === 'Stars'){
+  } else if (value === 'Name (Z-A)'){
+     var list =  _.sortBy(searchedArray, function(i) {return i.name.toLowerCase();});
+     var rlist = list.reverse();
+     for (var i = 0; i<searchedArray.length; i++){
+       searchedRestaurants(rlist[i]);
+      }
+      break;
+  } else if (value === 'Highest Rated'){
+      var list =  _.sortBy(searchedArray, 'stars');
+      var rlist = list.reverse();
+      for (var i = 0; i<searchedArray.length; i++){
+        searchedRestaurants(rlist[i]);
+      }
+      break;
+   } else if (value === 'Lowest Rated'){
       var list =  _.sortBy(searchedArray, 'stars');
       for (var i = 0; i<searchedArray.length; i++){
-       searchedRestaurants(list[i]);
+      searchedRestaurants(list[i]);
+     }
+    break;
+   } else if (value === 'Price (Low-High)'){
+      var list =  _.sortBy(searchedArray, 'cost');
+      for (var i = 0; i<searchedArray.length; i++){
+        searchedRestaurants(list[i]);
       }
-     break;
+      break;
+   } else if (value === 'Price (High-Low)'){
+      var list =  _.sortBy(searchedArray, 'cost');
+      var rlist= list.reverse();
+      for (var i = 0; i<searchedArray.length; i++){
+        searchedRestaurants(rlist[i]);
+      }
+      break;
    } else if (value === 'Type'){
       var list =  _.sortBy(searchedArray, function(i) {return i.type.toLowerCase();});
       for (var i = 0; i<searchedArray.length; i++){
@@ -986,13 +1028,27 @@ function sorter(event){
    }
   }
   while (restaurants.className == "hidden media"){
-    if (value === 'Name'){
+    if (value === 'Name (A-Z)'){
       var list =  _.sortBy(reviewList, function(i) {return i.name.toLowerCase();});
       for (var i = 0; i<list.length; i++){
         addReviews(list[i]);
       }
     break;
-    } else if (value ==='Stars'){
+  } else if (value === 'Name (Z-A)'){
+      var list =  _.sortBy(reviewList, function(i) {return i.name.toLowerCase();});
+      var rlist = list.reverse();
+      for (var i = 0; i<list.length; i++){
+        addReviews(rlist[i]);
+      }
+    break;
+    } else if (value ==='Highest Rated'){
+        var list = _.sortBy(reviewList, 'stars');
+        var rlist = list.reverse();
+        for (var i =0; i<list.length; i++){
+        addReviews(rlist[i]);
+        }
+      break;
+    }else if (value ==='Lowest Rated'){
         var list = _.sortBy(reviewList, 'stars');
         for (var i =0; i<list.length; i++){
         addReviews(list[i]);
@@ -1009,19 +1065,35 @@ function sortOptions(){
   }
   var option = document.createElement('option');
   var option2 = document.createElement('option');
-  var name = document.createTextNode('Name');
-  var stars = document.createTextNode('Stars');
+  var option3 = document.createElement('option');
+  var option4 = document.createElement('option');
+  var name = document.createTextNode('Name (A-Z)');
+  var reverseName =document.createTextNode('Name (Z-A)')
+  var stars = document.createTextNode('Lowest Rated');
+  var reverseStars = document.createTextNode('Highest Rated')
   option.appendChild(name);
-  option2.appendChild(stars);
+  option2.appendChild(reverseName);
+  option3.appendChild(reverseStars);
+  option4.appendChild(stars);
   sortReviewToggle.appendChild(option);
   sortReviewToggle.appendChild(option2);
+  sortReviewToggle.appendChild(option3);
+  sortReviewToggle.appendChild(option4);
 }
 
 function addType(){
-  while (sortReviewToggle.lastChild.textContent ==='Stars'){
+  while (sortReviewToggle.lastChild.textContent ==='Lowest Rated'){
     var option = document.createElement('option');
+    var option2 = document.createElement('option');
+    var option3 = document.createElement('option');
     var type = document.createTextNode('Type');
+    var cost = document.createTextNode('Price (Low-High)');
+    var reverseCost = document.createTextNode('Price (High-Low)');
+    option3.appendChild(reverseCost);
+    option2.appendChild(cost);
     option.appendChild(type);
+    sortReviewToggle.appendChild(option2);
+    sortReviewToggle.appendChild(option3);
     sortReviewToggle.appendChild(option);
   }
 }
