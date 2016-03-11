@@ -395,6 +395,7 @@ var target;
 var resId;
 var revId
 var addReviewButton = document.getElementById('add-review');
+var jumbotron = document.getElementById('failed-search');
 var addRestaurantButton = document.getElementById('add-restaurant');
 var restaurants = document.getElementById('restaurants');
 var selectedRestaurant = document.getElementById('selected-restaurant');
@@ -489,7 +490,12 @@ function generateId(){
   resId = (resLast +1);
   revId = (revLast +1);
 }
-
+function hideJumbo(){
+  while(jumbotron.firstChild){
+    jumbotron.removeChild(jumbotron.firstChild);
+  }
+  jumbotron.className="hidden jumbotron"
+};
 function stopRefresh(event) {
   removeDom();
   hideGoBack();
@@ -523,14 +529,42 @@ function sortRestaurants(array,b) {
     } else if (a.cost == b) {
       searchedRestaurants(a);
       searchedArray.push(a);
+    } else {
+      failedSearch(b);
+      break;
     }
   }
   sortOptions();
   addType();
 };
+function failedSearch(b){
+  hideJumbo();
+  var container = document.createElement('div');
+  var h1 = document.createElement('h1');
+  var p = document.createElement('p');
+  var button = document.createElement('button');
+  button.setAttribute('type', 'submit');
+  button.setAttribute('data-id', 'restaurant');
+  button.setAttribute('class', 'btn btn-primary btn-lg');
+  var buttonP = document.createElement('p');
+  var buttonTxt = document.createTextNode('Add Restaurant!')
+  var fail = document.createTextNode('"' + b + '"' + ' brought 0 results!');
+  var text = document.createTextNode('Sorry, but ' + '"'+ b +'"' + ' failed to bring any results. You can add ' + '"' + b + '"' + ' by pressing the Add Restaurant button below' );
+  container.className = "container";
+  button.appendChild(buttonTxt);
+  buttonP.appendChild(button);
+  p.appendChild(text);
+  h1.appendChild(fail);
+  container.appendChild(h1);
+  container.appendChild(p);
+  container.appendChild(buttonP);
+  jumbotron.appendChild(container);
+  jumbotron.className = "jumbotron";
+};
 
 function searchedRestaurants(array){
   var res = array;
+  hideJumbo();
   appendRes(res);
   var button = document.createElement('button');
   button.setAttribute('type', 'button');
@@ -807,6 +841,7 @@ function goHome(){
   showImages();
   hideResForm();
   hideRevForm();
+  hideJumbo();
   document.forms['form1'].reset();
   hideSort();
 };
@@ -842,6 +877,7 @@ function addRestaurantClick(event){
   event.preventDefault();
   removeSel();
   removeRevDom();
+  hideJumbo();
   hideImages();
   hideRevButton();
   hideGoBack();
