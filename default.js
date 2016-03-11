@@ -452,8 +452,8 @@ function showImages(){ foodHomePage.className ="row-fluid" };
 function hideImages(){ foodHomePage.className ="hidden row-fluid" };
 function showGoBack(){ goBackToResultsButton.className = "btn btn-default pull-left" };
 function hideGoBack(){ goBackToResultsButton.className = "hidden btn btn-default pull-left" };
-function showRevButton(){ addReviewButton.className = "btn btn-default" };
-function hideRevButton(){ addReviewButton.className = "hidden btn btn-default" };
+function showRevButton(){ addReviewButton.className = "btn btn-primary" };
+function hideRevButton(){ addReviewButton.className = "hidden btn btn-primary" };
 function showResForm(){ userRestaurantForm.className = "well" };
 function hideResForm(){ userRestaurantForm.className = "hidden well" };
 function showRevForm(event){
@@ -957,8 +957,8 @@ function useful(array, target){
   if (target.className === "btn btn-default btn-sm"){
     var sum1 = (count + 1);
     usefully(sum1, target);
-    target.className = "btn btn-default btn-sm active"
-  } else if (target.className === "btn btn-default btn-sm active"){
+    target.className = "btn btn-default btn-sm btn-warning active"
+  } else if (target.className === "btn btn-default btn-sm btn-warning active"){
     usefully(count, target);
     target.className = "btn btn-default btn-sm"
   }
@@ -987,8 +987,8 @@ function funny(array, target){
   if (target.className === "btn btn-default btn-sm"){
     var sum1 = (count + 1);
     funnier(sum1, target);
-    target.className = "btn btn-default btn-sm active"
-  } else if (target.className === "btn btn-default btn-sm active"){
+    target.className = "btn btn-default btn-sm btn-success active"
+  } else if (target.className === "btn btn-default btn-sm btn-success active"){
     funnier(count, target);
     target.className = "btn btn-default btn-sm"
   }
@@ -1017,8 +1017,8 @@ function cool(array, target){
   if (target.className === "btn btn-default btn-sm"){
     var sum1 = (count + 1);
     cooler(sum1, target);
-    target.className = "btn btn-default btn-sm active"
-  } else if (target.className === "btn btn-default btn-sm active"){
+    target.className = "btn btn-default btn-sm btn-info active"
+  } else if (target.className === "btn btn-default btn-sm btn-info active"){
     cooler(count, target);
     target.className = "btn btn-default btn-sm"
   }
