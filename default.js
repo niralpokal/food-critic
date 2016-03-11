@@ -505,17 +505,25 @@ function stopRefresh(event) {
 };
 
 function sortRestaurants(array,b) {
+  var b =b;
+  var array = array;
   for (var i = 0; i< array.length; i++){
     var a = array[i];
+    var name = a.name.toLowerCase();
+    console.log(name);
     if (b == 'food'){
       searchedRestaurants(a);
       searchedArray.push(a);
     } else if ((a.type.toLowerCase() == b) || (a.name.toLowerCase() == b)){
       searchedRestaurants(a);
       searchedArray.push(a);
-    } else /*if (!(a.type.toLowerCase() == b) && !(a.name.toLowerCase() == b))*/{
-      //restaurants.appendChild(failH1);
-    }
+    } else if(name.indexOf(b)!=-1){
+      searchedRestaurants(a);
+      searchedArray.push(a);
+    } else if (a.cost == b) {
+      searchedRestaurants(a);
+      searchedArray.push(a);
+    } 
   }
   sortOptions();
   addType();
