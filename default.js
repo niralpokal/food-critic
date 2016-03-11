@@ -548,8 +548,8 @@ function failedSearch(b){
   button.setAttribute('class', 'btn btn-primary btn-lg');
   var buttonP = document.createElement('p');
   var buttonTxt = document.createTextNode('Add Restaurant!')
-  var fail = document.createTextNode('"' + b + '"' + ' brought 0 results!');
-  var text = document.createTextNode('Sorry, but ' + '"'+ b +'"' + ' failed to bring any results. You can add ' + '"' + b + '"' + ' by pressing the Add Restaurant button below' );
+  var fail = document.createTextNode('"' + captilizeFirstLetter(b) + '"' + ' brought 0 results!');
+  var text = document.createTextNode('Sorry, but ' + '"'+ captilizeFirstLetter(b) +'"' + ' failed to bring any results. You can add ' + '"' + captilizeFirstLetter(b) + '"' + ' by pressing the Add Restaurant button below' );
   container.className = "container";
   button.appendChild(buttonTxt);
   buttonP.appendChild(button);
@@ -767,6 +767,9 @@ function submitReview(event){
       stars1 = starChoice[i].value;
     }
   };
+  if(stars1 === undefined){
+    stars1 = 0;
+  }
   var images;
   var reviewContent = document.getElementById('user-review-content').value;
   for (var i = 0; i < restaurantArray.length; i++) {
@@ -775,14 +778,14 @@ function submitReview(event){
     }
   };
   userReview = {
-    name: userName,
+    name: captilizeFirstLetter(userName),
     id: revId,
     stars: stars1,
     image: images,
     useful: 0,
     funny: 0,
     cool: 0,
-    content: reviewContent
+    content: captilizeFirstLetter(reviewContent)
   };
   for (var i = 0; i < restaurantArray.length; i++) {
     if (restaurantId == restaurantArray[i].id){
@@ -909,14 +912,14 @@ function addRestaurant(event){
     }
   };
   userRestuarant = {
-    name: name,
-    type: type,
+    name: captilizeFirstLetter(name),
+    type: captilizeFirstLetter(type),
     id: resId,
     numberOfReviews: 0,
     cost: cost1,
     stars: 0,
     image: 'images/defaultimage.jpg',
-    info: info,
+    info: captilizeFirstLetter(info),
     reviews: []
   };
   restaurantId = resId;
@@ -1172,6 +1175,10 @@ function addType(){
     sortReviewToggle.appendChild(option);
   }
 }
+
+function captilizeFirstLetter(string){
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
 function myTarget(event){
   var ev = event;
