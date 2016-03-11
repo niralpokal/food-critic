@@ -523,7 +523,7 @@ function sortRestaurants(array,b) {
     } else if (a.cost == b) {
       searchedRestaurants(a);
       searchedArray.push(a);
-    } 
+    }
   }
   sortOptions();
   addType();
@@ -856,11 +856,19 @@ function addRestaurant(event){
   var name = document.getElementById('restaurant-name').value;
   var type = document.getElementById('restaurant-type').value;
   var info = document.getElementById('restaurant-info').value;
+  var costChoice = document.getElementsByName('inlineCost');
+  var cost1;
+  for (var i = 0; i< costChoice.length; i++ ){
+    if (costChoice[i].checked){
+      cost1 = costChoice[i].value;
+    }
+  };
   userRestuarant = {
     name: name,
     type: type,
     id: resId,
     numberOfReviews: 0,
+    cost: cost1,
     stars: 0,
     image: 'images/defaultimage.jpg',
     info: info,
