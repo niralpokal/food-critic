@@ -685,12 +685,18 @@ function addReviews(array){
   var id = temp.id;
   starIcon(stars);
   stars = starValue;
+  var i1 = document.createElement('i');
+  i1.className="fa fa-thumbs-o-up";
+  var i2 = document.createElement('i');
+  i2.className = "fa fa-smile-o";
+  var i3 = document.createElement('i');
+  i3.className = "fa fa-beer";
   var usefulButton = document.createElement('button');
   var funnyButton = document.createElement('button');
   var coolButton = document.createElement('button');
-  var usefulText = document.createTextNode('Useful: ' + useful);
-  var funnyText = document.createTextNode('Funny: ' + funny);
-  var coolText = document.createTextNode('Cool: ' + cool);
+  var usefulText = document.createTextNode(' Useful: ' + useful);
+  var funnyText = document.createTextNode(' Funny: ' + funny);
+  var coolText = document.createTextNode(' Cool: ' + cool);
   usefulButton.setAttribute('type', 'button');
   usefulButton.setAttribute('class', 'btn btn-default btn-sm');
   funnyButton.setAttribute('type', 'button');
@@ -719,8 +725,11 @@ function addReviews(array){
   starImage.setAttribute('alt', "");
   starImage.setAttribute('width', "100");
   starImage.setAttribute('height', "100");
+  usefulButton.appendChild(i1);
   usefulButton.appendChild(usefulText);
+  funnyButton.appendChild(i2);
   funnyButton.appendChild(funnyText);
+  coolButton.appendChild(i3);
   coolButton.appendChild(coolText);
   buttonDiv.appendChild(usefulButton);
   buttonDiv.appendChild(funnyButton);
@@ -947,13 +956,10 @@ function useful(array, target){
   var count = array.useful;
   if (target.className === "btn btn-default btn-sm"){
     var sum1 = (count + 1);
-    array.useful = sum1;
-    target.textContent =('Useful: ' + array.useful);
+    usefully(sum1, target);
     target.className = "btn btn-default btn-sm active"
   } else if (target.className === "btn btn-default btn-sm active"){
-    var subtract1 = (count - 1);
-    array.useful = subtract1;
-    target.textContent =('Useful: ' + array.useful);
+    usefully(count, target);
     target.className = "btn btn-default btn-sm"
   }
 };
@@ -980,13 +986,10 @@ function funny(array, target){
   var count = array.funny;
   if (target.className === "btn btn-default btn-sm"){
     var sum1 = (count + 1);
-    array.funny = sum1;
-    target.textContent =('Funny: ' + array.funny);
+    funnier(sum1, target);
     target.className = "btn btn-default btn-sm active"
   } else if (target.className === "btn btn-default btn-sm active"){
-    var subtract1 = (count - 1);
-    array.funny = subtract1;
-    target.textContent =('Funny: ' + array.funny);
+    funnier(count, target);
     target.className = "btn btn-default btn-sm"
   }
 };
@@ -1013,16 +1016,38 @@ function cool(array, target){
   var count = array.cool;
   if (target.className === "btn btn-default btn-sm"){
     var sum1 = (count + 1);
-    array.cool = sum1;
-    target.textContent =('Cool: ' + array.cool);
+    cooler(sum1, target);
     target.className = "btn btn-default btn-sm active"
   } else if (target.className === "btn btn-default btn-sm active"){
-    var subtract1 = (count - 1);
-    array.cool = subtract1;
-    target.textContent =('Cool: ' + array.cool);
+    cooler(count, target);
     target.className = "btn btn-default btn-sm"
   }
 };
+
+function cooler(a ,target){
+  target.textContent='';
+  var i = document.createElement('i');
+  i.className = "fa fa-beer";
+  var text = document.createTextNode(' Cool: ' + a)
+  target.appendChild(i);
+  target.appendChild(text);
+};
+function funnier(a, target){
+  target.textContent='';
+  var i = document.createElement('i');
+  i.className = "fa fa-smile-o";
+  var text = document.createTextNode(' Funny: ' + a)
+  target.appendChild(i);
+  target.appendChild(text);
+};
+function usefully(a, target){
+  target.textContent='';
+  var i = document.createElement('i');
+  i.className = "fa fa-thumbs-o-up";
+  var text = document.createTextNode(' Useful: ' + a)
+  target.appendChild(i);
+  target.appendChild(text);
+}
 
 function sorter(event){
   event.preventDefault();
