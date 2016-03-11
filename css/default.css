@@ -43,3 +43,6 @@
   color: white;
   z-index: 7;
 }
+[data-id="show"]{
+  margin-top: 5px;
+}
