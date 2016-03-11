@@ -497,6 +497,7 @@ function hideJumbo(){
   jumbotron.className="hidden jumbotron"
 };
 function stopRefresh(event) {
+  hideRes();
   removeDom();
   hideGoBack();
   hideRevButton();
