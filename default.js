@@ -501,7 +501,6 @@ function stopRefresh(event) {
   hideGoBack();
   hideRevButton();
   hideImages();
-  showRes();
   hideRev();
   hideSort();
   event.preventDefault();
@@ -516,7 +515,6 @@ function sortRestaurants(array,b) {
   for (var i = 0; i< array.length; i++){
     var a = array[i];
     var name = a.name.toLowerCase();
-    console.log(name);
     if (b == 'food'){
       searchedRestaurants(a);
       searchedArray.push(a);
@@ -529,15 +527,16 @@ function sortRestaurants(array,b) {
     } else if (a.cost == b) {
       searchedRestaurants(a);
       searchedArray.push(a);
-    } else {
-      failedSearch(b);
-      break;
     }
   }
   sortOptions();
   addType();
+  if(restaurants.className === "hidden media"){
+   failedSearch(b);
+  }
 };
 function failedSearch(b){
+  hideSort();
   hideJumbo();
   var container = document.createElement('div');
   var h1 = document.createElement('h1');
