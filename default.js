@@ -387,6 +387,7 @@ var restaurantArray = [
     ]
   }
 ];
+
 var userReview = {};
 var userRestuarant = {};
 var search;
@@ -430,24 +431,28 @@ function removeDom(){
     element3.removeChild(element3.firstChild);
   }
 };
+
 function removeRevDom(){
   var element = listOfReviews;
   while(element.firstChild){
     element.removeChild(element.firstChild);
   }
 };
+
 function removeSel(){
   var element = selectedRestaurant;
   while(element.firstChild){
     element.removeChild(element.firstChild);
   }
-}
+};
+
 function removeRes(){
   var element = restaurants;
   while(element.firstChild){
     element.removeChild(element.firstChild);
   }
 };
+
 function showImages(){ foodHomePage.className ="row-fluid" };
 function hideImages(){ foodHomePage.className ="hidden row-fluid" };
 function showGoBack(){ goBackToResultsButton.className = "btn btn-default pull-left" };
@@ -460,6 +465,7 @@ function showRevForm(event){
   event.preventDefault();
   userReviewForm.className="well"
 };
+
 function hideRevForm(){ userReviewForm.className="hidden well" };
 function showRes(){ restaurants.className = "media" };
 function hideRes(){ restaurants.className = "hidden media" }
@@ -469,12 +475,14 @@ function showSort(){
   var parent = sortReviewToggle.parentElement;
   var theParent = parent.parentElement;
   theParent.className = "form-group pull-right"
-}
+};
+
 function hideSort(){
   var parent = sortReviewToggle.parentElement;
   var theParent = parent.parentElement;
   theParent.className = "hidden form-group pull-right"
-}
+};
+
 function generateId(){
   var resList = [];
   var revList = [];
@@ -489,13 +497,15 @@ function generateId(){
   var revLast = Math.max.apply(null, revList);
   resId = (resLast +1);
   revId = (revLast +1);
-}
+};
+
 function hideJumbo(){
   while(jumbotron.firstChild){
     jumbotron.removeChild(jumbotron.firstChild);
   }
   jumbotron.className="hidden jumbotron"
 };
+
 function stopRefresh(event) {
   hideRes();
   removeDom();
@@ -536,6 +546,7 @@ function sortRestaurants(array,b) {
    failedSearch(b);
   }
 };
+
 function failedSearch(b){
   hideSort();
   hideJumbo();
@@ -549,7 +560,7 @@ function failedSearch(b){
   var buttonP = document.createElement('p');
   var buttonTxt = document.createTextNode('Add Restaurant!')
   var fail = document.createTextNode('"' + captilizeFirstLetter(b) + '"' + ' brought 0 results!');
-  var text = document.createTextNode('Sorry, but ' + '"'+ captilizeFirstLetter(b) +'"' + ' failed to bring any results. You can add ' + '"' + captilizeFirstLetter(b) + '"' + ' by pressing the Add Restaurant button below' );
+  var text = document.createTextNode('Sorry, but ' + '"'+ captilizeFirstLetter(b) +'"' + ' failed to bring any results. You can add ' + '"' + captilizeFirstLetter(b) + '"' + ' by pressing the Add Restaurant button below.' );
   container.className = "container";
   button.appendChild(buttonTxt);
   buttonP.appendChild(button);
@@ -601,11 +612,12 @@ function appendRes(array){
   var starImage = document.createElement('img');
   var totalRev = document.createTextNode(" " + rev + " reviews");
   resImage.className="img-rounded";
+  resImage.setAttribute('data-id', 'resImage')
   resImage.setAttribute('src', image);
   resImage.setAttribute('alt', "");
   resImage.setAttribute('width', "324");
   resImage.setAttribute('height', "236");
-  starImage.className="img";
+  starImage.setAttribute('data-id', 'img');
   starImage.setAttribute('src', stars);
   starImage.setAttribute('alt', "");
   starImage.setAttribute('width', "150");
@@ -651,7 +663,7 @@ function showReviews(target){
       slRes(restaurantArray[i]);
       reviewsList(restaurantArray[i].reviews);
     }
-  };
+  }
   hideRes();
   showRev();
 };
@@ -667,7 +679,7 @@ function reviewsList(array){
     addReviews(reviews[i]);
     reviewList.push(reviews[i]);
     i++;
-  };
+  }
   hideResForm();
   showGoBack();
   showRevButton();
@@ -766,7 +778,7 @@ function submitReview(event){
     if (starChoice[i].checked){
       stars1 = starChoice[i].value;
     }
-  };
+  }
   if(stars1 === undefined){
     stars1 = 0;
   }
@@ -776,7 +788,7 @@ function submitReview(event){
     if (restaurantId == restaurantArray[i].id){
       images = restaurantArray[i].image;
     }
-  };
+  }
   userReview = {
     name: captilizeFirstLetter(userName),
     id: revId,
@@ -797,7 +809,6 @@ function submitReview(event){
       slRes(restaurantArray[i]);
     }
   }
-
   document.forms['form2'].reset();
   resetReviews();
 };
@@ -910,7 +921,7 @@ function addRestaurant(event){
     if (costChoice[i].checked){
       cost1 = costChoice[i].value;
     }
-  };
+  }
   userRestuarant = {
     name: captilizeFirstLetter(name),
     type: captilizeFirstLetter(type),
@@ -1010,7 +1021,7 @@ function coolClick(target){
         }
       }
     }
-  };
+  }
 };
 
 function cool(array, target){
@@ -1035,6 +1046,7 @@ function cooler(a ,target){
   target.appendChild(i);
   target.appendChild(text);
 };
+
 function funnier(a, target){
   target.textContent='';
   var i = document.createElement('i');
@@ -1043,6 +1055,7 @@ function funnier(a, target){
   target.appendChild(i);
   target.appendChild(text);
 };
+
 function usefully(a, target){
   target.textContent='';
   var i = document.createElement('i');
@@ -1050,7 +1063,7 @@ function usefully(a, target){
   var text = document.createTextNode(' Useful: ' + a)
   target.appendChild(i);
   target.appendChild(text);
-}
+};
 
 function sorter(event){
   event.preventDefault();
@@ -1134,7 +1147,7 @@ function sorter(event){
       break;
     }
   }
-}
+};
 
 function sortOptions(){
   var element = sortReviewToggle;
@@ -1157,7 +1170,7 @@ function sortOptions(){
   sortReviewToggle.appendChild(option2);
   sortReviewToggle.appendChild(option3);
   sortReviewToggle.appendChild(option4);
-}
+};
 
 function addType(){
   while (sortReviewToggle.lastChild.textContent ==='Lowest Rated'){
@@ -1174,7 +1187,7 @@ function addType(){
     sortReviewToggle.appendChild(option3);
     sortReviewToggle.appendChild(option);
   }
-}
+};
 
 function captilizeFirstLetter(string){
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -1207,7 +1220,7 @@ function myTarget(event){
   }else if(theTarget === 'submit-restaurant'){
     addRestaurant(ev);
   }
-}
+};
 
 document.body.addEventListener('click', myTarget)
 sortReviewToggle.addEventListener('change', sorter);

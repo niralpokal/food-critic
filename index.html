@@ -9,24 +9,24 @@
   </head>
   <body>
     <div class="container-fluid">
-      <div id="overlay"class="row">
+      <div class="row" id="overlay">
         <div class="header-overlay"></div>
-        <div id="header" class="col-md-12 col-sm-12 well">
+        <div class="col-md-12 col-sm-12 col-xs-12 well" id="header">
           <div class="row-fluid">
           <form class="form-inline pull-right">
             <div class="form-group">
-              <button type="submit" id="home" data-id="home" class="btn btn-default">Home</button>
-              <button type="submit" id="add-restaurant" data-id="restaurant" class="btn btn-default"><i class="fa fa-star"></i> Add Restaurant!</button>
+              <button class="btn btn-default" id="home" data-id="home" type="submit">Home</button>
+              <button class="btn btn-default" id="add-restaurant" data-id="restaurant" type="submit" ><i class="fa fa-star"></i> Add Restaurant!</button>
             </div>
           </form>
           </div>
-          <div class="row-fluid col-md-12 col-sm-12">
-            <form id="form1" class="form-inline">
+          <div class="row-fluid col-md-12 col-sm-12 col-xs-12">
+            <form class="form-inline" id="form1">
               <div class="form-group col-md-offset-3 col-sm-offset-2 col-md-7 col-sm-8">
-                <img id="logo" data-id="logo"src="images/header_logo.png" class=""  alt="Yelp Logo" />
+                <img id="logo" data-id="logo" src="images/header_logo.png" alt="Yelp Logo" />
                 <label for="searchbar"></label>
-                <input type="text" id="search-bar" class="form-control" form="form1" placeholder="Search by type or name..." value="">
-                <button type="submit" id="search-button" form="form1" class="btn btn-default"><img src="images/search_icon.png" alt="Search"  width = "20px"></button>
+                <input class="form-control" id="search-bar" type="text" form="form1" placeholder="Search by type or name..." value="">
+                <button class="btn btn-default" id="search-button" type="submit" form="form1"><img src="images/search_icon.png" alt="Search"  width = "20px"></button>
               </div>
             </form>
             </div>
@@ -34,116 +34,116 @@
         </div>
       </div>
       <div class="row-fluid">
-        <form id="form3" class="hidden well col-md-12">
+        <form class="hidden well col-md-12" id="form3">
           <div class="form-group">
             <label for="restaurant-name">Name of Restaurant</label>
-            <input type="text" class="form-control" id="restaurant-name" placeholder="Name of Restaurant">
+            <input class="form-control" id="restaurant-name" type="text" placeholder="Name of Restaurant">
           </div>
           <div class="form-group">
             <label for="restaurant-type">Type of Restaurant:</label>
-            <input type="text" class="form-control" id="restaurant-type" placeholder="E.G. Mexican, American...">
+            <input class="form-control" id="restaurant-type" type="text" placeholder="E.G. Mexican, American...">
           </div>
           <div class="form-group">
             <b>How Expensive is the Restaurant?</b><br>
             <label class="radio-inline">
-              <input type="radio" name="inlineCost" id="cost1" value="$"> $
+              <input name="inlineCost" type="radio" value="$"> $
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineCost" id="cost2" value="$$"> $$
+              <input name="inlineCost" type="radio" value="$$"> $$
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineCost" id="cost3" value="$$$"> $$$
+              <input name="inlineCost" type="radio" value="$$$"> $$$
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineCost" id="cost4" value="$$$$"> $$$$
+              <input name="inlineCost" type="radio" value="$$$$"> $$$$
             </label>
           </div>
           <div class="form-group">
             <label for="restaurant-info">Enter a description for the Restaurant:</label>
-            <textarea id="restaurant-info" class="form-control" rows="3" placeholder="Enter a description...."></textarea>
+            <textarea class="form-control" id="restaurant-info" rows="3" placeholder="Enter a description...."></textarea>
           </div>
-          <button type="submit" id="submit-user-restaurant" data-id="submit-restaurant" class="btn btn-primary">Submit</button>
+          <button class="btn btn-primary" id="submit-user-restaurant" data-id="submit-restaurant" type="submit">Submit</button>
         </form>
       </div>
       <div class="row-fluid">
-        <form class="form-inline col-md-12">
-          <div class="form-group col-md-4">
-            <button type="submit" id="search-results"  data-id="back"class="hidden btn btn-default pull-left"><i class="fa fa-chevron-left"></i> Go Back To Search Results</button>
+        <form class="form-inline col-md-12 col-xs-12">
+          <div class="form-group col-md-4 col-xs-4">
+            <button class="hidden btn btn-default pull-left" id="search-results" data-id="back" type="submit"><i class="fa fa-chevron-left"></i> Go Back To Search Results</button>
           </div>
-          <div class="form-group col-md-offset-1">
-            <button type="submit" id="add-review" data-id="reviews" class="hidden btn btn-primary"> <i class="fa fa-star"></i> Add Your Review Here!!</button>
+          <div class="form-group col-md-offset-1 col-xs-4">
+            <button class="hidden btn btn-primary" id="add-review" data-id="reviews" type="submit"> <i class="fa fa-star"></i> Add Your Review Here!!</button>
           </div>
-          <div class="hidden form-group pull-right">
+          <div class="hidden form-group col-xs-2">
             <fieldset class="form-group">
-              <label for="sort-reviews">Sort By:</label>
+              <label for="sort-reviews" id="label">Sort By:</label>
               <select class="form-control" id="sort-reviews">
               </select>
             </fieldset>
           </div>
         </form>
       </div>
-      <div id="food-image-home" class="row-fluid">
+      <div class="row-fluid" id="food-image-home">
         <div class="col-sm-3 col-md-3 col-xs-6">
-          <img src="images/food2.jpg" class="img-responsive img-thumbnail"  alt="burger photo">
+          <img class="img-responsive img-thumbnail" src="images/food2.jpg" alt="burger photo">
         </div>
         <div class="col-sm-3 col-md-3 col-xs-6">
-          <img src="images/food3.jpg" class="img-responsive img-thumbnail"  alt="pizza photo">
+          <img class="img-responsive img-thumbnail" src="images/food3.jpg" alt="pizza photo">
         </div>
         <div class="col-sm-3 col-md-3 col-xs-6">
-          <img src="images/food4.jpg" class="img-responsive img-thumbnail"  alt="taco photo">
+          <img class="img-responsive img-thumbnail" src="images/food4.jpg" alt="taco photo">
         </div>
         <div class="col-sm-3 col-md-3 col-xs-6">
-          <img src="images/food1.jpg" class="img-responsive img-thumbnail" alt="sandwich photo">
+          <img class="img-responsive img-thumbnail" src="images/food1.jpg" alt="sandwich photo">
         </div>
       </div>
 
       <br>
       <br>
-      <div class="row-fluid col-md-12">
-        <div id="selected-restaurant" class="media">
+      <div class="row-fluid col-md-12 col-xs-12">
+        <div class="media" id="selected-restaurant">
         </div>
       </div>
       <div class="row-fluid">
-        <form id="form2" class="hidden well col-md-12">
+        <form class="hidden well col-md-12" id="form2">
           <div class="form-group">
             <label for="name-input">Name:</label>
-            <input type="text" class="form-control" id="name-input" placeholder="Name">
+            <input class="form-control" id="name-input" placeholder="Name" type="text">
           </div>
           <div class="form-group">
             <b>How many stars do you want to give the Restaurant?</b><br>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadio" id="inlineRadio1" value="1"> 1
+              <input name="inlineRadio" value="1" type="radio"> 1
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadio" id="inlineRadio2" value="2"> 2
+              <input name="inlineRadio" value="2" type="radio"> 2
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadio" id="inlineRadio3" value="3"> 3
+              <input name="inlineRadio" value="3" type="radio"> 3
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadio" id="inlineRadio4" value="4"> 4
+              <input name="inlineRadio" value="4" type="radio"> 4
             </label>
             <label class="radio-inline">
-              <input type="radio" name="inlineRadio" id="inlineRadio5" value="5"> 5
+              <input name="inlineRadio" value="5" type="radio"> 5
             </label>
           </div>
           <div class="form-group">
             <label for="user-review-content">Enter Your Review Below</label>
-            <textarea id="user-review-content" class="form-control" rows="3" placeholder="Your review goes here...."></textarea>
+            <textarea class="form-control" id="user-review-content" rows="3" placeholder="Your review goes here...."></textarea>
           </div>
-          <button type="submit" id="submit-user-review" data-id="submit-review"class="btn btn-primary">Submit</button>
+          <button class="btn btn-primary" id="submit-user-review" data-id="submit-review" type="submit">Submit</button>
         </form>
       </div>
-      <div class="row-fluid col-md-12">
-        <div id="review-list" class="media">
+      <div class="row-fluid col-md-12 col-xs-12">
+        <div class="media"id="review-list">
         </div>
       </div>
-      <div class="row-fluid col-md-12">
-        <div id="restaurants"class="hidden media">
+      <div class="row-fluid col-md-12 col-xs-12">
+        <div class="hidden media" id="restaurants">
         </div>
       </div>
     </div>
-    <div id="failed-search" class="hidden jumbotron">
+    <div class="hidden jumbotron" id="failed-search">
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
     <script src="default.js"></script>

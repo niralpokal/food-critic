@@ -6,13 +6,11 @@
   height: 85%;
   width: 100%;
 }
-#overlay {position: relative;}
+#overlay { position: relative; }
 #header{
   position: relative;
   background-color: #af0606
 }
-
-
 #logo {
   position: relative;
   z-index:7;
@@ -43,6 +41,34 @@
   color: white;
   z-index: 7;
 }
-[data-id="show"]{
-  margin-top: 5px;
+[data-id="show"]{ margin-top: 5px; }
+@media only screen and (min-width: 0px) and (max-width: 768px)  {
+  #search-bar {
+    position: relative;
+    width: 40%;
+    display: inline;
+  }
+  #search-button {
+    position: relative;
+    display: inline;
+  }
+  [data-id="img"]{
+    max-width: 100%;
+    height: auto;
+    display: inline;
+  }
+  [data-id="resImage"]{
+    max-width: 200px;
+    height: auto;
+  }
+  #search-results{
+    float: left;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  #add-review{
+    max-width: 100%;
+    overflow: hidden;
+  }
+  #label{ display: none; }
 }
