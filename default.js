@@ -971,10 +971,13 @@ function useful(array, target){
   if (target.className === "btn btn-default btn-sm"){
     var sum1 = (count + 1);
     usefully(sum1, target);
+    array.useful = sum1;
     target.className = "btn btn-default btn-sm btn-warning active"
   } else if (target.className === "btn btn-default btn-sm btn-warning active"){
-    usefully(count, target);
+    var minus1 = (count - 1);
+    usefully(minus1, target);
     target.className = "btn btn-default btn-sm"
+    array.useful = minus1;
   }
 };
 
@@ -1001,10 +1004,13 @@ function funny(array, target){
   if (target.className === "btn btn-default btn-sm"){
     var sum1 = (count + 1);
     funnier(sum1, target);
+    array.funny = sum1;
     target.className = "btn btn-default btn-sm btn-success active"
   } else if (target.className === "btn btn-default btn-sm btn-success active"){
-    funnier(count, target);
+    var minus1 = (count - 1);
+    funnier(minus1, target);
     target.className = "btn btn-default btn-sm"
+    array.funny = minus1;
   }
 };
 
@@ -1032,9 +1038,12 @@ function cool(array, target){
     var sum1 = (count + 1);
     cooler(sum1, target);
     target.className = "btn btn-default btn-sm btn-info active"
+    array.cool = sum1;
   } else if (target.className === "btn btn-default btn-sm btn-info active"){
-    cooler(count, target);
+    var minus1 = (count - 1);
+    cooler(minus1, target);
     target.className = "btn btn-default btn-sm"
+    array.cool = minus1;
   }
 };
 
