@@ -4,6 +4,7 @@ var middleware = express.static('./public/');
 
 app.use(middleware);
 app.get('/', function(req, res) {
+  res.send(200)
 })
 
 var port = process.env.PORT || 8080;
