@@ -520,6 +520,20 @@ function stopRefresh(event) {
   sortRestaurants(restaurantArray, search.toLowerCase());
 };
 
+function stopRefresh1(value) {
+  hideRes();
+  removeDom();
+  hideGoBack();
+  hideRevButton();
+  hideImages();
+  hideRev();
+  hideSort();
+  event.preventDefault();
+  search = value;
+  searchedArray = [];
+  sortRestaurants(restaurantArray, search.toLowerCase());
+};
+
 function sortRestaurants(array,b) {
   var b =b;
   var array = array;
@@ -1228,6 +1242,14 @@ function myTarget(event){
     submitReview(ev);
   }else if(theTarget === 'submit-restaurant'){
     addRestaurant(ev);
+  }else if(theTarget === 'american'){
+    stopRefresh1('american');
+  }else if(theTarget === 'pizza'){
+    stopRefresh1('pizza');
+  }else if(theTarget === 'pizza'){
+    stopRefresh1('pizza');
+  }else if(theTarget === 'mexican'){
+    stopRefresh1('mexican');
   }
 };
 

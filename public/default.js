@@ -520,6 +520,20 @@ function stopRefresh(event) {
   sortRestaurants(restaurantArray, search.toLowerCase());
 };
 
+function stopRefresh1(value) {
+  hideRes();
+  removeDom();
+  hideGoBack();
+  hideRevButton();
+  hideImages();
+  hideRev();
+  hideSort();
+  event.preventDefault();
+  search = value;
+  searchedArray = [];
+  sortRestaurants(restaurantArray, search.toLowerCase());
+};
+
 function sortRestaurants(array,b) {
   var b =b;
   var array = array;
@@ -971,10 +985,13 @@ function useful(array, target){
   if (target.className === "btn btn-default btn-sm"){
     var sum1 = (count + 1);
     usefully(sum1, target);
+    array.useful = sum1;
     target.className = "btn btn-default btn-sm btn-warning active"
   } else if (target.className === "btn btn-default btn-sm btn-warning active"){
-    usefully(count, target);
+    var minus1 = (count - 1);
+    usefully(minus1, target);
     target.className = "btn btn-default btn-sm"
+    array.useful = minus1;
   }
 };
 
@@ -1001,10 +1018,13 @@ function funny(array, target){
   if (target.className === "btn btn-default btn-sm"){
     var sum1 = (count + 1);
     funnier(sum1, target);
+    array.funny = sum1;
     target.className = "btn btn-default btn-sm btn-success active"
   } else if (target.className === "btn btn-default btn-sm btn-success active"){
-    funnier(count, target);
+    var minus1 = (count - 1);
+    funnier(minus1, target);
     target.className = "btn btn-default btn-sm"
+    array.funny = minus1;
   }
 };
 
@@ -1032,9 +1052,12 @@ function cool(array, target){
     var sum1 = (count + 1);
     cooler(sum1, target);
     target.className = "btn btn-default btn-sm btn-info active"
+    array.cool = sum1;
   } else if (target.className === "btn btn-default btn-sm btn-info active"){
-    cooler(count, target);
+    var minus1 = (count - 1);
+    cooler(minus1, target);
     target.className = "btn btn-default btn-sm"
+    array.cool = minus1;
   }
 };
 
@@ -1219,6 +1242,14 @@ function myTarget(event){
     submitReview(ev);
   }else if(theTarget === 'submit-restaurant'){
     addRestaurant(ev);
+  }else if(theTarget === 'american'){
+    stopRefresh1('american');
+  }else if(theTarget === 'pizza'){
+    stopRefresh1('pizza');
+  }else if(theTarget === 'pizza'){
+    stopRefresh1('pizza');
+  }else if(theTarget === 'mexican'){
+    stopRefresh1('mexican');
   }
 };
 
