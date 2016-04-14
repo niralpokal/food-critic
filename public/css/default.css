@@ -1,0 +1,74 @@
+.header-overlay {
+  position: absolute;
+  background-image: url("../images/header_background.png");
+  background-size: cover;
+  z-index: 6;
+  height: 85%;
+  width: 100%;
+}
+#overlay { position: relative; }
+#header{
+  position: relative;
+  background-color: #af0606
+}
+#logo {
+  position: relative;
+  z-index:7;
+}
+#search-button {
+  position: relative;
+  background-color: rgb(170, 17, 0);
+  z-index: 7;
+  border-color: rgb(134, 18, 2);
+}
+#search-bar {
+  position: relative;
+  background-color: rgb(238, 238, 238);
+  z-index: 7;
+  width: 60%;
+}
+#home {
+  position: relative;
+  background-color: rgb(170, 17, 0);
+  border-color: rgb(134, 18, 2);
+  color: white;
+  z-index: 7;
+}
+#add-restaurant {
+  position: relative;
+  background-color: rgb(170, 17, 0);
+  border-color: rgb(134, 18, 2);
+  color: white;
+  z-index: 7;
+}
+[data-id="show"]{ margin-top: 5px; }
+@media only screen and (min-width: 0px) and (max-width: 768px)  {
+  #search-bar {
+    position: relative;
+    width: 40%;
+    display: inline;
+  }
+  #search-button {
+    position: relative;
+    display: inline;
+  }
+  [data-id="img"]{
+    max-width: 100%;
+    height: auto;
+    display: inline;
+  }
+  [data-id="resImage"]{
+    max-width: 200px;
+    height: auto;
+  }
+  #search-results{
+    float: left;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  #add-review{
+    max-width: 100%;
+    overflow: hidden;
+  }
+  #label{ display: none; }
+}
