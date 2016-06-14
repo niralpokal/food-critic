@@ -417,6 +417,7 @@ var starValue;
 var searchedArray = [];
 var reviewList = [];
 
+$('#carousel').carousel();
 function removeDom(){
   var element = restaurants;
   var element2 = listOfReviews;
