@@ -18,7 +18,7 @@ updates:
     commit-message:
       # Prefix all commit messages with "npm"
       prefix: "maintenance-npm"
-    open-pull-requests-limit: 0
+    open-pull-requests-limit: 15
     target-branch: "integration"
     labels:
       - "dependencies"
