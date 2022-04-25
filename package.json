@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/niralpokal/food-critic#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.18.0"
   }
 }
